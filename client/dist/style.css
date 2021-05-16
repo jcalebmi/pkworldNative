@@ -1,0 +1,199 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+#pkworld {
+  width: 100%;
+  height: 100%;
+}
+.bold {
+  font-weight: bold;
+}
+.highlight {
+  background-color: lightblue;
+}
+
+#feed {
+  width: 95vw;
+}
+li.dataLists{
+  border: solid black;
+  list-style: none;
+  padding: 0;
+  border-width: .1em 0;
+}
+ul.dataLists{
+  width: 90%;
+  padding: 0;
+  margin: 0 auto;
+  border-radius: 5%;
+  border: solid black;
+  overflow: hidden;
+  max-height: 500px;
+}
+
+/* Nav */
+#navigation {
+  width: 95vw;
+  text-align: center;
+  border: solid black;
+  margin: auto;
+}
+
+#navigation
+button {
+  border: none;
+  background-color: white;
+}
+
+/* Map */
+#map {
+  display: inline-grid;
+  position: relative;
+  grid-template-columns: 85% 15%;
+  width: 100%;
+  padding: 0 auto;
+  margin: 0 auto;
+}
+/* Map Search */
+.search {
+  width: 90%;
+  margin: 0;
+  padding: 0;
+}
+.search select {
+  width: 100%;
+}
+.search input {
+  width: 100%;
+}
+.popOver {
+  background-color: white;
+  border: solid black;
+}
+
+.popOver li {
+  border: none;
+  border-bottom: solid black;
+  list-style: none;
+  overflow: hidden;
+}
+.popOver ul {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Social Meda */
+.socialMedia {
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+a.social:hover {
+  transform: translateY(-2px);
+}
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.instagram {
+  color: black;
+}
+
+/* Events */
+#events {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+#events
+.forms {
+  position: relative;
+  display: inline-grid;
+  grid-template-columns: 25% 25%;
+}
+
+#events
+.forms
+.search {
+  position: absolute;
+  margin-left: 30vw;
+  margin-top:9px;
+  margin-bottom: 0;
+}
+
+#events
+.forms
+label.select {
+  font-weight: bold;
+  margin-left: 55px;
+  margin-bottom: 0;
+}
+
+#events
+.forms
+.select {
+  width: 20vw;
+  margin: 0;
+}
+
+#events
+h3 {
+  text-align: center;
+  margin-bottom: 1%;
+}
+#events
+li
+.contentContainer {
+  text-align:center
+}
+#events
+li
+.contents {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Users */
+#users {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+#users
+h3 {
+  text-align: center;
+  margin-bottom: 1%
+}
+
+#users
+li
+.contentContainer {
+  margin-top: 0;
+  text-align:center;
+}
+#users
+li
+.contents {
+  display: inline-block;
+  text-align: left;
+}
+
+
+
