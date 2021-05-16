@@ -5,7 +5,7 @@ const userData = [
     facebook: 'http://facebook.com/calebiuliano',
     instagram: 'http://instagram.com/calebiuliano',
     youtube: 'http://youtube.com/rillahops',
-    twitter: '',
+    twitter: null,
     phone: 1234,
     email: 'calebiuliano@gmail.com',
     city: 'Orlando',

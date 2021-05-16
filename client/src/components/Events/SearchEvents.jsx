@@ -25,7 +25,7 @@ class SearchEvents extends React.Component {
         <input
           className="search"
           type="text"
-          value ={this.state.search}
+          value={this.state.search}
           placeholder="Search Events"
           onChange={this.handleChange} />
       </form>

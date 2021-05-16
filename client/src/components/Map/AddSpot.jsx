@@ -5,8 +5,8 @@ class AddSpot extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Spot Name',
-      video: 'Video URL',
+      name: '',
+      video: '',
       gym: null
     }
     this.onChange = this.onChange.bind(this);
@@ -37,28 +37,53 @@ class AddSpot extends React.Component {
         video: video
       }
     }
-    console.log(spot)
-    createSpot(spot);
+    // createSpot(spot);
     this.props.close(null)
     this.props.temp(null)
   }
 
   render () {
     return (
-      <form onSubmit={this.onSubmit}>
+      <form
+        onSubmit={this.onSubmit}
+        id="addSpot">
         <label htmlFor="name">
-          <input type="text" name="name" value={this.state.name} onChange={this.onChange}></input>
+          <input
+            required
+            type="text"
+            name="name"
+            value={this.state.name}
+            placeholder="Spot Name"
+            onChange={this.onChange}></input>
         </label><br></br>
         <label htmlFor="video">
-          <input type="text" name="video" value={this.state.video} onChange={this.onChange}></input>
+          <input
+            type="url"
+            name="video"
+            value={this.state.video}
+            placeholder="Add Video Url?"
+            onChange={this.onChange}></input>
         </label><br></br>
         <h3>Gym?</h3>
-        <label htmlFor="gym">True:
-          <input type="radio" name="gym" value={'true'} onChange={this.onChange}></input>
-        </label>
-        <label htmlFor="gym">False:
-          <input type="radio" name="gym" value={'false'} onChange={this.onChange}></input>
-        </label><br></br>
+        <div className="label">
+          <label
+            htmlFor="gym">Yes:
+            <input
+              type="radio"
+              name="gym"
+              value={'true'}
+              onChange={this.onChange}></input>
+          </label>
+          <label
+            htmlFor="gym">No:
+            <input
+              type="radio"
+              name="gym"
+              value={'false'}
+              onChange={this.onChange}></input>
+          </label>
+        </div>
+        <br></br>
         <input type='submit'></input>
       </form>
     )
