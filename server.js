@@ -21,21 +21,23 @@ app.get('/spots', (req, res) => {
   Spot.find().then(results => {
     res.status(200).send(results)
   })
-})
+});
 
+app.post('/events', (req, res) => {
+  const event = new Event(req.body);
+  event.save().then(results => {
+    Event.find().then(results => {
+      res.status(201).send(results);
+      console.log('Success')
+    })
+  });
+});
+
+app.get('/events', (req, res) => {
+  Event.find().then(results => res.status(200).send(results));
+})
 
 const port = 8080;
 app.listen(port, () => {
   console.log('listening on, ', port);
 });
-
-// let save = (repos) => {
-
-//   for (var i = 0; i < repos.length; i ++) {
-//     console.log('REPO', repos[i])
-//     var newRepo = new Repo(repos[i]);
-//     newRepo.save();
-
-//   }
-
-// }

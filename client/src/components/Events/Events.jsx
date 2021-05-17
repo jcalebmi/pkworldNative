@@ -5,13 +5,14 @@ import eventList from '../sampleData/Events.js';
 import SearchLocations from './SearchLocations.jsx';
 import AddEvent from './AddEvent.jsx';
 import findEvents from './helpers/findEvents.js';
+import getEvents from './helpers/getEvents.js';
 
 class Events extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: eventList,
-      display: eventList,
+      events: [],
+      display: [],
       length: 5,
       currentSearch: '',
       modal: false
@@ -20,12 +21,16 @@ class Events extends React.Component {
     this.updateEvents = this.updateEvents.bind(this);
     this.loadMore = this.loadMore.bind(this);
     this.addEvent = this.addEvent.bind(this);
+    this.closeModal = this.closeModal.bind(this)
   }
 
   componentDidMount () {
-    const sort = findEvents('', this.state.events, this.props.location);
-    this.setState({
+    getEvents().then(data => {
+      const sort = findEvents('', data, this.props.location);
+      this.setState({
+      events: data,
       display: sort.slice(0, 5)
+    })
     })
   }
 
@@ -36,10 +41,22 @@ class Events extends React.Component {
   }
 
   addEvent (e) {
-    e.preventDefault();
+    if (this.state.modal) {
+      this.closeModal();
+      return;
+    }
     this.setState({
       modal: true
-    })
+    });
+    // if (this.node.contains(e.target)) {
+    //   return;
+    // }
+    // document.addEventListener('click', this.closeModal);
+  }
+  closeModal () {
+    this.setState({
+      modal: false
+    }, document.removeEventListener('click', this.closeModal))
   }
 /////////////////////////////////
   loadMore (entries) {
@@ -69,6 +86,13 @@ class Events extends React.Component {
   render() {
     return (
       <div id="events">
+        {this.state.modal
+          ? <AddEvent
+              location={this.props.location}
+              closeModal={this.closeModal}
+              modal={this.state.modal}
+              />
+          : null}
         <div className="forms">
           <SearchLocations />
           <SearchEvents
@@ -82,9 +106,6 @@ class Events extends React.Component {
         <div ref={this.loader}>
           <button onClick={this.addEvent}>Add Event</button>
         </div>
-        {this.state.modal
-          ? <AddEvent />
-          : null}
       </div>
     )
   }

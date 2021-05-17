@@ -27,7 +27,7 @@ class Event extends React.Component {
                 <span>State: {this.props.event.state}</span>
               </div>
               <br></br>
-              <span className="bold" onClick={this.showMore}>Close</span>
+              <span className="bold seeMore" onClick={this.showMore}>Close</span>
             </div>
           </div> :
           <div>
@@ -37,7 +37,7 @@ class Event extends React.Component {
                 <span>Description: {this.props.event.description}</span>
               </div>
               <br></br>
-              <span className="bold" onClick={this.showMore}>More</span>
+              <span className="bold seeMore" onClick={this.showMore}>More</span>
             </div>
           </div>}
       </li>

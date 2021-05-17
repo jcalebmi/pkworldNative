@@ -52,7 +52,7 @@ class User extends React.Component {
                 className="instagram social">
                 <FontAwesomeIcon icon={faInstagram} size="1x" />
               </a><br></br>
-              <span className="bold" onClick={this.showMore}>Close</span>
+              <span className="bold seeMore" onClick={this.showMore}>Close</span>
             </div>
           </div> :
           <div>
@@ -74,7 +74,7 @@ class User extends React.Component {
                 className="instagram social">
                 <FontAwesomeIcon icon={faInstagram} size="1x" />
               </a><br></br>
-              <span className="bold" onClick={this.showMore}>More</span>
+              <span className="bold seeMore" onClick={this.showMore}>More</span>
             </div>
           </div>}
       </li>

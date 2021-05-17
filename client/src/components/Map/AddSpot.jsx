@@ -62,7 +62,7 @@ class AddSpot extends React.Component {
             <input
               type="radio"
               name="gym"
-              value={'true'}
+              value='true'
               onChange={this.onChange}></input>
           </label>
           <label
@@ -70,7 +70,7 @@ class AddSpot extends React.Component {
             <input
               type="radio"
               name="gym"
-              value={'false'}
+              value='false'
               onChange={this.onChange}></input>
           </label>
         </div>

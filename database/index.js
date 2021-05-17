@@ -18,10 +18,11 @@ let eventSchema = mongoose.Schema({
   city: String,
   state: String,
   country: String,
-  zip: Number,
   jam: Boolean,
   gym: Boolean,
-  photos: [String]
+  photos: [String],
+  lat: Number,
+  lng: Number
 });
 
 let Event = mongoose.model('Event', eventSchema);
