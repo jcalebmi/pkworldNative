@@ -1,9 +1,10 @@
 import React from 'react';
-const findEvents = (value, events) => {
+const findEvents = (value, events, location) => {
   let keys;
+  const copy = JSON.parse(JSON.stringify(events));
+  let filter = copy;
   if (value.length > 0) {
-    let copy = JSON.parse(JSON.stringify(events));
-    let filter = copy.filter((event) => {
+    filter = filter.filter((event) => {
       keys = Object.keys(event);
       let doesMatch = false;
       keys.forEach((key) => {
@@ -29,22 +30,19 @@ const findEvents = (value, events) => {
       })
       return event;
     })
-
-
-    // if (search.length >= 2) {
-    //   filtered = filtered.map((review, index) => {
-    //     const i = review.body.toLowerCase().indexOf(search.toLowerCase());
-    //     if (i !== -1) {
-    //       const body = review.body.split('');
-    //       review.body = <span key={index}>{body.slice(0, i)}<span id="highlight">{body.slice(i, i + search.length)}</span>{body.slice(i + search.length)} </span>;
-    //     }
-    //     return review;
-    //   });
-    // }
-    return filter
-  } else {
-    return events;
   }
+  filter.sort((a, b) => {
+    const distanceA = Math.sqrt(((a.lat - location.lat) ** 2) + ((a.lng - location.lng) ** 2) );
+    const distanceB = Math.sqrt(((b.lat - location.lat) ** 2) + ((b.lng - location.lng) ** 2) );
+    if (distanceA < distanceB) {
+      return -1;
+    }
+    if (distanceA > distanceB) {
+      return 1;
+    }
+    return 0;
+  })
+  return filter;
 }
 
 export default findEvents;

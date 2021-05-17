@@ -11,7 +11,7 @@ class SearchEvents extends React.Component {
   }
 
   handleChange (e) {
-    const search = findEvents(e.target.value, this.props.events);
+    const search = findEvents(e.target.value, this.props.events, this.props.location);
 
     this.props.updateEvents(search);
 

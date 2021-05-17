@@ -20,24 +20,15 @@ class AddSpot extends React.Component {
   }
   onSubmit (e) {
     e.preventDefault();
-    let spot;
-    if (this.state.video === 'Video URL') {
-      spot = {
-        name: this.state.name,
-        lat: this.props.coordinates.lat,
-        lng: this.props.coordinates.lng,
-        gym: this.state.gym
-      }
-    } else {
-      spot = {
+    const spot = {
         name: this.state.name,
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
         gym: this.state.gym,
-        video: video
+        videos: this.state.video
       }
-    }
-    // createSpot(spot);
+
+    createSpot(spot);
     this.props.close(null)
     this.props.temp(null)
   }

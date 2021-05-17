@@ -56,7 +56,7 @@ class App extends React.Component {
             ? <Users users={this.state.users} location={this.state.location} usePlaces={usePlacesAutocomplete}/>
             :null}
           {this.state.feed === 'Events'
-            ? <Events/>
+            ? <Events location={this.state.location}/>
             :null}
         </div>
       </div>

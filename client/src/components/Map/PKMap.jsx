@@ -15,7 +15,7 @@ import apiToken from '../../../../myConfig.js';
 import getMarkers from './helpers/getMarkers.js';
 
 
-const libraries = ["places"];
+const libraries = ["places", "geometry"];
 //Height and width necessary for map to work
 const mapContainerStyle = {
   width: "75vw",

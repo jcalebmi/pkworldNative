@@ -28,8 +28,8 @@ ul.dataLists{
   margin: 0 auto;
   border-radius: 5%;
   border: solid black;
-  overflow: hidden;
-  max-height: 500px;
+  max-height: fit-content;
+  overflow-y: hidden;
 }
 
 /* Nav */

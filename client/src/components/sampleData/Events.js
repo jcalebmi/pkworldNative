@@ -10,6 +10,8 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 28.5383,
+    lng: -81.3792,
   },
   {
     name: 'Event1',
@@ -22,6 +24,8 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: -23,
+    lng: 50
   },
   {
     name: 'jam 2',
@@ -34,9 +38,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 50,
+    lng: -80
   },
   {
-    name: 'name',
+    name: 'name2',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -46,6 +52,8 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 21,
+    lng: 22
   },
   {
     name: 'Test Event 3',
@@ -58,9 +66,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 53,
+    lng: -90
   },
   {
-    name: 'name',
+    name: 'name3',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -70,9 +80,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: -60,
+    lng: 40
   },
   {
-    name: 'name',
+    name: 'name4',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -82,9 +94,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 34.06816112517546,
+    lng: -118.44554252766474
   },
   {
-    name: 'name',
+    name: 'name5',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -94,9 +108,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 60,
+    lng: 70
   },
   {
-    name: 'name',
+    name: 'name6',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -106,9 +122,11 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 60,
+    lng: 45
   },
   {
-    name: 'name',
+    name: 'name7',
     description: 'description',
     date: 'date',
     address: 'address',
@@ -118,6 +136,8 @@ const eventList = [
     zip: 'zip',
     jam: true,
     gym: true,
+    lat: 60,
+    lng: 41
   }
 ]
 
