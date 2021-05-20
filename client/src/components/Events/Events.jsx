@@ -88,13 +88,13 @@ class Events extends React.Component {
   loadMore (entries) {
     const target = entries[0];
     if (target.isIntersecting && this.state.display.length !== this.state.events.length) {
-      // if (!this.state.searching) {
-        const sort = findEvents(this.state.searchTerm, this.state.events, this.props.location);
+      if (!this.state.searching) {
+        const sort = findEvents('', this.state.events, this.props.location);
         this.setState({
           length: this.state.length + 2,
           display: sort.slice(0, this.state.length + 2)
         })
-      // }
+      }
     }
   };
 
