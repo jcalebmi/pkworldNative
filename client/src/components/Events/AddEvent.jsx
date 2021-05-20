@@ -1,8 +1,4 @@
 import React from 'react';
-import SelectLocation from './SelectLocation.jsx';
-import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
-import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from '@reach/combobox';
-import submitEvent from './helpers/submitEvent.js';
 
 class AddEvent extends React.Component {
   constructor(props) {
@@ -16,8 +12,6 @@ class AddEvent extends React.Component {
       country: '',
       gym: null,
       jam: null,
-      lat: null,
-      lng: null,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
@@ -39,7 +33,7 @@ class AddEvent extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const data = this.state;
-    submitEvent(data);
+    this.props.submitInfo(data);
     this.props.closeModal();
   }
 
@@ -67,21 +61,12 @@ class AddEvent extends React.Component {
                 onChange={this.handleChange}
                 required/>
             </label>
-            <label htmlFor="country">
+            <label htmlFor="address">
             <input
               type="text"
-              placeholder="Country"
-              value={this.state.country}
-              name="country"
-              onChange={this.handleChange}
-              required/>
-            </label>
-            <label htmlFor="state">
-            <input
-              type="text"
-              placeholder="State"
-              value={this.state.state}
-              name="state"
+              placeholder="Address"
+              value={this.state.address}
+              name="address"
               onChange={this.handleChange}
               required/>
             </label>
@@ -94,13 +79,24 @@ class AddEvent extends React.Component {
               onChange={this.handleChange}
               required/>
             </label>
-            <SelectLocation
-              location={this.props.location}
-              handleLocation={this.handleLocation}
-              city={this.state.city}
-              state={this.state.state}
-              country={this.state.country}
-              modal={this.props.modal}/>
+            <label htmlFor="state">
+            <input
+              type="text"
+              placeholder="State"
+              value={this.state.state}
+              name="state"
+              onChange={this.handleChange}
+              required/>
+            </label>
+            <label htmlFor="country">
+            <input
+              type="text"
+              placeholder="Country"
+              value={this.state.country}
+              name="country"
+              onChange={this.handleChange}
+              required/>
+            </label>
             <h3>At A Gym?</h3>
             <div className="label">
               <label
@@ -115,7 +111,7 @@ class AddEvent extends React.Component {
               </label>
               <label
                 className="radio"
-                htmlFor="gym">No:
+                htmlFor="gym"> No:
                 <input
                   className="radio"
                   type="radio"
@@ -138,7 +134,7 @@ class AddEvent extends React.Component {
               </label>
               <label
                 className="radio"
-                htmlFor="jam">No:
+                htmlFor="jam"> No:
                 <input
                   className="radio"
                   type="radio"
@@ -149,7 +145,7 @@ class AddEvent extends React.Component {
             </div>
             <br></br>
             <input type='submit'></input>
-          </form>
+          </form><br/>
           <div
             className="closeModal"
             onClick={this.props.closeModal}>+</div>

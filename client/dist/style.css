@@ -1,8 +1,14 @@
 html, body {
   height: 100%;
   width: 100%;
+  color: #EEFBFB;
+  background-image: linear-gradient(45deg, #12232E 0%, #090979 45%, #007CC7 55%);
 }
 #pkworld {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
 }
@@ -10,7 +16,7 @@ html, body {
   font-weight: bold;
 }
 .highlight {
-  background-color: lightblue;
+  background-color: #203647;
 }
 .seeMore {
   cursor: pointer;
@@ -19,7 +25,8 @@ html, body {
   width: 95vw;
 }
 li.dataLists{
-  border: solid black;
+  border: solid #EEFBFB;
+  background-color: #4DA8DA;
   list-style: none;
   padding: 0;
   border-width: .1em 0;
@@ -29,7 +36,7 @@ ul.dataLists{
   padding: 0;
   margin: 0 auto;
   border-radius: 5%;
-  border: solid black;
+  border: solid #EEFBFB;
   max-height: fit-content;
   overflow-y: hidden;
 }
@@ -38,28 +45,33 @@ ul.dataLists{
 #navigation {
   width: 95vw;
   text-align: center;
-  border: solid black;
+  border: solid #EEFBFB;
   margin: auto;
 }
 
 #navigation
 button {
+  color: #EEFBFB;
   border: none;
-  background-color: white;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
 }
 
 /* Map */
 #map {
+  color: black;
   display: inline-grid;
   position: relative;
   grid-template-columns: 85% 15%;
   width: 100%;
   padding: 0 auto;
   margin: 0 auto;
+  margin-top: 10px;
 }
 /* Map Search */
 .search {
-  width: 90%;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
@@ -70,6 +82,7 @@ button {
   width: 100%;
 }
 .popOver {
+  color:black;
   z-index:2;
   background-color: white;
   border: solid black;
@@ -86,7 +99,16 @@ button {
   padding: 0;
   margin: 0;
 }
-
+h2.submitSpot {
+  text-align: center;
+}
+#addSpot {
+  text-align: center;
+}
+#addSpot
+h1{
+  text-align: center;
+}
 #addSpot
 h3 {
   margin-bottom: 1%;
@@ -97,7 +119,16 @@ h3 {
 }
 #addSpot
 label{
+  text-align: center;
   margin: 0 10px;
+}
+#addSpot
+textarea {
+  margin: 0 auto;
+  margin-top: 2px;
+  padding: 0 auto;
+  width: 72%;
+  height: 45px;
 }
 /* Social Meda */
 .socialMedia {
@@ -119,11 +150,11 @@ a.youtube {
 }
 
 a.facebook {
-  color: #4968ad;
+  color: #336ce6;
 }
 
 a.twitter {
-  color: #49a1eb;
+  color: #1690f3;
 }
 
 a.instagram {
@@ -139,21 +170,16 @@ a.instagram {
 }
 #events
 .forms {
-  position: relative;
-  display: inline-grid;
-  grid-template-columns: 25% 25%;
+  display: grid;
+  grid-template-columns: 75% 25%;
   text-align: left;
 }
 
 #events
 .forms
 .search {
-  position: absolute;
-  width: 50%;
-  margin-top:9px;
-  margin-left: 30vw;
+  width: 100%;
   margin-bottom: 0;
-  float: right;
 }
 
 #events
@@ -167,8 +193,15 @@ label.select {
 #events
 .forms
 .select {
+  padding-right: 60vw;
   width: 20vw;
   margin: 0;
+}
+
+#events
+button {
+  width: 20vw;
+  background-color: #EEFBFB;
 }
 
 #events
@@ -187,18 +220,17 @@ li
   display: inline-block;
   text-align: left;
 }
-#events
+/* #events
 button {
   margin: 0 auto;
   padding: 0 auto;
-}
+} */
 
 /* Add Events */
 #addEvent {
-  width: 100%;
+  width: 93%;
   height: 100%;
-  z-index: 1;
-  position: fixed;
+  position: absolute;
   background-color: none;
   margin: 0 auto;
   padding: 0 auto;
@@ -206,13 +238,12 @@ button {
 }
 #addEvent
 .formContainer {
-  width: 60%;
-  height: 60%;
+  width: 50%;
+  height: 50%;
   opacity: .95;
   margin: 0 auto;
-  position: relative;
   text-align: center;
-  background-color: lightgray;
+  background-color: #203647;
   border: solid black;
   overflow-y: scroll;
 }
@@ -242,6 +273,7 @@ input.radio {
   width: 100%;
   margin: 0 auto;
   padding: 0 auto;
+  text-align: center;
 }
 
 #users
@@ -262,7 +294,47 @@ li
   display: inline-block;
   text-align: left;
 }
+#users
+button {
+  margin: 0 auto;
+  padding: 0 auto;
+}
+/* Add User */
+#addUser {
+  width: 93%;
+  height: 93%;
+  z-index: 1;
+  position: fixed;
+  background-color: none;
+  margin: 0 auto;
+  padding: 0 auto;
+  text-align: center;
+}
+#addUser
+.formContainer {
+  width: 60%;
+  height: 60%;
+  opacity: .95;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  background-color: #203647;
+  border: solid black;
+  overflow-y: scroll;
+}
+#addUser
+input {
+  margin: 0 auto;
+  display: block;
+}
 
+#addUser
+.closeModal {
+  font-size: 2em;
+  transform: rotate(45deg);
+  cursor: pointer;
+  margin-bottom: 0;
+}
 
 
 

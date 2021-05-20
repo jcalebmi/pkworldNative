@@ -10,6 +10,7 @@ let geoCode = (body) => {
   axios.get(options.url).then(function (response) {
     const data = {
       name: body.name,
+      description: body.description,
       address: response.data.results[0].formatted_address,
       lat: body.lat,
       lng: body.lng,
@@ -17,7 +18,6 @@ let geoCode = (body) => {
       gym: Boolean(body.gym)
     }
     const spot = new Spot(data);
-    console.log(body)
     spot.save()
     console.log('Success')
   }).catch(function (error) {

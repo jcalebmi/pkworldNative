@@ -1,7 +1,7 @@
 const axios = require('axios');
 
-const submitEvent = function (data) {
-  return axios.post('/events', data)
+const getUsers = function () {
+  return axios.get('/users')
     .then((res) => {
       return res.data;
     })
@@ -10,6 +10,4 @@ const submitEvent = function (data) {
     });
 };
 
-
-
-export default submitEvent;
+export default getUsers;

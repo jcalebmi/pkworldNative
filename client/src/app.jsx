@@ -6,8 +6,6 @@ import Home from './components/Home.jsx';
 import Navigation from './components/Navigation.jsx';
 import Users from './components/Users/Users.jsx';
 import Events from './components/Events/Events.jsx';
-import userData from './components/sampleData/Users.js';
-// import eventList from './components/sampleData/Events.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -18,8 +16,6 @@ class App extends React.Component {
         lat: 28.5383,
         lng: -81.3792
       },
-      users: userData,
-      // events: eventList,
     }
     this.changeFeed = this.changeFeed.bind(this);
   }
@@ -46,17 +42,18 @@ class App extends React.Component {
       <div id='pkworld'>
         <Navigation changeFeed={this.changeFeed}/>
         <div id="feed">
-          {this.state.feed === 'Home'
-            ? <Home />
-            :null}
           {this.state.feed === 'Map'
-            ? <PKMap location={this.state.location}/>
+            ? <PKMap
+                location={this.state.location}/>
             :null}
           {this.state.feed === 'Users'
-            ? <Users users={this.state.users} location={this.state.location} usePlaces={usePlacesAutocomplete}/>
+            ? <Users
+                location={this.state.location}
+                />
             :null}
           {this.state.feed === 'Events'
-            ? <Events location={this.state.location}/>
+            ? <Events
+                location={this.state.location}/>
             :null}
         </div>
       </div>

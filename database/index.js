@@ -28,8 +28,9 @@ let eventSchema = mongoose.Schema({
 let Event = mongoose.model('Event', eventSchema);
 
 let userSchema = mongoose.Schema({
-  userName: {type: String, unique: true},
-  name: String,
+  // userName: {type: String, unique: true},
+  firstName: String,
+  lastName: String,
   facebook: String,
   instagram: String,
   youtube: String,
@@ -39,13 +40,16 @@ let userSchema = mongoose.Schema({
   city: String,
   state: String,
   country: String,
-  pic: String
+  pic: String,
+  lat: Number,
+  lng: Number
 });
 
 let User = mongoose.model('User', userSchema);
 
 let spotSchema = mongoose.Schema({
   name: String,
+  description: String,
   address: String,
   lat: Number,
   lng: Number,

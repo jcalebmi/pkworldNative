@@ -10,7 +10,6 @@ import SearchLocations from './SearchLocations.jsx';
 import SearchSpots from './SearchSpots.jsx';
 import Locate from './Locate.jsx';
 import AddSpot from './AddSpot.jsx';
-import spots from '../sampleData/Locations.js';
 import apiToken from '../../../../myConfig.js';
 import getMarkers from './helpers/getMarkers.js';
 
@@ -136,7 +135,8 @@ const PKMap = (props) => {
             setSelected(null);
           }}>
           <div>
-            <h2>{selected.name || 'Submit Spot?'}</h2>
+            <h2 className="submitSpot">{selected.name || 'Submit Spot?'}</h2>
+            <p>{selected.description}</p>
             <p>{selected.address}</p>
             {selected.name ? null :
             <AddSpot
@@ -150,7 +150,7 @@ const PKMap = (props) => {
         </InfoWindow>) : null}
       </GoogleMap>
       <div className="search">
-        <Locate panTo={panTo} location={props.location}/>
+        {/* <Locate panTo={panTo} location={props.location}/> */}
         <select value={searching} onChange={handleSearching}>
           <option value='Locations'>Locations</option>
           <option value="Spots">Spots</option>

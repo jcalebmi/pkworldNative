@@ -6,6 +6,7 @@ class AddSpot extends React.Component {
     super(props);
     this.state = {
       name: '',
+      description: '',
       video: '',
       gym: null
     }
@@ -22,6 +23,7 @@ class AddSpot extends React.Component {
     e.preventDefault();
     const spot = {
         name: this.state.name,
+        description: this.state.description,
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
         gym: this.state.gym,
@@ -46,6 +48,13 @@ class AddSpot extends React.Component {
             value={this.state.name}
             placeholder="Spot Name"
             onChange={this.onChange}></input>
+        </label><br/>
+        <label htmlFor="description">
+          <textarea
+            name="description"
+            value={this.state.description}
+            placeholder="Description, Kick out rate, times to avoid, etc"
+            onChange={this.onChange}/>
         </label><br></br>
         <label htmlFor="video">
           <input
