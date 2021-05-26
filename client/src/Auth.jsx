@@ -16,63 +16,56 @@ firebase.initializeApp(config);
 const auth = firebase.auth();
 
 const Auth = () => {
-  const [userInfo, setUserInfo] = useState({});
   const [user] = useAuthState(auth);
-
-  useEffect(() => {
-    console.log(user);
-    axios.get();
-  }, [user]);
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
-      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        {user === null ? (
+      <div>
+        {user === null ?
           <button
-            onClick={() => {
-              const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-              firebase.auth().signInWithPopup(googleAuthProvider);
+          onClick={() => {
+            const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth().signInWithPopup(googleAuthProvider);
             }}
           >
             Sign In with Google
           </button>
-        ) : (
-          /* <button
+          :
+          <button
+            onClick={() => {
+             firebase.auth().signOut();
+           }}
+           >
+           Sign Out
+           </button>}
+        {/* <button
+          data-testid="signin-anon"
           onClick={() => {
-            const emailProvider = new firebase.auth.EmailAuthProvider();
-            firebase.auth().signInWithPopup(emailProvider);
+            firebase.auth().signInAnonymously();
           }}
         >
-          Sign In with Email
-        </button> */
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <img
-              style={{ border: '1px solid white', borderRadius: '15px' }}
-              height="30px"
-              width="30px"
-              src={user.photoURL}
-            />
-            <button
-              onClick={() => {
-                firebase.auth().signOut();
-              }}
-            >
-              Sign Out
-            </button>
-          </div>
-        )}
+          Sign In Anonymously
+        </button> */}
+        <FirebaseAuthConsumer>
+          {/* {({ isSignedIn, user, providerId }) => {
+            return (
+              <pre style={{ height: 300, overflow: "auto" }}>
+                {JSON.stringify({ isSignedIn, user, providerId }, null, 2)}
+              </pre>
+            );
+          }} */}
+        </FirebaseAuthConsumer>
         <div>
+          <IfFirebaseAuthed>
+            {/* {() => {
+              return <div>You are authenticated</div>;
+            }} */}
+          </IfFirebaseAuthed>
           <IfFirebaseAuthedAnd
-            filter={({ providerId }) => providerId !== 'anonymous'}
+            filter={({ providerId }) => providerId !== "anonymous"}
           >
-            {/* {({ providerId }) => <div>You are authenticated with {providerId}</div>
-            } */}
+            {/* {({ providerId }) => {
+              return <div>You are authenticated with {providerId}</div>;
+            }} */}
           </IfFirebaseAuthedAnd>
         </div>
       </div>
