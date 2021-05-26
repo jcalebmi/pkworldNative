@@ -1,6 +1,6 @@
 const axios = require('axios');
-const apiToken = require('../myConfig.js');
-const {Event, User, Spot} = require('../database/index.js');
+const apiToken = require('../../myConfig.js');
+const {Event, User, Spot} = require('../../database/index.js');
 
 let getLatLng = (body, route) => {
   if (route === 'users') {

@@ -1,15 +1,15 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'client', 'dist')));
+app.use(express.static(path.join(__dirname, '/../', 'client', 'dist')));
 
 const geoCode = require('./api/geoCode.js');
 const getLatLng = require('./api/getLatLng.js');
 
-const {Event, User, Spot} = require('./database/index.js');
+const {Event, User, Spot} = require('../database/index.js');
 
 app.post('/spot', (req, res) => {
   geoCode(req.body);

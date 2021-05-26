@@ -6,6 +6,7 @@ import Home from './components/Home.jsx';
 import Navigation from './components/Navigation.jsx';
 import Users from './components/Users/Users.jsx';
 import Events from './components/Events/Events.jsx';
+import Auth from './Auth.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends React.Component {
             ? <Events
                 location={this.state.location}/>
             :null}
+            <Auth />
         </div>
       </div>
     )
