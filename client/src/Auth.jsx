@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import firebase from 'firebase';
 import 'firebase/auth';
-import 'firebase/firestore';
-
+import 'firebase/app';
 import {
   FirebaseAuthProvider,
   FirebaseAuthConsumer,
@@ -19,16 +18,26 @@ const Auth = () => {
   const [user] = useAuthState(auth);
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
-      <div>
+      <div id='auth'>
         {user === null ?
-          <button
-          onClick={() => {
-            const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-            firebase.auth().signInWithPopup(googleAuthProvider);
-            }}
-          >
-            Sign In with Google
-          </button>
+          <div>
+            <button
+            onClick={() => {
+              const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+              firebase.auth().signInWithPopup(googleAuthProvider);
+              }}
+            >
+              Sign in with Google
+            </button><br/>
+            <button
+            onClick={() => {
+              const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
+              firebase.auth().signInWithPopup(facebookAuthProvider);
+              }}
+            >
+              Sign in with Facebook
+            </button>
+          </div>
           :
           <button
             onClick={() => {

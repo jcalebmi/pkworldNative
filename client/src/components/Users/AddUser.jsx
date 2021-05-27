@@ -1,5 +1,7 @@
 import React from 'react';
+
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
+// const auth = firebase.auth();
 
 
 class AddUser extends React.Component {

@@ -336,5 +336,15 @@ input {
   margin-bottom: 0;
 }
 
+#auth {
+  background-color: #EEFBFB;
+  height: 50vh;
+  text-align: center;
+}
+
+#signIn {
+  margin-top: 1em;
+}
+
 
 

@@ -1,4 +1,6 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
 import User from './User.jsx';
 import AddUser from './AddUser.jsx';
 import getUsers from './helpers/getUsers.js';
@@ -13,6 +15,7 @@ class Users extends React.Component {
       display: [],
       modal: false
     }
+    this.auth = firebase.auth();
     this.loader = React.createRef(null);
     this.updateUsers = this.updateUsers.bind(this);
     this.loadMore = this.loadMore.bind(this);
@@ -83,7 +86,9 @@ class Users extends React.Component {
           {this.state.display.map((user, index) => <User key={index} user={user}/>)}
         </ul>
         <div ref={this.loader}>
-          <button onClick={this.addUser}>Join</button>
+          {this.auth.currentUser
+          ? <button onClick={this.addUser}>Join</button>
+          : null}
         </div>
       </div>
     )

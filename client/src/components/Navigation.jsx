@@ -3,7 +3,7 @@ import React from 'react';
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.feeds = ['Map', 'Events', 'Users']
+    this.feeds = ['Map', 'Events', 'Users', 'Profile']
     this.handleClick = this.handleClick.bind(this);
   }
 
