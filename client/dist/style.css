@@ -1,5 +1,5 @@
 html, body {
-  height: 100%;
+  height:100%;
   width: 100%;
   color: #EEFBFB;
   background-image: linear-gradient(45deg, #12232E 0%, #090979 45%, #007CC7 55%);
@@ -18,6 +18,10 @@ html, body {
 }
 .highlight {
   background-color: #203647;
+}
+#deleteLi {
+  display: grid;
+  grid-template-columns: 70% 30%;
 }
 .seeMore {
   cursor: pointer;
@@ -70,13 +74,14 @@ button {
 /* Map */
 #map {
   color: black;
-  display: inline-grid;
-  position: relative;
-  grid-template-columns: 85% 15%;
   width: 100%;
   padding: 0 auto;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 1em;
+}
+#map
+.location {
+
 }
 
 #map
@@ -90,20 +95,31 @@ button {
 #map
 .info
 div {
-  padding: .5em;
+  padding: .2em;
   text-align: center;
 }
 
 /* Map Search */
+#map
 .search {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
   margin: 0;
   padding: 0;
 }
-.search select {
-  width: 100%;
+#map
+.search
+select {
+  margin: 0;
+  padding: 0;
+  width: 50%;
 }
-.search input {
+#map
+.search
+input {
+  margin: 0;
+  padding: 0;
   width: 100%;
 }
 .popOver {

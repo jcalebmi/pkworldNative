@@ -90,6 +90,26 @@ const PKMap = (props) => {
   return (
     <div id="map">
       <MapInfo changeFeed={props.changeFeed}/><br/>
+      <div className="search">
+        <select value={searching} onChange={handleSearching}>
+          <option value='Locations'>Locations</option>
+          <option value="Spots">Spots</option>
+        </select><br/>
+        {searching === 'Locations'
+        ? <SearchLocations
+        usePlaces={usePlacesAutocomplete}
+        getGeocode={getGeocode}
+        getLatLng={getLatLng}
+        panTo={panTo}
+        location={props.location}/>
+        : <SearchSpots
+            panTo={panTo}
+            markers={markers}/>}
+
+      </div>
+      <Locate
+        panTo={panTo}
+        location={props.location}/>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={8}
@@ -147,24 +167,6 @@ const PKMap = (props) => {
 
         </InfoWindow>) : null}
       </GoogleMap>
-      <div className="search">
-        {/* <Locate panTo={panTo} location={props.location}/> */}
-        <select value={searching} onChange={handleSearching}>
-          <option value='Locations'>Locations</option>
-          <option value="Spots">Spots</option>
-        </select>
-        {searching === 'Locations'
-        ? <SearchLocations
-        usePlaces={usePlacesAutocomplete}
-        getGeocode={getGeocode}
-        getLatLng={getLatLng}
-        panTo={panTo}
-        location={props.location}/>
-        : <SearchSpots
-            panTo={panTo}
-            markers={markers}/>}
-
-      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const Locate = (props) => {
   return (
     <button
-      id="button"
+      className="location"
       onClick={() => {
         //returns data about location
         //takes success, error, options callback

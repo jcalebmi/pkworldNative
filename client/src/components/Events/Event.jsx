@@ -44,11 +44,14 @@ class Event extends React.Component {
               <br/>
               <span className="bold seeMore" onClick={this.showMore}>Close</span><br/>
               {this.auth.currentUser && this.props.event.email === this.auth.currentUser.email
-            ? <span
-              className="seeMore deleteLi"
-              onClick={this.handleDelete}
-              >Delete Your Event?</span>
-            : null}
+            ? <div id="deleteLi">
+                <div></div>
+                <span
+                className="seeMore deleteLi"
+                onClick={this.handleDelete}
+                >Delete Your Event?</span>
+              </div>
+              : null}
             </div>
           </div> :
           <div>
@@ -64,11 +67,14 @@ class Event extends React.Component {
                 className="bold seeMore"
                 onClick={this.showMore}>More</span><br/>
               {this.auth.currentUser && this.props.event.email === this.auth.currentUser.email
-            ? <span
-              className="seeMore deleteLi"
-              onClick={this.handleDelete}
-              >Delete Your Event?</span>
-            : null}
+            ? <div id="deleteLi">
+                <div></div>
+                <span
+                className="seeMore deleteLi"
+                onClick={this.handleDelete}
+                >Delete Your Event?</span>
+              </div>
+              : null}
             </div>
           </div>}
       </li>
