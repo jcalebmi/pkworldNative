@@ -14,6 +14,7 @@ import getMarkers from './helpers/getMarkers.js';
 import firebase from 'firebase';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import MapInfo from './MapInfo.jsx';
 import Auth from '../../Auth.jsx';
 import LoggedIn from './LoggedIn.jsx';
 import LoggedOut from './LoggedOut.jsx';
@@ -88,6 +89,7 @@ const PKMap = (props) => {
   if(!isLoaded) return "Loading";
   return (
     <div id="map">
+      <MapInfo changeFeed={props.changeFeed}/><br/>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={8}

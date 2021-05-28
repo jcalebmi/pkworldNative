@@ -89,7 +89,9 @@ class Users extends React.Component {
         <div ref={this.loader}>
           {this.auth.currentUser
           ? <button onClick={this.addUser}>Join</button>
-          : <p className="seeMore" onClick={()=>this.props.changeFeed('Profile')}>Sign in to join</p>}
+          : <div
+            className="seeMore"
+            onClick={()=>this.props.changeFeed('Profile')}><span className="signIn">Sign in to join</span></div>}
         </div>
       </div>
     )

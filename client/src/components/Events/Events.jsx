@@ -6,6 +6,7 @@ import Event from './Event.jsx';
 import SearchEvents from './SearchEvents.jsx';
 import SearchLocations from './SearchLocations.jsx';
 import AddEvent from './AddEvent.jsx';
+import EventsInfo from './EventsInfo.jsx';
 import findEvents from './helpers/findEvents.js';
 import getEvents from './helpers/getEvents.js';
 import submitEvent from './helpers/submitEvent.js';
@@ -130,12 +131,15 @@ class Events extends React.Component {
         <div className="forms">
           {this.auth.currentUser
             ? <button onClick={this.addEvent}>Add Event</button>
-            : <span className="seeMore" onClick={() => this.props.changeFeed('Profile')}>Sign in to add events</span>}
+            : <div
+              className="seeMore"
+              onClick={() => this.props.changeFeed('Profile')}><span className="signIn">Sign in to add events</span></div>}
           <SearchEvents
             events={this.state.events}
             updateEvents={this.updateEvents}
             location={this.props.location}/>
         </div>
+        <EventsInfo changeFeed={this.props.changeFeed}/><br/>
         <ul className="dataLists">
           {this.state.display.map((event, index) => <Event key={index} event={event}/>)}
         </ul>
