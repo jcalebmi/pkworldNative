@@ -32,6 +32,11 @@ app.get('/events', (req, res) => {
   Event.find().then(results => res.status(200).send(results));
 })
 
+app.delete(`/events/:id`, (req, res) => {
+  Event.remove({_id: req.params.id}).then(results => console.log(results))
+  res.status(200).send('deleted')
+})
+
 app.get('/users', (req, res) => {
   User.find().then(results => res.status(200).send(results));
 })

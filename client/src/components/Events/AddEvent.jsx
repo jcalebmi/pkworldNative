@@ -11,6 +11,7 @@ class AddEvent extends React.Component {
       name: '',
       email: this.auth.currentUser.email,
       description: '',
+      website: '',
       address: '',
       city: '',
       state: '',
@@ -65,6 +66,15 @@ class AddEvent extends React.Component {
                 name="description"
                 onChange={this.handleChange}
                 required/>
+            </label>
+            <label htmlFor="website">
+              <input
+                type="url"
+                placeholder="Website"
+                value={this.state.website}
+                name="website"
+                onChange={this.handleChange}
+                />
             </label>
             <label htmlFor="address">
             <input

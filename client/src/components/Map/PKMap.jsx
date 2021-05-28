@@ -9,13 +9,14 @@ import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption 
 import SearchLocations from './SearchLocations.jsx';
 import SearchSpots from './SearchSpots.jsx';
 import Locate from './Locate.jsx';
-import AddSpot from './AddSpot.jsx';
 import apiToken from '../../../../myConfig.js';
 import getMarkers from './helpers/getMarkers.js';
 import firebase from 'firebase';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Auth from '../../Auth.jsx';
+import LoggedIn from './LoggedIn.jsx';
+import LoggedOut from './LoggedOut.jsx';
 const auth = firebase.auth();
 
 const libraries = ["places", "geometry"];
@@ -40,9 +41,7 @@ const options = {
 
 
 const PKMap = (props) => {
-  //set markers on map
   const [user] = useAuthState(auth);
-  console.log(user)
   const [markers, setMarkers] = useState([])
   const [searching, setSearching] = useState('Locations')
   const [temp, setTemp] = useState(null)
@@ -136,27 +135,13 @@ const PKMap = (props) => {
             setSelected(null);
           }}>
           {user
-            ? <div>
-                <h2 className="submitSpot">{selected.name || 'Submit Spot?'}</h2>
-                <p>{selected.description}</p>
-                <p>{selected.address}</p>
-                {selected.name ? null :
-                <AddSpot
-                  temp={setTemp}
-                  close={setSelected}
-                  coordinates={{
-                    lat: selected.lat,
-                    lng: selected.lng
-                    }}/>}
-              </div>
-            : <div>
-                <h2 className="submitSpot">{selected.name || <span
-                className="seeMore"
-                onClick={() => props.changeFeed('Profile')}>Sign in to submit a spot.<br/>
-                Click to sign in.</span>}</h2>
-                <p>{selected.description}</p>
-                <p>{selected.address}</p>
-              </div>}
+            ? <LoggedIn
+                setTemp={setTemp}
+                setSelected={setSelected}
+                selected={selected}/>
+            : <LoggedOut
+                changeFeed={props.changeFeed}
+                selected={selected}/>}
 
         </InfoWindow>) : null}
       </GoogleMap>

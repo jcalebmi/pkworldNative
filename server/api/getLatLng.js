@@ -49,6 +49,7 @@ let getLatLng = (body, route) => {
         name: body.name,
         email: body.email,
         description: body.description,
+        website: body.website,
         date: body.date,
         address: body.address,
         city: body.city,

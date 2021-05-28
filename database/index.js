@@ -14,6 +14,7 @@ let eventSchema = mongoose.Schema({
   name: String,
   email: String,
   description: String,
+  website: String,
   date: Date,
   address: String,
   city: String,

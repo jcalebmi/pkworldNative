@@ -21,6 +21,12 @@ html, body {
 .seeMore {
   cursor: pointer;
 }
+.deleteLi {
+  float: right;
+  margin-bottom: 0;
+  margin: 0;
+  z-index: 5;
+}
 #feed {
   width: 95vw;
 }
