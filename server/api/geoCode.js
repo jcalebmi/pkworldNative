@@ -10,6 +10,7 @@ let geoCode = (body) => {
   axios.get(options.url).then(function (response) {
     const data = {
       name: body.name,
+      email: body.email,
       description: body.description,
       address: response.data.results[0].formatted_address,
       lat: body.lat,

@@ -22,12 +22,11 @@ class User extends React.Component {
     })
   }
   render () {
-    console.log(this.props.user)
     return (
       <li className="user dataLists">
         {this.state.more ?
           <div>
-            <h3>{this.props.user.firstName}</h3>
+            <h3>{this.props.user.displayName}</h3>
             <img src='/'></img><br></br>
             <div className="contentContainer">
               <div className="contents">
@@ -57,7 +56,7 @@ class User extends React.Component {
             </div>
           </div> :
           <div>
-            <h3>{this.props.user.firstName} {this.props.user.lastName}</h3>
+            <h3>{this.props.user.displayName}</h3>
             <img src='/'></img><br></br>
             <div className="socialMedia">
               <a href={this.props.user.youtube}

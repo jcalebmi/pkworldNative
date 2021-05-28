@@ -12,6 +12,7 @@ db.once('open', function() {
 
 let eventSchema = mongoose.Schema({
   name: String,
+  email: String,
   description: String,
   date: Date,
   address: String,
@@ -28,15 +29,13 @@ let eventSchema = mongoose.Schema({
 let Event = mongoose.model('Event', eventSchema);
 
 let userSchema = mongoose.Schema({
-  // userName: {type: String, unique: true},
-  firstName: String,
-  lastName: String,
+  displayName: String,
   facebook: String,
   instagram: String,
   youtube: String,
   twitter: String,
   phone: Number,
-  email: String,
+  email: {type: String, unique: true},
   city: String,
   state: String,
   country: String,
@@ -49,6 +48,7 @@ let User = mongoose.model('User', userSchema);
 
 let spotSchema = mongoose.Schema({
   name: String,
+  email: String,
   description: String,
   address: String,
   lat: Number,

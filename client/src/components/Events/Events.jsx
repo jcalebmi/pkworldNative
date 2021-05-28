@@ -1,4 +1,7 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/app';
 import Event from './Event.jsx';
 import SearchEvents from './SearchEvents.jsx';
 import SearchLocations from './SearchLocations.jsx';
@@ -10,6 +13,7 @@ import submitEvent from './helpers/submitEvent.js';
 class Events extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       events: [],
       display: [],
@@ -124,8 +128,9 @@ class Events extends React.Component {
               />
           : null}
         <div className="forms">
-          {/* <SearchLocations /> */}
-          <button onClick={this.addEvent}>Add Event</button>
+          {this.auth.currentUser
+            ? <button onClick={this.addEvent}>Add Event</button>
+            : <span className="seeMore" onClick={() => this.props.changeFeed('Profile')}>Sign in to add events</span>}
           <SearchEvents
             events={this.state.events}
             updateEvents={this.updateEvents}

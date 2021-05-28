@@ -12,7 +12,11 @@ import Locate from './Locate.jsx';
 import AddSpot from './AddSpot.jsx';
 import apiToken from '../../../../myConfig.js';
 import getMarkers from './helpers/getMarkers.js';
-
+import firebase from 'firebase';
+import 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import Auth from '../../Auth.jsx';
+const auth = firebase.auth();
 
 const libraries = ["places", "geometry"];
 //Height and width necessary for map to work
@@ -37,6 +41,8 @@ const options = {
 
 const PKMap = (props) => {
   //set markers on map
+  const [user] = useAuthState(auth);
+  console.log(user)
   const [markers, setMarkers] = useState([])
   const [searching, setSearching] = useState('Locations')
   const [temp, setTemp] = useState(null)
@@ -48,13 +54,8 @@ const PKMap = (props) => {
       setMarkers(data)
     })
   },[])
-  //function keeps same value unless depths argument changes
+
   const onMapClick = useCallback((e) => {
-    //spread operator keeps current state while adding new state
-    // setMarkers(current => [...current, {
-    //   lat: e.latLng.lat(),
-    //   lng: e.latLng.lng(),
-    // }])
     setTemp({
       lat: e.latLng.lat(),
       lng: e.latLng.lng()
@@ -134,19 +135,29 @@ const PKMap = (props) => {
           onCloseClick={() => {
             setSelected(null);
           }}>
-          <div>
-            <h2 className="submitSpot">{selected.name || 'Submit Spot?'}</h2>
-            <p>{selected.description}</p>
-            <p>{selected.address}</p>
-            {selected.name ? null :
-            <AddSpot
-              temp={setTemp}
-              close={setSelected}
-              coordinates={{
-                lat: selected.lat,
-                lng: selected.lng
-                }}/>}
-          </div>
+          {user
+            ? <div>
+                <h2 className="submitSpot">{selected.name || 'Submit Spot?'}</h2>
+                <p>{selected.description}</p>
+                <p>{selected.address}</p>
+                {selected.name ? null :
+                <AddSpot
+                  temp={setTemp}
+                  close={setSelected}
+                  coordinates={{
+                    lat: selected.lat,
+                    lng: selected.lng
+                    }}/>}
+              </div>
+            : <div>
+                <h2 className="submitSpot">{selected.name || <span
+                className="seeMore"
+                onClick={() => props.changeFeed('Profile')}>Sign in to submit a spot.<br/>
+                Click to sign in.</span>}</h2>
+                <p>{selected.description}</p>
+                <p>{selected.address}</p>
+              </div>}
+
         </InfoWindow>) : null}
       </GoogleMap>
       <div className="search">

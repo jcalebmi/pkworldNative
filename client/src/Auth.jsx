@@ -10,6 +10,7 @@ import {
   IfFirebaseAuthedAnd,
 } from '@react-firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import Profile from './components/Auth/Profile.jsx';
 import config from '../../firebaseConfig.js';
 firebase.initializeApp(config);
 const auth = firebase.auth();
@@ -21,6 +22,7 @@ const Auth = () => {
       <div id='auth'>
         {user === null ?
           <div>
+            <h3>You are not signed in</h3>
             <button
             onClick={() => {
               const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
@@ -39,13 +41,16 @@ const Auth = () => {
             </button>
           </div>
           :
-          <button
+          <div>
+            <Profile user={user}/>
+            <button
             onClick={() => {
              firebase.auth().signOut();
-           }}
-           >
-           Sign Out
-           </button>}
+             }}
+             >
+             Sign Out
+             </button>
+          </div>}
         {/* <button
           data-testid="signin-anon"
           onClick={() => {

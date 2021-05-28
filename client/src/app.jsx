@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
-import firebase from 'firebase';
-import 'firebase/auth';
+import axios from 'axios';
 import PKMap from './components/Map/PKMap.jsx';
 import Home from './components/Home.jsx';
 import Navigation from './components/Navigation.jsx';
 import Users from './components/Users/Users.jsx';
 import Events from './components/Events/Events.jsx';
 import SignIn from './components/Auth/SignIn.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -20,16 +20,8 @@ class App extends React.Component {
         lng: -81.3792
       },
     }
-    this.auth = firebase.auth();
     this.changeFeed = this.changeFeed.bind(this);
-    // this.setUser = this.setUser.bind(this);
   }
-
-  // setUser (user) {
-  //   this.setState({
-  //     user: user
-  //   })
-  // }
 
   changeFeed (feed) {
     this.setState({
@@ -55,16 +47,19 @@ class App extends React.Component {
         <div id="feed">
           {this.state.feed === 'Map'
             ? <PKMap
-                location={this.state.location}/>
+                location={this.state.location}
+                changeFeed={this.changeFeed}/>
             :null}
           {this.state.feed === 'Users'
             ? <Users
                 location={this.state.location}
+                changeFeed={this.changeFeed}
                 />
             :null}
           {this.state.feed === 'Events'
             ? <Events
-                location={this.state.location}/>
+                location={this.state.location}
+                changeFeed={this.changeFeed}/>
             :null}
           {this.state.feed === 'Profile'
             ? <SignIn

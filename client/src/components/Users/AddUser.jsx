@@ -1,21 +1,22 @@
 import React from 'react';
-
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/app';
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
-// const auth = firebase.auth();
 
 
 class AddUser extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
-      firstName: '',
-      lastName: '',
+      displayName: this.auth.currentUser.displayName,
       facebook: '',
       instagram: '',
       youtube: '',
       twitter: '',
       phone: '',
-      email: '',
+      email: this.auth.currentUser.email,
       city: '',
       state: '',
       country: '',
@@ -44,33 +45,6 @@ class AddUser extends React.Component {
         <div className="formContainer">
           <h2>Join</h2>
           <form onSubmit={this.handleSubmit}>
-            <label htmlFor="firstName">
-              <input
-                type="text"
-                placeholder="First Name"
-                value={this.state.firstName}
-                name="firstName"
-                onChange={this.handleChange}
-                required/>
-            </label>
-            <label htmlFor="lastName">
-              <input
-                type="text"
-                placeholder="Last Name"
-                value={this.state.lastName}
-                name="lastName"
-                onChange={this.handleChange}
-                required/>
-            </label>
-            <label htmlFor="email">
-              <input
-                type="email"
-                placeholder="Email"
-                value={this.state.email}
-                name="email"
-                onChange={this.handleChange}
-                required/>
-            </label>
             <label htmlFor="phone">
               <input
                 type="tel"
@@ -82,7 +56,7 @@ class AddUser extends React.Component {
             </label>
             <label htmlFor="facebook">
               <input
-                type="facebook"
+                type="url"
                 placeholder="Facebook"
                 value={this.state.facebook}
                 name="facebook"
@@ -91,7 +65,7 @@ class AddUser extends React.Component {
             </label>
             <label htmlFor="youtube">
               <input
-                type="youtube"
+                type="url"
                 placeholder="Youtube"
                 value={this.state.youtube}
                 name="youtube"
@@ -100,7 +74,7 @@ class AddUser extends React.Component {
             </label>
             <label htmlFor="twitter">
               <input
-                type="twitter"
+                type="url"
                 placeholder="Twitter"
                 value={this.state.twitter}
                 name="twitter"
@@ -109,7 +83,7 @@ class AddUser extends React.Component {
             </label>
             <label htmlFor="instagram">
               <input
-                type="instagram"
+                type="url"
                 placeholder="Instagram"
                 value={this.state.instagram}
                 name="instagram"

@@ -1,6 +1,7 @@
 import React from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
+import 'firebase/app';
 import User from './User.jsx';
 import AddUser from './AddUser.jsx';
 import getUsers from './helpers/getUsers.js';
@@ -10,12 +11,12 @@ import submitUser from './helpers/submitUser.js';
 class Users extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       users: [],
       display: [],
       modal: false
     }
-    this.auth = firebase.auth();
     this.loader = React.createRef(null);
     this.updateUsers = this.updateUsers.bind(this);
     this.loadMore = this.loadMore.bind(this);
@@ -88,7 +89,7 @@ class Users extends React.Component {
         <div ref={this.loader}>
           {this.auth.currentUser
           ? <button onClick={this.addUser}>Join</button>
-          : null}
+          : <p className="seeMore" onClick={()=>this.props.changeFeed('Profile')}>Sign in to join</p>}
         </div>
       </div>
     )

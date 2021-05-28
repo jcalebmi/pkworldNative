@@ -1,11 +1,16 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/app';
 import createSpot from './helpers/createSpot.js';
 
 class AddSpot extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       name: '',
+      email: this.auth.currentUser.email,
       description: '',
       video: '',
       gym: null
@@ -23,6 +28,7 @@ class AddSpot extends React.Component {
     e.preventDefault();
     const spot = {
         name: this.state.name,
+        email: this.state.email,
         description: this.state.description,
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,

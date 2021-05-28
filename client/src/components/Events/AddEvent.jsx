@@ -1,10 +1,15 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
+import 'firebase/app';
 
 class AddEvent extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       name: '',
+      email: this.auth.currentUser.email,
       description: '',
       address: '',
       city: '',

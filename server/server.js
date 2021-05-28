@@ -40,6 +40,10 @@ app.post('/users', (req, res) => {
   getLatLng(req.body, 'users').then(results => res.status(200).send(results));
 });
 
+app.get('/userInfo', (req, res) => {
+  User.find({email: req.query.email}).then(results => res.status(200).send(results));
+})
+
 const port = 3005;
 app.listen(port, () => {
   console.log('listening on, ', port);

@@ -11,8 +11,7 @@ let getLatLng = (body, route) => {
 
     return axios.get(options.url).then(function (response) {
       const query = {
-        firstName: body.firstName,
-        lastName: body.lastName,
+        displayName: body.displayName,
         facebook: body.facebook,
         instagram: body.instagram,
         youtube: body.youtube,
@@ -48,6 +47,7 @@ let getLatLng = (body, route) => {
     return axios.get(options.url).then(function (response) {
       const query = {
         name: body.name,
+        email: body.email,
         description: body.description,
         date: body.date,
         address: body.address,

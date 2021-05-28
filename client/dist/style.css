@@ -272,6 +272,7 @@ input.radio {
 #users {
   width: 100%;
   margin: 0 auto;
+  margin-top: 1em;
   padding: 0 auto;
   text-align: center;
 }
@@ -286,7 +287,7 @@ h3 {
 li
 .contentContainer {
   margin-top: 0;
-  text-align:center;
+  text-align: center;
 }
 #users
 li
@@ -337,13 +338,33 @@ input {
 }
 
 #auth {
-  background-color: #EEFBFB;
   height: 50vh;
   text-align: center;
 }
+#auth
+.userInfo {
+  margin: 0 auto;
+  text-align: center;
+}
+#auth
+.userInfoContainer {
+  text-align: center;
+}
+#auth
+.userInfo {
+  text-align: left;
+}
 
 #signIn {
+  text-align: center;
+  width: 90%;
+  padding: 0;
+  margin: 0 auto;
   margin-top: 1em;
+  border-radius: 5%;
+  border: solid #EEFBFB;
+  background-color: #4DA8DA;
+  color: #EEFBFB;
 }
 
 
