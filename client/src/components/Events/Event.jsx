@@ -2,7 +2,7 @@ import React from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/app';
-import deleteEvent from './helpers/deleteEvent.js';
+import editEvent from './helpers/editEvent.js';
 
 class Event extends React.Component {
   constructor(props) {
@@ -12,7 +12,7 @@ class Event extends React.Component {
       more: false
     }
     this.showMore = this.showMore.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   showMore () {
@@ -21,8 +21,8 @@ class Event extends React.Component {
     })
   }
 
-  handleDelete () {
-    deleteEvent(this.props.event._id)
+  handleEdit () {
+    editEvent(this.props.event._id, 'delete')
   }
   render () {
     return (
@@ -49,7 +49,7 @@ class Event extends React.Component {
                 <span
                 className="seeMore deleteLi"
                 onClick={this.handleDelete}
-                >Delete Your Event?</span>
+                >Edit Your Event?</span>
               </div>
               : null}
             </div>
@@ -72,7 +72,7 @@ class Event extends React.Component {
                 <span
                 className="seeMore deleteLi"
                 onClick={this.handleDelete}
-                >Delete Your Event?</span>
+                >Edit Your Event?</span>
               </div>
               : null}
             </div>
