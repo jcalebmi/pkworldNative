@@ -61,4 +61,4 @@ let spotSchema = mongoose.Schema({
 
 let Spot = mongoose.model('Spot', spotSchema);
 
-module.exports = {Event, User, Spot};
+module.exports = { db, Event, User, Spot};

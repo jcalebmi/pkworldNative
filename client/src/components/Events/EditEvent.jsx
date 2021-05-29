@@ -2,7 +2,6 @@ import React from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/app';
-import editEvent from './helpers/editEvent.js';
 
 class EditEvent extends React.Component {
   constructor(props) {
@@ -36,7 +35,7 @@ class EditEvent extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const data = this.state;
-    editEvent(this.props.id, this.state.delete, data);
+    this.props.handleEdit(this.props.id, this.state.delete, data);
     this.props.closeModal();
   }
 

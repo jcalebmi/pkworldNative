@@ -37,6 +37,12 @@ app.delete(`/events/:id`, (req, res) => {
   res.status(200).send('deleted')
 })
 
+app.put('/events/:id', (req, res) => {
+  const body = req.body.data;
+  const id = req.params.id;
+  getLatLng(body, 'events', id).then(results => res.status(200).send(results));
+})
+
 app.get('/users', (req, res) => {
   User.find().then(results => res.status(200).send(results));
 })

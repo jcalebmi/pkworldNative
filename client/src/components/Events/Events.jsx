@@ -4,12 +4,14 @@ import 'firebase/auth';
 import 'firebase/app';
 import Event from './Event.jsx';
 import SearchEvents from './SearchEvents.jsx';
+import EditEvent from './EditEvent.jsx';
 import SearchLocations from './SearchLocations.jsx';
 import AddEvent from './AddEvent.jsx';
 import EventsInfo from './EventsInfo.jsx';
 import findEvents from './helpers/findEvents.js';
 import getEvents from './helpers/getEvents.js';
 import submitEvent from './helpers/submitEvent.js';
+import editEvent from './helpers/EditEvent.js';
 
 class Events extends React.Component {
   constructor(props) {
@@ -22,7 +24,9 @@ class Events extends React.Component {
       currentSearch: '',
       modal: false,
       searching: false,
-      searchTerm: ''
+      searchTerm: '',
+      edit: false,
+      eventId: ''
     }
     this.loader = React.createRef(null);
     this.updateEvents = this.updateEvents.bind(this);
@@ -30,9 +34,16 @@ class Events extends React.Component {
     this.addEvent = this.addEvent.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.submitInfo = this.submitInfo.bind(this);
+    this.showEditModal = this.showEditModal.bind(this);
+    this.requestEvents = this.requestEvents.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount () {
+    this.requestEvents();
+  }
+
+  requestEvents () {
     getEvents().then(data => {
       const sort = findEvents('', data, this.props.location);
 
@@ -51,6 +62,10 @@ class Events extends React.Component {
         display: sort.slice(0, length)
         })
     });
+  }
+
+  handleEdit (id, path, data) {
+    editEvent(id, path, data).then(results => this.requestEvents())
   }
 
   updateEvents (search, length, term) {
@@ -88,6 +103,13 @@ class Events extends React.Component {
     this.setState({
       modal: false
     }, document.removeEventListener('click', this.closeModal))
+  }
+
+  showEditModal (id) {
+    this.setState({
+      edit: !this.state.edit,
+      eventId: id
+    })
   }
 /////////////////////////////////
   loadMore (entries) {
@@ -128,6 +150,12 @@ class Events extends React.Component {
               submitInfo={this.submitInfo}
               />
           : null}
+        {this.state.edit
+          ? <EditEvent
+              closeModal={this.showEditModal}
+              id={this.state.eventId}
+              handleEdit={this.handleEdit}/>
+          : null}
         <div className="forms">
           {this.auth.currentUser
             ? <button onClick={this.addEvent}>Add Event</button>
@@ -141,7 +169,7 @@ class Events extends React.Component {
         </div>
         <EventsInfo changeFeed={this.props.changeFeed}/><br/>
         <ul className="dataLists">
-          {this.state.display.map((event, index) => <Event key={index} event={event}/>)}
+          {this.state.display.map((event, index) => <Event key={index} event={event} showEditModal={this.showEditModal}/>)}
         </ul>
         <div ref={this.loader}>
         </div>

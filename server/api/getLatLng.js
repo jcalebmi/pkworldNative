@@ -1,14 +1,14 @@
 const axios = require('axios');
 const apiToken = require('../../myConfig.js');
 const {Event, User, Spot} = require('../../database/index.js');
+const ObjectId = require('mongodb').ObjectId;
 
-let getLatLng = (body, route) => {
+let getLatLng = (body, route, id) => {
   if (route === 'users') {
     const address = `${body.city}+${body.state}+${body.country}`;
     let options = {
       url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiToken}`,
     };
-
     return axios.get(options.url).then(function (response) {
       const query = {
         displayName: body.displayName,
@@ -38,7 +38,7 @@ let getLatLng = (body, route) => {
       console.log('ERROR: Axios Get Failed');
     });
   } else if (route === 'events') {
-    console.log(body)
+
     const address = `${body.address}+${body.city}+${body.state}+${body.country}`;
     let options = {
       url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiToken}`,
@@ -61,15 +61,19 @@ let getLatLng = (body, route) => {
         lat: response.data.results[0].geometry.location.lat,
         lng: response.data.results[0].geometry.location.lng
       }
-      const event = new Event(query);
-      console.log(event);
-      const data = event.save().then(results => {
-      }).then(results => {
-        return Event.find().then(data => {
-          return data;
+      if (!id) {
+        const event = new Event(query);
+        const data = event.save().then(results => {
+          return Event.find().then(data => data)
         })
-      })
-      return data;
+       return data;
+      }
+      if (id) {
+        const data = Event.findByIdAndUpdate({'_id': id}, {...query}).then(results => console.log('Results',results));
+
+        return data
+      }
+
     })
     .catch(function (error) {
       console.log(error)
