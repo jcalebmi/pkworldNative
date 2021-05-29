@@ -13,9 +13,9 @@ db.once('open', function() {
 let eventSchema = mongoose.Schema({
   name: String,
   email: String,
+  date: [Date],
   description: String,
   website: String,
-  date: Date,
   address: String,
   city: String,
   state: String,

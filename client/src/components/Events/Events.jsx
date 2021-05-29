@@ -22,6 +22,7 @@ class Events extends React.Component {
       display: [],
       length: 5,
       currentSearch: '',
+      sortBy: 'date',
       modal: false,
       searching: false,
       searchTerm: '',
@@ -45,7 +46,7 @@ class Events extends React.Component {
 
   requestEvents () {
     getEvents().then(data => {
-      const sort = findEvents('', data, this.props.location);
+      const sort = findEvents('', data, this.props.location, this.state.sortBy);
 
       this.setState({
       events: data,
@@ -56,10 +57,10 @@ class Events extends React.Component {
 
   submitInfo (data) {
     submitEvent(data).then(res => {
-      const sort = findEvents('', res, this.props.location);
+      const sort = findEvents('', res, this.props.location, this.state.sortBy);
       this.setState({
         events: res,
-        display: sort.slice(0, length)
+        display: sort.slice(0, this.state.length)
         })
     });
   }
@@ -68,20 +69,22 @@ class Events extends React.Component {
     editEvent(id, path, data).then(results => this.requestEvents())
   }
 
-  updateEvents (search, length, term) {
+  updateEvents (search, length, term, sortBy) {
     let isSearching = false;
     if (length > 0) {
       isSearching = true;
       this.setState({
         display: search.slice(0),
         searching: isSearching,
-        searchTerm: term
+        searchTerm: term,
+        sortBy: sortBy
       });
     } else {
       this.setState({
-        display: search.slice(0, length),
+        display: search.slice(0, this.state.length),
         searching: isSearching,
-        searchTerm: term
+        searchTerm: term,
+        sortBy: sortBy
       })
     }
   }

@@ -1,8 +1,12 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
+
 
 class MapInfo extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
   }
 
   render () {
@@ -13,10 +17,12 @@ class MapInfo extends React.Component {
           <br />
         </p>
         <div>
-          <span
-            className="seeMore signIn"
-            onClick={() => {this.props.changeFeed('Profile')}}>Sign in to add spots.
-          </span>
+          {this.auth.currentUser
+            ? null
+            : <span
+                className="seeMore signIn"
+                onClick={() => {this.props.changeFeed('Profile')}}>Sign in to add spots.
+             </span>}
         </div>
       </div>
     )

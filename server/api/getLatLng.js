@@ -69,8 +69,7 @@ let getLatLng = (body, route, id) => {
        return data;
       }
       if (id) {
-        const data = Event.findByIdAndUpdate({'_id': id}, {...query}).then(results => console.log('Results',results));
-
+        const data = Event.findByIdAndUpdate({'_id': id}, {...query}).then(results => results);
         return data
       }
 

@@ -94,7 +94,7 @@ const PKMap = (props) => {
         <select value={searching} onChange={handleSearching}>
           <option value='Locations'>Locations</option>
           <option value="Spots">Spots</option>
-        </select><br/>
+        </select>
         {searching === 'Locations'
         ? <SearchLocations
         usePlaces={usePlacesAutocomplete}

@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/app';
 import EditEvent from './EditEvent.jsx';
+const moment = require('moment');
 
 class Event extends React.Component {
   constructor(props) {
@@ -31,6 +32,7 @@ class Event extends React.Component {
               <div className="contentContainer">
                 <div className="contents">
                   <p>
+                    Date: {moment(this.props.event.date[0]).format("MMM Do YY")}-{moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
                     Description: {this.props.event.description}<br/>
                     Website: {this.props.event.website}<br/>
                     Address: {this.props.event.address}<br/>
@@ -57,7 +59,9 @@ class Event extends React.Component {
               <h3>{this.props.event.name}</h3>
               <div className="contentContainer">
                 <div className="contents">
-                  <p>Description: {this.props.event.description}<br/>
+                  <p>
+                  Date: {moment(this.props.event.date[0]).format("MMM Do YY")} - {moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
+                  Description: {this.props.event.description}<br/>
                   Website: {this.props.event.website}<br/>
                   </p>
                 </div>

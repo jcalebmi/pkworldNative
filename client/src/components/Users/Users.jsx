@@ -4,6 +4,7 @@ import 'firebase/auth';
 import 'firebase/app';
 import User from './User.jsx';
 import AddUser from './AddUser.jsx';
+import UserInfo from './UserInfo.jsx';
 import getUsers from './helpers/getUsers.js';
 import findUsers from './helpers/findUsers.js';
 import submitUser from './helpers/submitUser.js';
@@ -83,6 +84,7 @@ class Users extends React.Component {
               submitInfo={this.submitInfo}
               />
           : null}
+        <UserInfo />
         <ul className="dataLists">
           {this.state.display.map((user, index) => <User key={index} user={user}/>)}
         </ul>

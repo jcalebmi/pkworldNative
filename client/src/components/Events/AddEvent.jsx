@@ -2,6 +2,7 @@ import React from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/app';
+import Calendar from 'react-calendar';
 
 class AddEvent extends React.Component {
   constructor(props) {
@@ -18,14 +19,21 @@ class AddEvent extends React.Component {
       country: '',
       gym: null,
       jam: null,
+      date: new Date()
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.onCalendarChange = this.onCalendarChange.bind(this);
   }
 
   handleChange(e) {
     this.setState({
       [e.target.name]: e.target.value
+    })
+  }
+  onCalendarChange(e) {
+    this.setState({
+      date: e
     })
   }
 
@@ -151,7 +159,14 @@ class AddEvent extends React.Component {
                   onChange={this.handleChange}></input>
               </label>
             </div>
-            <br></br>
+            <br/>
+            <Calendar
+              className="react-calendar"
+              tileClassName="react-calendar__tile"
+              onChange={this.onCalendarChange}
+              value={this.state.date}
+              selectRange={true}/>
+            <br/>
             <input type='submit'></input>
           </form><br/>
           <div
