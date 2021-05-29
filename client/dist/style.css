@@ -27,6 +27,10 @@ html, body {
 .seeMore {
   cursor: pointer;
 }
+h2.seeMore
+span:hover{
+  background-color: #007CC7
+}
 .signIn:hover {
   background-color: #12232E;
 }
@@ -45,6 +49,15 @@ html, body {
   width: 90%;
   margin: 0 auto;
 }
+.info
+p {
+  padding: .5em;
+}
+.info
+div {
+  padding: .5em;
+  text-align: center;
+}
 li.dataLists{
   border: solid #EEFBFB;
   background-color: #4DA8DA;
@@ -56,6 +69,7 @@ ul.dataLists{
   width: 90%;
   padding: 0;
   margin: 0 auto;
+  margin-top: 1em;
   border-radius: 5%;
   border: solid #EEFBFB;
   max-height: fit-content;
@@ -87,10 +101,6 @@ button {
   margin: 0 auto;
   margin-top: 1em;
 }
-#map
-.location {
-
-}
 
 #map
 .info{
@@ -103,7 +113,6 @@ button {
 #map
 .info
 div {
-  padding: .2em;
   text-align: center;
 }
 
@@ -115,12 +124,14 @@ div {
   float: right;
   width: 50%;
   margin: 0;
+  margin-left: 13vw;
   padding: 0;
 }
 #map
 .search
 select {
   margin: 0;
+  margin-left: 13vw;
   padding: 0;
   width: 50%;
 }
@@ -217,12 +228,15 @@ a.instagram {
   width: 100%;
   margin: 0 auto;
   padding: 0 auto;
+  margin-top: 1em;
 }
 #events
 .forms {
   display: grid;
   grid-template-columns: 75% 25%;
   text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
 #events
@@ -234,30 +248,24 @@ a.instagram {
 
 #events
 .forms
-label.select {
-  font-weight: bold;
-  margin-bottom: 0;
-  padding-right: 60vw;
+select {
+  width: 20vw;
 }
 
 #events
 .forms
-.select {
-  padding-right: 60vw;
-  width: 20vw;
-  margin: 0;
-}
-
-#events
 button {
-  width: 20vw;
+  width: 15vw;
+  height: 5vh;
   background-color: #EEFBFB;
+  margin: 0;
+  padding: 0;
 }
 
 #events
 h3 {
   text-align: center;
-  margin-bottom: 1%;
+  margin-bottom: 0;
 }
 #events
 li
@@ -269,13 +277,6 @@ li
 .contents {
   display: inline-block;
   text-align: left;
-}
-
-#events
-.info
-div {
-  padding: .5em;
-  text-align: center;
 }
 
 /* Add Events */
@@ -338,7 +339,7 @@ h3 {
 #users
 li
 .contentContainer {
-  margin-top: 0;
+  margin-top:1em;
   text-align: center;
 }
 #users
@@ -509,36 +510,36 @@ input {
   background: none;
 }
 .react-calendar__tile:disabled {
-  background-color: white;
+  background-color: #76baff;
 }
 .react-calendar__tile:enabled:hover,
 .react-calendar__tile:enabled:focus {
-  background-color: white;
+  background-color: #76baff;
 }
 .react-calendar__tile--now {
-  background: #ffff76;
+  background: #96ff76;
 }
 .react-calendar__tile--now:enabled:hover,
 .react-calendar__tile--now:enabled:focus {
-  background: #ffffa9;
+  background: #76baff;
 }
 .react-calendar__tile--hasActive {
   background: #76baff;
 }
 .react-calendar__tile--hasActive:enabled:hover,
 .react-calendar__tile--hasActive:enabled:focus {
-  background: #a9d4ff;
+  background: #76baff;
 }
 .react-calendar__tile--active {
-  background-color: #006edc;
-  color: blue;
+  background-color: #76baff;
+  color: black;
 }
 .react-calendar__tile--active:enabled:hover,
 .react-calendar__tile--active:enabled:focus {
-  background: #1087ff;
+  background: #76baff;
 }
 .react-calendar--selectRange .react-calendar__tile--hover {
-  background-color: #1087ff;
+  background-color: #76baff;
 }
 
 

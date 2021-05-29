@@ -95,7 +95,8 @@ class Events extends React.Component {
       return;
     }
     this.setState({
-      modal: true
+      modal: true,
+      edit: false
     });
   }
   closeModal () {
@@ -107,6 +108,7 @@ class Events extends React.Component {
   showEditModal (id) {
     this.setState({
       edit: !this.state.edit,
+      modal: false,
       eventId: id
     })
   }
@@ -155,18 +157,13 @@ class Events extends React.Component {
               id={this.state.eventId}
               handleEdit={this.handleEdit}/>
           : null}
-        <div className="forms">
-          {this.auth.currentUser
-            ? <button onClick={this.addEvent}>Add Event</button>
-            : <div
-              className="seeMore"
-              onClick={() => this.props.changeFeed('Profile')}><span className="signIn">Sign in to add events</span></div>}
-          <SearchEvents
-            events={this.state.events}
-            updateEvents={this.updateEvents}
-            location={this.props.location}/>
-        </div>
-        <EventsInfo changeFeed={this.props.changeFeed}/><br/>
+        <EventsInfo
+          changeFeed={this.props.changeFeed}
+          events={this.state.events}
+          updateEvents={this.updateEvents}
+          addEvent={this.addEvent}
+          location={this.props.location}
+          /><br/>
         <ul className="dataLists">
           {this.state.display.map((event, index) => <Event key={index} event={event} showEditModal={this.showEditModal}/>)}
         </ul>

@@ -63,8 +63,9 @@ class EditEvent extends React.Component {
     return (
       <div id="addEvent">
         <div className="formContainer">
-          <h2><span
-            onClick={this.edit}>Edit</span> |
+          <h2 className="seeMore"><span
+            onClick={this.edit}
+            >Edit</span> |
             <span
             onClick={this.delete}> Delete</span></h2>
           {this.state.delete === 'edit'
