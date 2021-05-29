@@ -94,10 +94,6 @@ class Events extends React.Component {
     this.setState({
       modal: true
     });
-    // if (this.node.contains(e.target)) {
-    //   return;
-    // }
-    // document.addEventListener('click', this.closeModal);
   }
   closeModal () {
     this.setState({
