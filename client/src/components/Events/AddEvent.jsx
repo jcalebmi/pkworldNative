@@ -20,7 +20,6 @@ class AddEvent extends React.Component {
       jam: null,
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleLocation = this.handleLocation.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -29,13 +28,7 @@ class AddEvent extends React.Component {
       [e.target.name]: e.target.value
     })
   }
-  handleLocation ({results}, address) {
-    this.setState({
-      address: address.split(',')[0],
-      lat: results.lat,
-      lng: results.lng
-    });
-  }
+
   handleSubmit (e) {
     e.preventDefault();
     const data = this.state;
