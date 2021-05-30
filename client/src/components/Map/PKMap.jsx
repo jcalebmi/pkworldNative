@@ -89,24 +89,17 @@ const PKMap = (props) => {
   if(!isLoaded) return "Loading";
   return (
     <div id="map">
-      <MapInfo changeFeed={props.changeFeed}/><br/>
-      <div className="search">
-        <select value={searching} onChange={handleSearching}>
-          <option value='Locations'>Locations</option>
-          <option value="Spots">Spots</option>
-        </select>
-        {searching === 'Locations'
-        ? <SearchLocations
+      <MapInfo
+        changeFeed={props.changeFeed}
+        searching={searching}
+        onChange={handleSearching}
         usePlaces={usePlacesAutocomplete}
         getGeocode={getGeocode}
         getLatLng={getLatLng}
         panTo={panTo}
-        location={props.location}/>
-        : <SearchSpots
-            panTo={panTo}
-            markers={markers}/>}
-
-      </div>
+        location={props.location}
+        markers={markers}
+        />
       <Locate
         panTo={panTo}
         location={props.location}/>

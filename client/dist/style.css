@@ -111,36 +111,44 @@ button {
   border: solid #EEFBFB;
 }
 #map
-.info
-div {
+div.info {
   text-align: center;
 }
 
 /* Map Search */
 #map
+.info
 .search {
-  display: flex;
-  flex-direction: column;
-  float: right;
-  width: 50%;
+  display: grid;
+  grid-template-columns: 75% 25%;
+  width: 100%;
   margin: 0;
-  margin-left: 13vw;
+  padding: 0;
+  padding-bottom: 1vw;
+}
+#map
+.info
+.search
+div {
+  margin: 0;
   padding: 0;
 }
 #map
+.info
 .search
 select {
-  margin: 0;
-  margin-left: 13vw;
-  padding: 0;
-  width: 50%;
+  margin: 0 1vw;
+  padding: 0 1vw;
+  width: 20vw
 }
 #map
+.info
 .search
 input {
   margin: 0;
+  margin-left: 1vw;
   padding: 0;
-  width: 100%;
+  width: 19.5vw;
 }
 .popOver {
   color:black;
