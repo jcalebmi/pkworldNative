@@ -27,7 +27,7 @@ class Events extends React.Component {
       searching: false,
       searchTerm: '',
       edit: false,
-      eventId: ''
+      event: {}
     }
     this.loader = React.createRef(null);
     this.updateEvents = this.updateEvents.bind(this);
@@ -105,11 +105,11 @@ class Events extends React.Component {
     }, document.removeEventListener('click', this.closeModal))
   }
 
-  showEditModal (id) {
+  showEditModal (event) {
     this.setState({
       edit: !this.state.edit,
       modal: false,
-      eventId: id
+      event: event
     })
   }
 /////////////////////////////////
@@ -154,17 +154,19 @@ class Events extends React.Component {
         {this.state.edit
           ? <EditEvent
               closeModal={this.showEditModal}
-              id={this.state.eventId}
+              event={this.state.event}
               handleEdit={this.handleEdit}/>
           : null}
-        <EventsInfo
-          changeFeed={this.props.changeFeed}
-          events={this.state.events}
-          updateEvents={this.updateEvents}
-          addEvent={this.addEvent}
-          location={this.props.location}
-          /><br/>
+        <EventsInfo /><br/>
         <ul className="dataLists">
+          <div className="formsContainer">
+              <SearchEvents
+                addEvent={this.addEvent}
+                changeFeed={this.props.changeFeed}
+                events={this.state.events}
+                updateEvents={this.updateEvents}
+                location={this.props.location}/>
+          </div>
           {this.state.display.map((event, index) => <Event key={index} event={event} showEditModal={this.showEditModal}/>)}
         </ul>
         <div ref={this.loader}>

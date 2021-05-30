@@ -1,9 +1,12 @@
 import React from 'react';
 import findEvents from './helpers/findEvents.js';
+import firebase from 'firebase';
+import 'firebase/auth';
 
 class SearchEvents extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       search: '',
       option: 'date'
@@ -30,11 +33,20 @@ class SearchEvents extends React.Component {
   }
   render () {
     return (
-      <div>
+      <div className="forms">
         <select onChange ={this.handleSelect}>
           <option value='date'>Date</option>
           <option value="nearest">Nearest</option>
         </select>
+        <div className="add">
+            {this.auth.currentUser
+              ? <button
+                  onClick={this.props.addEvent}>Add Event</button>
+              : <span
+                  className="seeMore signIn"
+                  onClick={() => {this.props.changeFeed('Profile')}}>Sign in to add events
+                </span>}
+          </div>
         <form className="search">
           <input
             className="search"

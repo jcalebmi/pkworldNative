@@ -239,35 +239,56 @@ a.instagram {
   margin-top: 1em;
 }
 #events
-.forms {
-  display: grid;
-  grid-template-columns: 75% 25%;
-  text-align: left;
+.formsContainer {
   margin: 0;
   padding: 0;
+}
+#events
+div.forms {
+  background-color: #007CC7;
+  text-align: center;
+  display: flex;
+  align-content: space-between;
 }
 
 #events
 .forms
-.search {
+div.add
+button {
+  background: transparent;
+  color: #EEFBFB;
+  margin: 0;
+  padding: 0;
   width: 100%;
-  margin-bottom: 0;
+  height: 100%;
+}
+#events
+.forms
+div.add {
+  text-align: center;
+  width: 25vw;
+  margin: 0 .2vw;
+  padding: 0;
+}
+#events
+.forms
+.add
+span{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#events
+.forms
+.search {
+  width: 30vw;
+  margin: 0;
 }
 
 #events
 .forms
 select {
-  width: 20vw;
-}
-
-#events
-.forms
-button {
-  width: 15vw;
-  height: 5vh;
-  background-color: #EEFBFB;
-  margin: 0;
-  padding: 0;
+  width: 30vw;
 }
 
 #events

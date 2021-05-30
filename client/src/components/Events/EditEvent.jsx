@@ -9,18 +9,18 @@ class EditEvent extends React.Component {
     super(props);
     this.auth = firebase.auth();
     this.state = {
-      name: '',
+      name: this.props.event.name,
       email: this.auth.currentUser.email,
-      description: '',
-      website: '',
-      address: '',
-      city: '',
-      state: '',
-      country: '',
-      gym: null,
-      jam: null,
+      description: this.props.event.description,
+      website: this.props.event.website,
+      address: this.props.event.address,
+      city: this.props.event.city,
+      state: this.props.event.state,
+      country: this.props.event.country,
+      gym: this.props.event.gym,
+      jam: this.props.event.jam,
       delete: 'edit',
-      date: null
+      date: [new Date(this.props.event.date[0]), new Date(this.props.event.date[1])]
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,7 +44,7 @@ class EditEvent extends React.Component {
   handleSubmit (e) {
     e.preventDefault();
     const data = this.state;
-    this.props.handleEdit(this.props.id, this.state.delete, data);
+    this.props.handleEdit(this.props.event._id, this.state.delete, data);
     this.props.closeModal();
   }
 
@@ -60,6 +60,7 @@ class EditEvent extends React.Component {
   }
 
   render () {
+    console.log(this.props.event)
     return (
       <div id="addEvent">
         <div className="formContainer">

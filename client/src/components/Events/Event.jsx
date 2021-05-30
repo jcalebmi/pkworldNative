@@ -49,7 +49,7 @@ class Event extends React.Component {
                   <div></div>
                   <span
                   className="seeMore deleteLi"
-                  onClick={() => this.props.showEditModal(this.props.event._id)}
+                  onClick={() => this.props.showEditModal(this.props.event)}
                   >Edit Your Event?</span>
                 </div>
                 : null}
@@ -74,7 +74,7 @@ class Event extends React.Component {
                   <div></div>
                   <span
                   className="seeMore deleteLi"
-                  onClick={()=> this.props.showEditModal(this.props.event._id)}
+                  onClick={()=> this.props.showEditModal(this.props.event)}
                   >Edit Your Event?</span>
                 </div>
                 : null}
