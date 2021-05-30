@@ -66,7 +66,14 @@ class Events extends React.Component {
   }
 
   handleEdit (id, path, data) {
-    editEvent(id, path, data).then(results => this.requestEvents())
+    editEvent(id, path, data).then(results => {
+      const sort = findEvents('', results, this.props.location, this.state.sortBy);
+
+      this.setState({
+      events: results,
+      display: sort.slice(0, this.state.length)
+      })
+    })
   }
 
   updateEvents (search, length, term, sortBy) {

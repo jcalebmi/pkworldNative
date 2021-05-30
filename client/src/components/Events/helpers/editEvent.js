@@ -11,8 +11,7 @@ const editEvent = function (id, path, data) {
   if (path === "edit") {
     return axios.put(`/events/${id}`, {data: data})
     .then((res) => {
-      console.log(Array.isArray(res.data))
-      return res.data[0]
+      return res.data
     })
     .catch((err) => {
       console.log('ERROR: ', err);

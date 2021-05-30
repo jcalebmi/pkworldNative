@@ -48,12 +48,16 @@ const PKMap = (props) => {
   const [temp, setTemp] = useState(null)
   //create info pop ups on markers
   const [selected, setSelected] = useState(null);
-  document.addEventListener('touchstart', {passive:true})
+
   useEffect(() => {
+    loadMarkers();
+  },[])
+
+  const loadMarkers = () => {
     getMarkers().then(data => {
       setMarkers(data)
-    })
-  },[])
+    });
+  }
 
   const onMapClick = useCallback((e) => {
     setTemp({
@@ -62,8 +66,6 @@ const PKMap = (props) => {
     })
     setSelected(null);
   }, [])
-  document.addEventListener('touchstart', onMapClick, {capture: true});
-
 
   const mapRef = useRef();
   const onMapLoad = useCallback((map) => {
@@ -87,6 +89,7 @@ const PKMap = (props) => {
   // handle loading of map
   if (loadError) return "error";
   if(!isLoaded) return "Loading";
+  console.log(markers)
   return (
     <div id="map">
       <MapInfo
@@ -151,6 +154,7 @@ const PKMap = (props) => {
           }}>
           {user
             ? <LoggedIn
+                setMarkers={setMarkers}
                 setTemp={setTemp}
                 setSelected={setSelected}
                 selected={selected}/>

@@ -2,12 +2,12 @@ const axios = require('axios');
 const apiToken = require('../../myConfig.js');
 const {Event, User, Spot} = require('../../database/index.js');
 
-let geoCode = (body) => {
+let geoCode = (body, id) => {
   let options = {
     url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${body.lat},${body.lng}&key=${apiToken}`,
   };
 
-  axios.get(options.url).then(function (response) {
+  return axios.get(options.url).then(function (response) {
     const data = {
       name: body.name,
       email: body.email,
@@ -18,9 +18,15 @@ let geoCode = (body) => {
       videos: body.video,
       gym: Boolean(body.gym)
     }
-    const spot = new Spot(data);
-    spot.save()
-    console.log('Success')
+    if (id) {
+      const spot = Spot.findByIdAndUpdate({'_id': id}, {...data}).then(results => results);
+        return spot
+    } else {
+      const spot = new Spot(data);
+      return spot.save().then(Spot.find().then(results => results))
+      console.log('Success')
+    }
+
   }).catch(function (error) {
     console.log(error)
     console.log('ERROR: Axios Get Failed');

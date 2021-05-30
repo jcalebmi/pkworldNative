@@ -36,7 +36,7 @@ class AddSpot extends React.Component {
         videos: this.state.video
       }
 
-    createSpot(spot);
+    createSpot(spot).then(data => this.props.setMarkers(data));
     this.props.close(null)
     this.props.temp(null)
   }
