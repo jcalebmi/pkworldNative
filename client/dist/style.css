@@ -202,6 +202,9 @@ textarea {
   width: 72%;
   height: 45px;
 }
+#deleteSpot {
+  text-align: center;
+}
 /* Social Meda */
 .socialMedia {
   text-align: center;

@@ -190,6 +190,7 @@ class EditEvent extends React.Component {
                 <input type='submit'></input>
               </form>
               : <form onSubmit={this.handleSubmit}>
+                  <h2>Delete Your Event?</h2>
                   <input
                     type="submit"
                     value="Delete"></input>

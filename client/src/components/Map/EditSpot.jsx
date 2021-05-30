@@ -114,7 +114,10 @@ class EditSpot extends React.Component {
             <input type='submit'></input>
           </div>
         </form>
-      :<form onSubmit={this.onSubmit}>
+      :<form
+          id="deleteSpot"
+          onSubmit={this.onSubmit}>
+        <h2>Delete This Spot?</h2>
         <input
           type="submit"
           value="Delete"></input>
