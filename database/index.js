@@ -23,8 +23,10 @@ let eventSchema = mongoose.Schema({
   jam: Boolean,
   gym: Boolean,
   photos: [String],
+  videos: [String],
   lat: Number,
-  lng: Number
+  lng: Number,
+  reported: Number
 });
 
 let Event = mongoose.model('Event', eventSchema);
@@ -42,7 +44,8 @@ let userSchema = mongoose.Schema({
   country: String,
   pic: String,
   lat: Number,
-  lng: Number
+  lng: Number,
+  reported: Number
 });
 
 let User = mongoose.model('User', userSchema);
@@ -56,7 +59,8 @@ let spotSchema = mongoose.Schema({
   lng: Number,
   photos: [String],
   videos: [String],
-  gym: Boolean
+  gym: Boolean,
+  reported: Number
 });
 
 let Spot = mongoose.model('Spot', spotSchema);
