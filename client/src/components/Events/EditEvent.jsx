@@ -20,7 +20,7 @@ class EditEvent extends React.Component {
       gym: null,
       jam: null,
       delete: 'edit',
-      date: new Date()
+      date: null
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
