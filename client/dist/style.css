@@ -17,6 +17,9 @@ html, body {
 .bold {
   font-weight: bold;
 }
+.underline {
+  text-decoration: underline;
+}
 .highlight {
   background-color: #203647;
 }
@@ -420,23 +423,35 @@ input {
 }
 
 #auth {
-  height: 50vh;
+  min-height:fit-content;
+  max-height: max-content;
   text-align: center;
+  overflow-y: scroll;
 }
 #auth
-.userInfo {
+div.userInfoContainer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  text-align: center;
   margin: 0 auto;
-  text-align: center;
 }
 #auth
-.userInfoContainer {
-  text-align: center;
+div.userInfo {
+  width: 100%;
+  padding: 0 1vw;
 }
 #auth
-.userInfo {
-  text-align: left;
-}
+div.userInfo
+p {
 
+  text-align: left;
+  margin: 0 auto;
+}
+#auth
+div.userInfo
+span {
+  color: #12232E;
+}
 #signIn {
   text-align: center;
   width: 90%;

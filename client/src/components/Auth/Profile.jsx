@@ -20,16 +20,16 @@ class Profile extends React.Component {
       <div className="userInfoContainer">
         <div className="userInfo">
           <p>
-            Name: {this.state.user.displayName}<br/>
-            Email: {this.state.user.email}<br/>
-            Phone: {this.state.user.phone}<br/>
-            Facebook: {this.state.user.facebook}<br/>
-            Youtube: {this.state.user.youtube}<br/>
-            Twitter: {this.state.user.twitter}<br/>
-            Instagram: {this.state.user.instagram}<br/>
-            City: {this.state.user.city}<br/>
-            State: {this.state.user.state}<br/>
-            Country: {this.state.user.country}<br/>
+            <span className="bold underline">Name:</span> {this.state.user.displayName}<br/>
+            <span className="bold underline">Email:</span> {this.state.user.email}<br/>
+            <span className="bold underline">Phone:</span> {this.state.user.phone}<br/>
+            <span className="bold underline">Facebook:</span> {this.state.user.facebook}<br/>
+            <span className="bold underline">Youtube:</span> {this.state.user.youtube}<br/>
+            <span className="bold underline">Twitter:</span> {this.state.user.twitter}<br/>
+            <span className="bold underline">Instagram:</span> {this.state.user.instagram}<br/>
+            <span className="bold underline">City:</span> {this.state.user.city}<br/>
+            <span className="bold underline">State:</span> {this.state.user.state}<br/>
+            <span className="bold underline">Country:</span> {this.state.user.country}<br/>
           </p>
         </div>
       </div>
