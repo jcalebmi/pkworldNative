@@ -236,6 +236,10 @@ a.instagram {
   color: black;
 }
 
+/* Spot Marker */
+#spotMarker {
+  text-align: center;
+}
 /* Events */
 #events {
   text-align: center;
@@ -442,6 +446,7 @@ div.userInfoContainer {
 div.userInfo {
   width: 100%;
   padding: 0 1vw;
+  text-align: left;
 }
 #auth
 div.userInfo
@@ -452,8 +457,9 @@ p {
 }
 #auth
 div.userInfo
-span {
+h3 {
   color: #12232E;
+  margin-bottom: 1%;
 }
 #signIn {
   text-align: center;

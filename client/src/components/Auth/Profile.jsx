@@ -19,18 +19,16 @@ class Profile extends React.Component {
     return (
       <div className="userInfoContainer">
         <div className="userInfo">
-          <p>
-            <span className="bold underline">Name:</span> {this.state.user.displayName}<br/>
-            <span className="bold underline">Email:</span> {this.state.user.email}<br/>
-            <span className="bold underline">Phone:</span> {this.state.user.phone}<br/>
-            <span className="bold underline">Facebook:</span> {this.state.user.facebook}<br/>
-            <span className="bold underline">Youtube:</span> {this.state.user.youtube}<br/>
-            <span className="bold underline">Twitter:</span> {this.state.user.twitter}<br/>
-            <span className="bold underline">Instagram:</span> {this.state.user.instagram}<br/>
-            <span className="bold underline">City:</span> {this.state.user.city}<br/>
-            <span className="bold underline">State:</span> {this.state.user.state}<br/>
-            <span className="bold underline">Country:</span> {this.state.user.country}<br/>
-          </p>
+            <h3 className="bold underline">Name:</h3> {this.state.user.displayName}<br/>
+            <h3 className="bold underline">Email:</h3> {this.state.user.email}<br/>
+            <h3 className="bold underline">Phone:</h3> {this.state.user.phone}<br/>
+            <h3 className="bold underline">Facebook:</h3> {this.state.user.facebook}<br/>
+            <h3 className="bold underline">Youtube:</h3> {this.state.user.youtube}<br/>
+            <h3 className="bold underline">Twitter:</h3> {this.state.user.twitter}<br/>
+            <h3 className="bold underline">Instagram:</h3> {this.state.user.instagram}<br/>
+            <h3 className="bold underline">City:</h3> {this.state.user.city}<br/>
+            <h3 className="bold underline">State:</h3> {this.state.user.state}<br/>
+            <h3 className="bold underline">Country:</h3> {this.state.user.country}<br/>
         </div>
       </div>
     )

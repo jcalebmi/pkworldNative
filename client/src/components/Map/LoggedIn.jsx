@@ -22,11 +22,11 @@ class LoggedIn extends React.Component {
 
   render () {
     return (
-      <div>
+      <div id="spotMarker">
         {!this.state.showEdit
         ? <div>
             <h2 className="submitSpot">{this.props.selected.name || 'Submit Spot?'}</h2>
-            <p>{this.props.selected.address}</p>
+            <p className='bold underline'>{this.props.selected.address}</p>
             <p>{this.props.selected.description}</p>
           </div>
           : <EditSpot
@@ -39,7 +39,9 @@ class LoggedIn extends React.Component {
                 lng: this.props.selected.lng
                 }}/>}
         {this.auth.currentUser.email === this.props.selected.email && !this.state.showEdit
-        ? <p onClick={this.showEdit}>Edit Spot?</p>
+        ? <p
+            className="seeMore underline"
+            onClick={this.showEdit}>Edit Spot?</p>
         : null}
         {this.props.selected.name ? null :
         <AddSpot
