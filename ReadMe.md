@@ -28,22 +28,29 @@ To Do
 -Modal for viewing pic and video
 -Report for bad spots
 -Report for innapropriate content
+
 *Events*
 -Report
+-Require date
+
 *Users*
 -Search & Sort Function
 -Delete & put request
 -Convert location inputs to drop down
 -Report
+
 *Profile*
 -style
 -Delete & Put request
 -Profile Pic
+
 *Mongo*
 -Possibly Convert to Mongo Atlas
 -Index
+
 *Server*
 -Possibly add Redis
+
 *Overall*
 -Deploy
 -SSL certificate

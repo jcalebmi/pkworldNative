@@ -4,11 +4,13 @@ import 'firebase/auth';
 import 'firebase/app';
 import User from './User.jsx';
 import AddUser from './AddUser.jsx';
+import EditUser from './EditUser.jsx';
 import SearchUsers from './SearchUsers.jsx';
 import UserInfo from './UserInfo.jsx';
 import getUsers from './helpers/getUsers.js';
 import findUsers from './helpers/findUsers.js';
 import submitUser from './helpers/submitUser.js';
+import editUser from './helpers/editUser.js';
 
 class Users extends React.Component {
   constructor(props) {
@@ -19,7 +21,9 @@ class Users extends React.Component {
       display: [],
       length: 5,
       searching: false,
-      modal: false
+      modal: false,
+      edit: false,
+      user: {}
     }
     this.loader = React.createRef(null);
     this.updateUsers = this.updateUsers.bind(this);
@@ -27,6 +31,8 @@ class Users extends React.Component {
     this.addUser = this.addUser.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.submitInfo = this.submitInfo.bind(this);
+    this.showEditModal = this.showEditModal.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +50,15 @@ class Users extends React.Component {
         users: res,
         display: res.slice(0, 5)
         })
+    })
+  }
+
+  handleEdit (id, path, data) {
+    editUser(id, path, data).then(results => {
+      this.setState({
+      users: results,
+      display: results.slice(0, this.state.length)
+      })
     })
   }
 
@@ -74,7 +89,16 @@ class Users extends React.Component {
   }
   closeModal () {
     this.setState({
-      modal: false
+      modal: false,
+      edit: false
+    })
+  }
+
+  showEditModal (user) {
+    this.setState({
+      edit: !this.state.edit,
+      modal: false,
+      user: user
     })
   }
 /////////////////////////////////
@@ -116,6 +140,12 @@ class Users extends React.Component {
               submitInfo={this.submitInfo}
               />
           : null}
+          {this.state.edit
+          ? <EditUser
+              closeModal={this.showEditModal}
+              user={this.state.user}
+              handleEdit={this.handleEdit}/>
+          : null}
         <UserInfo />
         <ul className="dataLists">
          <div className="formsContainer">
@@ -126,7 +156,7 @@ class Users extends React.Component {
             updateUsers={this.updateUsers}
             location={this.props.location}/>
           </div>
-          {this.state.display.map((user, index) => <User key={index} user={user}/>)}
+          {this.state.display.map((user, index) => <User key={index} user={user} showEditModal={this.showEditModal}/>)}
         </ul>
         <div ref={this.loader}>
         </div>

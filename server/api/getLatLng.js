@@ -24,14 +24,20 @@ let getLatLng = (body, route, id) => {
         lat: response.data.results[0].geometry.location.lat,
         lng: response.data.results[0].geometry.location.lng
       }
-      const user = new User(query);
-      const data = user.save().then(results => {
-      }).then(results => {
-        return User.find().then(data => {
-          return data;
+      if (!id) {
+        const user = new User(query);
+        const data = user.save().then(results => {
+        }).then(results => {
+          return User.find().then(data => {
+            return data;
+          })
         })
-      })
       return data;
+      }
+      if (id) {
+        const data = User.findByIdAndUpdate({'_id': id}, {...query}).then(results => results);
+        return data
+      }
     })
     .catch(function (error) {
       console.log(error)

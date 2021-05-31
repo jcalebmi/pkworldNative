@@ -1,4 +1,6 @@
 import React from 'react';
+import firebase from 'firebase';
+import 'firebase/auth';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faYoutube,
@@ -10,6 +12,7 @@ import {
 class User extends React.Component {
   constructor(props) {
     super(props);
+    this.auth = firebase.auth();
     this.state = {
       more: false
     }
@@ -76,6 +79,15 @@ class User extends React.Component {
               </a><br></br>
               <span className="bold seeMore" onClick={this.showMore}>More</span>
             </div>
+            {this.auth.currentUser && this.props.user.email === this.auth.currentUser.email
+              ? <div id="deleteLi">
+                  <div></div>
+                  <span
+                  className="seeMore deleteLi"
+                  onClick={()=> this.props.showEditModal(this.props.user)}
+                  >Edit Info?</span>
+                </div>
+                : null}
           </div>}
       </li>
     )

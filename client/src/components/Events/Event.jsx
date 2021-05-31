@@ -1,7 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
 import 'firebase/auth';
-import 'firebase/app';
 import EditEvent from './EditEvent.jsx';
 const moment = require('moment');
 

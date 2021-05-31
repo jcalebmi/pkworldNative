@@ -25,7 +25,8 @@ const Auth = () => {
           <div>
             <h3>You are not signed in</h3>
             <button
-            onClick={() => {
+              className="signInButton"
+              onClick={() => {
               const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
               firebase.auth().signInWithPopup(googleAuthProvider);
               }}

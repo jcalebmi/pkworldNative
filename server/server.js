@@ -58,6 +58,16 @@ app.post('/users', (req, res) => {
   getLatLng(req.body, 'users').then(results => res.status(200).send(results));
 });
 
+app.put('/users/:id', (req, res) => {
+  const body = req.body.data;
+  const id = req.params.id;
+  getLatLng(body, 'users', id).then(results => User.find().then(data => res.status(201).send(data)));
+})
+
+app.delete(`/users/:id`, (req, res) => {
+  User.remove({_id: req.params.id}).then(results => User.find().then(data => res.status(201).send(data)))
+})
+
 app.get('/userInfo', (req, res) => {
   User.find({email: req.query.email}).then(results => res.status(200).send(results));
 })
