@@ -12,8 +12,8 @@ class LoggedOut extends React.Component {
         className="seeMore"
         onClick={() => this.props.changeFeed('Profile')}>Sign in to submit a spot.<br/>
         Click to sign in.</span>}</h2>
+        <p className='bold underline'>{this.props.selected.address}</p>
         <p>{this.props.selected.description}</p>
-        <p>{this.props.selected.address}</p>
       </div>
     )
   }

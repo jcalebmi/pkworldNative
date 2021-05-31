@@ -1,7 +1,6 @@
 const axios = require('axios');
 const apiToken = require('../../myConfig.js');
 const {Event, User, Spot} = require('../../database/index.js');
-const ObjectId = require('mongodb').ObjectId;
 
 let getLatLng = (body, route, id) => {
   if (route === 'users') {

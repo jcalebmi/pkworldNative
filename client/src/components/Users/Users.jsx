@@ -47,7 +47,7 @@ class Users extends React.Component {
 
   submitInfo (data) {
     submitUser(data).then(res => {
-      const sort = findEvents('', res, this.props.location);
+      const sort = findUsers('', res, this.props.location);
       this.setState({
         users: res,
         display: sort.slice(0, this.state.length)
@@ -57,7 +57,7 @@ class Users extends React.Component {
 
   handleEdit (id, path, data) {
     editUser(id, path, data).then(results => {
-      const sort = findEvents('', results, this.props.location);
+      const sort = findUsers('', results, this.props.location);
       this.setState({
       users: results,
       display: sort.slice(0, this.state.length)

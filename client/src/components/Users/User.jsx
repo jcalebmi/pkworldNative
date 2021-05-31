@@ -57,6 +57,15 @@ class User extends React.Component {
               </a><br></br>
               <span className="bold seeMore" onClick={this.showMore}>Close</span>
             </div>
+            {this.auth.currentUser && this.props.user.email === this.auth.currentUser.email
+              ? <div id="deleteLi">
+                  <div></div>
+                  <span
+                  className="seeMore deleteLi"
+                  onClick={()=> this.props.showEditModal(this.props.user)}
+                  >Edit Info?</span>
+                </div>
+                : null}
           </div> :
           <div>
             <h3>{this.props.user.displayName}</h3>

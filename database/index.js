@@ -1,14 +1,16 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/pkworld', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+const db = require('./setup.js');
+mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://localhost/pkworld', {
+//   useUnifiedTopology: true,
+//   useNewUrlParser: true
+// });
 
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log('CONNECTED')
-});
+// const db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log('CONNECTED')
+// });
 
 let eventSchema = mongoose.Schema({
   name: String,
