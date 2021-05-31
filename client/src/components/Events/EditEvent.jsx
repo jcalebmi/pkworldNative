@@ -59,7 +59,6 @@ class EditEvent extends React.Component {
   }
 
   render () {
-    console.log(this.props.event)
     return (
       <div id="addEvent">
         <div className="formContainer">

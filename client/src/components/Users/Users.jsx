@@ -4,6 +4,7 @@ import 'firebase/auth';
 import 'firebase/app';
 import User from './User.jsx';
 import AddUser from './AddUser.jsx';
+import SearchUsers from './SearchUsers.jsx';
 import UserInfo from './UserInfo.jsx';
 import getUsers from './helpers/getUsers.js';
 import findUsers from './helpers/findUsers.js';
@@ -16,6 +17,8 @@ class Users extends React.Component {
     this.state = {
       users: [],
       display: [],
+      length: 5,
+      searching: false,
       modal: false
     }
     this.loader = React.createRef(null);
@@ -44,10 +47,20 @@ class Users extends React.Component {
     })
   }
 
-  updateUsers (search) {
-    this.setState({
-      display: search.slice(0, this.state.length)
-    })
+  updateUsers (search, length) {
+    let isSearching = false;
+    if (length > 0) {
+      isSearching = true;
+      this.setState({
+        display: search.slice(0),
+        searching: isSearching,
+      });
+    } else {
+      this.setState({
+        display: search.slice(0, this.state.length),
+        searching: isSearching,
+      })
+    }
   }
 
   addUser (e) {
@@ -66,11 +79,30 @@ class Users extends React.Component {
   }
 /////////////////////////////////
   loadMore (entries) {
-
+    const target = entries[0];
+    if (target.isIntersecting && this.state.display.length !== this.state.users.length) {
+      if (!this.state.searching) {
+        const sort = findUsers('', this.state.users, this.props.location);
+        this.setState({
+          length: this.state.length + 2,
+          display: sort.slice(0, this.state.length + 2)
+        })
+      }
+    }
   };
 
   componentDidUpdate () {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: .25,
+    };
+    const observer = new IntersectionObserver(this.loadMore, options);
 
+    if (this.loader && this.loader.current) {
+      observer.observe(this.loader.current);
+    }
+    return () => observer.unobserve(this.loader.current);
   };
 //////////////////////////////
 
@@ -86,14 +118,17 @@ class Users extends React.Component {
           : null}
         <UserInfo />
         <ul className="dataLists">
+         <div className="formsContainer">
+          <SearchUsers
+            addUser={this.addUser}
+            changeFeed={this.props.changeFeed}
+            users={this.state.users}
+            updateUsers={this.updateUsers}
+            location={this.props.location}/>
+          </div>
           {this.state.display.map((user, index) => <User key={index} user={user}/>)}
         </ul>
         <div ref={this.loader}>
-          {this.auth.currentUser
-          ? <button onClick={this.addUser}>Join</button>
-          : <div
-            className="seeMore"
-            onClick={()=>this.props.changeFeed('Profile')}><span className="signIn">Sign in to join</span></div>}
         </div>
       </div>
     )

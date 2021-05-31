@@ -21,17 +21,14 @@ Now mark all your favorite training locations for a world of easy to find spots.
 
 To Do
 *Map*
+-Fix click issue
 -Fix styling
 *Spots*
 -video & pic upload
 -Modal for viewing pic and video
--delete & put request
 -Report for bad spots
 -Report for innapropriate content
 *Events*
--Put request
--Convert location inputs to drop down
--Input & sort by date
 -Report
 *Users*
 -Search & Sort Function

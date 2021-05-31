@@ -165,7 +165,8 @@ class AddEvent extends React.Component {
               tileClassName="react-calendar__tile"
               onChange={this.onCalendarChange}
               value={this.state.date}
-              selectRange={true}/>
+              selectRange={true}
+              />
             <br/>
             <input type='submit'></input>
           </form><br/>

@@ -1,6 +1,4 @@
 html, body {
-  height:100%;
-  width: 100%;
   color: #EEFBFB;
   background-image: linear-gradient(45deg, #12232E 0%, #090979 45%, #007CC7 55%);
 }
@@ -11,7 +9,7 @@ html, body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: fit-content;
 }
 
 .bold {
@@ -392,6 +390,54 @@ button {
   margin: 0 auto;
   padding: 0 auto;
 }
+
+#users
+.formsContainer {
+  margin: 0;
+  padding: 0;
+}
+#users
+div.forms {
+  background-color: #007CC7;
+  text-align: center;
+  display: flex;
+  align-content:stretch;
+}
+
+#users
+.forms
+div.add
+button {
+  background: transparent;
+  color: #EEFBFB;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+#users
+.forms
+div.add {
+  text-align: center;
+  width: 45vw;
+  margin: 0 .2vw;
+  padding: 0;
+}
+#users
+.forms
+.add
+span{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+#users
+.forms
+.search {
+  width: 45vw;
+  margin: 0;
+}
+
 /* Add User */
 #addUser {
   width: 93%;
@@ -460,6 +506,16 @@ div.userInfo
 h3 {
   color: #12232E;
   margin-bottom: 1%;
+}
+#auth
+button {
+  background: transparent;
+  border: none;
+}
+#auth
+img.google {
+  margin:0;
+  padding:0;
 }
 #signIn {
   text-align: center;

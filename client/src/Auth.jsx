@@ -11,6 +11,7 @@ import {
 } from '@react-firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Profile from './components/Auth/Profile.jsx';
+import google from './components/Auth/google/web/1x/btn_google_signin_light_normal_web.png'
 import config from '../../firebaseConfig.js';
 firebase.initializeApp(config);
 const auth = firebase.auth();
@@ -29,7 +30,7 @@ const Auth = () => {
               firebase.auth().signInWithPopup(googleAuthProvider);
               }}
             >
-              Sign in with Google
+              <img className="google" src={google} />
             </button><br/>
             <button
             onClick={() => {

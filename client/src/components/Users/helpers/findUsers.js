@@ -1,34 +1,34 @@
 import React from 'react';
-const findUsers = (value, events, location) => {
+const findUsers = (value, users, location) => {
   let keys;
-  const copy = JSON.parse(JSON.stringify(events));
+  const copy = JSON.parse(JSON.stringify(users));
   let filter = copy;
   if (value.length > 0) {
-    filter = filter.filter((event) => {
-      keys = Object.keys(event);
+    filter = filter.filter((user) => {
+      keys = Object.keys(user);
       let doesMatch = false;
       keys.forEach((key) => {
-        if (typeof event[key] === 'string') {
-          if (event[key].toLowerCase().includes(value.toLowerCase())) {
+        if (typeof user[key] === 'string') {
+          if (user[key].toLowerCase().includes(value.toLowerCase())) {
             doesMatch = true;
           }
         }
       })
       return doesMatch;
-    }).map((event, index) => {
+    }).map((user, index) => {
       keys.forEach(key => {
-        if (typeof event[key] !== 'string') {
+        if (typeof user[key] !== 'string') {
           return;
         } else {
-          const i = event[key].toLowerCase().indexOf(value.toLowerCase());
+          const i = user[key].toLowerCase().indexOf(value.toLowerCase());
           if (i !== -1) {
-            const contents = event[key].split('');
-            event[key] = <span key={index}>{contents.slice(0, i)}<span className="highlight">{contents.slice(i, i+value.length)}</span>{contents.slice(i+value.length)}</span>
+            const contents = user[key].split('');
+            user[key] = <span key={index}>{contents.slice(0, i)}<span className="highlight">{contents.slice(i, i+value.length)}</span>{contents.slice(i+value.length)}</span>
           }
           return;
         }
       })
-      return event;
+      return user;
     })
   }
   // filter.sort((a, b) => {
