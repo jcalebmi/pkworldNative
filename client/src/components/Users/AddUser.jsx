@@ -20,7 +20,7 @@ class AddUser extends React.Component {
       city: '',
       state: '',
       country: '',
-      pic: ''
+      pic: this.auth.currentUser.photoURL
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

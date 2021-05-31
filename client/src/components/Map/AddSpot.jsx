@@ -12,7 +12,8 @@ class AddSpot extends React.Component {
       name: '',
       email: this.auth.currentUser.email,
       description: '',
-      video: '',
+      video: [],
+      photos: [],
       gym: null
     }
     this.onChange = this.onChange.bind(this);
@@ -22,10 +23,11 @@ class AddSpot extends React.Component {
   onChange (e) {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    },console.log(this.state.gym))
   }
   onSubmit (e) {
     e.preventDefault();
+    console.log(this.state.gym)
     const spot = {
         name: this.state.name,
         email: this.state.email,
@@ -33,7 +35,8 @@ class AddSpot extends React.Component {
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
         gym: this.state.gym,
-        videos: this.state.video
+        videos: this.state.video,
+        photos: this.state.photos
       }
 
     createSpot(spot).then(data => this.props.setMarkers(data));
@@ -62,14 +65,6 @@ class AddSpot extends React.Component {
             placeholder="Description, Kick out rate, times to avoid, etc"
             onChange={this.onChange}/>
         </label><br></br>
-        <label htmlFor="video">
-          <input
-            type="url"
-            name="video"
-            value={this.state.video}
-            placeholder="Add Video Url?"
-            onChange={this.onChange}></input>
-        </label><br></br>
         <h3>Gym?</h3>
         <div className="label">
           <label
@@ -87,7 +82,7 @@ class AddSpot extends React.Component {
               name="gym"
               value='false'
               onChange={this.onChange}></input>
-          </label>
+          </label><br/>
         </div>
         <br></br>
         <input type='submit'></input>

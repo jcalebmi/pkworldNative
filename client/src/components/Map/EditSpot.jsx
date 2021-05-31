@@ -25,7 +25,7 @@ class EditSpot extends React.Component {
   onChange (e) {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    }, console.log(this.state.gym))
   }
   onSubmit (e) {
     e.preventDefault();
@@ -82,14 +82,6 @@ class EditSpot extends React.Component {
                 value={this.state.description}
                 placeholder="Description, Kick out rate, times to avoid, etc"
                 onChange={this.onChange}/>
-            </label><br></br>
-            <label htmlFor="video">
-              <input
-                type="url"
-                name="video"
-                value={this.state.video}
-                placeholder="Add Video Url?"
-                onChange={this.onChange}></input>
             </label><br></br>
             <h3>Gym?</h3>
             <div className="label">

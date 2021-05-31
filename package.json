@@ -2,8 +2,8 @@
   "name": "pkworld",
   "main": "server/server.js",
   "scripts": {
-    "react-dev": "webpack --mode development --watch",
-    "server-dev": "npx nodemon server/server.js"
+    "build": "webpack --mode development --watch",
+    "start": "npx nodemon dotenv/config server/server.js"
   },
   "dependencies": {
     "@babel/preset-env": "^7.13.15",

@@ -18,6 +18,7 @@ import MapInfo from './MapInfo.jsx';
 import Auth from '../../Auth.jsx';
 import LoggedIn from './LoggedIn.jsx';
 import LoggedOut from './LoggedOut.jsx';
+import gym from './assets/1552884071.svg';
 const auth = firebase.auth();
 
 const libraries = ["places", "geometry"];
@@ -112,11 +113,29 @@ const PKMap = (props) => {
         options={options}
         onClick={onMapClick}
         onLoad={onMapLoad}>
-        {markers.map((marker, index) => <Marker
+        {markers.map((marker, index) =>
+        marker.gym
+        ? <Marker
+            key={index}
+            position={{lat: marker.lat, lng: marker.lng}}
+            icon={{
+              url: gym,
+              //fix size of icon
+              scaledSize: new window.google.maps.Size(80, 80),
+              //Keep icon in middle of click
+              origin: new window.google.maps.Point(0,0),
+              //Set to half of size
+              anchor: new window.google.maps.Point(40,40)
+            }}
+            onClick={() => {
+              setSelected(marker)
+            }}
+            />
+            : <Marker
             key={index}
             position={{lat: marker.lat, lng: marker.lng}}
             // icon={{
-            //   url: './sneakers-sneaker-svgrepo-com.svg',
+            //   url: gym,
             //   //fix size of icon
             //   scaledSize: new window.google.maps.Size(20, 20),
             //   //Keep icon in middle of click

@@ -34,6 +34,7 @@ To Do
 -Require date
 
 *Users*
+-phone numbers
 -Sort Function
 -Convert location inputs to drop down
 -Report

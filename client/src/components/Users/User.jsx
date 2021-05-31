@@ -30,7 +30,7 @@ class User extends React.Component {
         {this.state.more ?
           <div>
             <h3>{this.props.user.displayName}</h3>
-            <img src='/'></img><br></br>
+            <img src={this.props.user.pic}></img><br></br>
             <div className="contentContainer">
               <div className="contents">
                 <span>City: {this.props.user.city}</span><br></br>
@@ -69,7 +69,7 @@ class User extends React.Component {
           </div> :
           <div>
             <h3>{this.props.user.displayName}</h3>
-            <img src='/'></img><br></br>
+            <img src={this.props.user.pic}></img><br></br>
             <div className="socialMedia">
               <a href={this.props.user.youtube}
                 className="youtube social">

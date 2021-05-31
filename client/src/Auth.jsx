@@ -18,7 +18,6 @@ const auth = firebase.auth();
 
 const Auth = () => {
   const [user] = useAuthState(auth);
-  console.log(user)
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
       <div id='auth'>

@@ -38,6 +38,9 @@ class Profile extends React.Component {
             </div>
               : null}
         </div>
+        <div>
+          <img src={this.auth.currentUser.photoURL} />
+        </div>
       </div>
     )
   }

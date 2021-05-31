@@ -16,7 +16,7 @@ let geoCode = (body, id) => {
       lat: body.lat,
       lng: body.lng,
       videos: body.video,
-      gym: Boolean(body.gym)
+      gym: body.gym
     }
     if (id) {
       const spot = Spot.findByIdAndUpdate({'_id': id}, {...data}).then(results => results);
