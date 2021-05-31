@@ -16,7 +16,7 @@ const findEvents = (value, events, location, sortBy) => {
       })
       return doesMatch;
     }).map((event, index) => {
-      keys.forEach(key => {
+      keys.forEach((key, index) => {
         if (typeof event[key] !== 'string') {
           return;
         } else {

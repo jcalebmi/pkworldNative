@@ -16,7 +16,7 @@ const findUsers = (value, users, location) => {
       })
       return doesMatch;
     }).map((user, index) => {
-      keys.forEach(key => {
+      keys.forEach((key, index) => {
         if (typeof user[key] !== 'string') {
           return;
         } else {
@@ -31,17 +31,18 @@ const findUsers = (value, users, location) => {
       return user;
     })
   }
-  // filter.sort((a, b) => {
-  //   const distanceA = Math.sqrt(((a.lat - location.lat) ** 2) + ((a.lng - location.lng) ** 2) );
-  //   const distanceB = Math.sqrt(((b.lat - location.lat) ** 2) + ((b.lng - location.lng) ** 2) );
-  //   if (distanceA < distanceB) {
-  //     return -1;
-  //   }
-  //   if (distanceA > distanceB) {
-  //     return 1;
-  //   }
-  //   return 0;
-  // })
+  filter.sort((a, b) => {
+    const distanceA = Math.sqrt(((a.lat - location.lat) ** 2) + ((a.lng - location.lng) ** 2) );
+    const distanceB = Math.sqrt(((b.lat - location.lat) ** 2) + ((b.lng - location.lng) ** 2) );
+    if (distanceA < distanceB) {
+      return -1;
+    }
+    if (distanceA > distanceB) {
+      return 1;
+    }
+    return 0;
+  })
+
   return filter;
 }
 

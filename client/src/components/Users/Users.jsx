@@ -37,27 +37,30 @@ class Users extends React.Component {
 
   componentDidMount() {
     getUsers().then(data => {
+      const sort = findUsers('', data, this.props.location);
       this.setState({
       users: data,
-      display: data.slice(0, 5)
+      display: sort.slice(0, 5)
       })
     })
   }
 
   submitInfo (data) {
     submitUser(data).then(res => {
+      const sort = findEvents('', res, this.props.location);
       this.setState({
         users: res,
-        display: res.slice(0, 5)
+        display: sort.slice(0, this.state.length)
         })
     })
   }
 
   handleEdit (id, path, data) {
     editUser(id, path, data).then(results => {
+      const sort = findEvents('', results, this.props.location);
       this.setState({
       users: results,
-      display: results.slice(0, this.state.length)
+      display: sort.slice(0, this.state.length)
       })
     })
   }

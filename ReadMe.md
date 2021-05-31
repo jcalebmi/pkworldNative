@@ -34,8 +34,7 @@ To Do
 -Require date
 
 *Users*
--Search & Sort Function
--Delete & put request
+-Sort Function
 -Convert location inputs to drop down
 -Report
 
