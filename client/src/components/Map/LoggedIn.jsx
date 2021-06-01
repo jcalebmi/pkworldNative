@@ -38,9 +38,11 @@ class LoggedIn extends React.Component {
                 lat: this.props.selected.lat,
                 lng: this.props.selected.lng
                 }}/>}
-        <p
+        {this.props.selected.name
+        ? <p
           onClick={() => this.props.changeFeed('content', this.props.selected._id)}
-          className="seeMore underline">Add Content?</p><span> | </span>
+          className="seeMore underline">Add Content?<span> | </span></p>
+          : null}
         {this.auth.currentUser.email === this.props.selected.email && !this.state.showEdit
         ? <p
             className="seeMore underline"
