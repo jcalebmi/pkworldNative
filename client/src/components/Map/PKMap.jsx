@@ -36,8 +36,12 @@ const center = {
 //style and controls options
 const options = {
   // styles: styles,
-  disableDefaultUI: false,
-  // zoomControl: true,
+  disableDefaultUI: true,
+  mapTypeControl: true,
+  zoomControl: true,
+  streetViewControl: true,
+  rotateControl: true,
+  // fullscreenContro:true
 }
 
 
