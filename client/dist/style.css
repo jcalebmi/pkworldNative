@@ -238,6 +238,10 @@ a.instagram {
 #spotMarker {
   text-align: center;
 }
+#spotMarker
+p.seeMore {
+  display: inline;
+}
 /* Events */
 #events {
   text-align: center;

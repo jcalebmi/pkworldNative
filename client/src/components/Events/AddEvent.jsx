@@ -19,7 +19,7 @@ class AddEvent extends React.Component {
       country: '',
       gym: null,
       jam: null,
-      date: null
+      date: [new Date(), new Date()]
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

@@ -172,6 +172,7 @@ const PKMap = (props) => {
           }}>
           {user
             ? <LoggedIn
+                changeFeed={props.changeFeed}
                 setMarkers={setMarkers}
                 setTemp={setTemp}
                 setSelected={setSelected}

@@ -35,7 +35,6 @@ To Do
 
 *Users*
 -phone numbers
--Sort Function
 -Convert location inputs to drop down
 -Report
 
@@ -45,7 +44,6 @@ To Do
 -Profile Pic
 
 *Mongo*
--Possibly Convert to Mongo Atlas
 -Index
 
 *Server*
