@@ -10,6 +10,7 @@ class EditSpot extends React.Component {
     this.auth = firebase.auth();
     this.state = {
       name: this.props.selected.name,
+      phone: this.props.selected.phone,
       email: this.auth.currentUser.email,
       description: this.props.selected.description,
       video: this.props.selected.video,
@@ -56,6 +57,7 @@ class EditSpot extends React.Component {
   }
 
   render () {
+    console.log(this.props.selected)
     return (
       this.state.delete === 'edit'
         ?<form

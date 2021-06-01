@@ -40,6 +40,7 @@ class AddUser extends React.Component {
   }
 
   render () {
+    console.log(this.state.phone)
     return (
       <div id="addUser">
         <div className="formContainer">

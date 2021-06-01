@@ -12,6 +12,7 @@ let getLatLng = (body, route, id) => {
       const query = {
         displayName: body.displayName,
         facebook: body.facebook,
+        phone: body.phone,
         instagram: body.instagram,
         youtube: body.youtube,
         twitter: body.twitter,

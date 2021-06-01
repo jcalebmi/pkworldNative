@@ -15,7 +15,7 @@ mongoose.Promise = global.Promise;
 let eventSchema = mongoose.Schema({
   name: String,
   email: String,
-  date: [Date],
+  date: {type: [Date], required: true},
   description: String,
   website: String,
   address: String,

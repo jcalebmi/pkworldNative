@@ -1,4 +1,5 @@
 import React from 'react';
+import compas from './assets/urwald-wind-rose-compass-rose-tiny.svg';
 
 const Locate = (props) => {
   return (
@@ -17,7 +18,7 @@ const Locate = (props) => {
             })
           }, () => null);
         }
-      }}>Locate Me</button>
+      }}><img src={compas}/></button>
   )
 }
 

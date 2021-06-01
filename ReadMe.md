@@ -22,7 +22,6 @@ Now mark all your favorite training locations for a world of easy to find spots.
 To Do
 *Map*
 -Fix click issue
--Fix styling
 *Spots*
 -video & pic upload
 -Modal for viewing pic and video
@@ -31,7 +30,6 @@ To Do
 
 *Events*
 -Report
--Require date
 
 *Users*
 -phone numbers
