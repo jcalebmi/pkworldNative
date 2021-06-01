@@ -38,7 +38,7 @@ class LoggedIn extends React.Component {
                 lat: this.props.selected.lat,
                 lng: this.props.selected.lng
                 }}/>}
-        {this.props.selected.name
+        {this.props.selected.name && !this.state.showEdit
         ? <p
           onClick={() => this.props.changeFeed('content', this.props.selected._id)}
           className="seeMore underline">Add Content?<span> | </span></p>
