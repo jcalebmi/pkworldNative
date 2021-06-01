@@ -5,11 +5,9 @@ import styles from './helpers/mapStyles.js';
 const moment = require('moment');
 import usePlacesAutocomplete, { getGeocode, getLatLng } from 'use-places-autocomplete';
 import { Combobox, ComboboxInput, ComboboxPopover, ComboboxList, ComboboxOption } from '@reach/combobox';
-// import '@reach/combobox/styles.css';
 import SearchLocations from './SearchLocations.jsx';
 import SearchSpots from './SearchSpots.jsx';
 import Locate from './Locate.jsx';
-import apiToken from '../../../../myConfig.js';
 import getMarkers from './helpers/getMarkers.js';
 import firebase from 'firebase';
 import 'firebase/auth';
@@ -88,7 +86,7 @@ const PKMap = (props) => {
   }
   //loads in the script for google API
   const {isLoaded, loadError} = useLoadScript({
-    googleMapsApiKey: apiToken,
+    googleMapsApiKey: process.env.REACT_APP_GOOGLEAPI,
     libraries,
   });
   // handle loading of map

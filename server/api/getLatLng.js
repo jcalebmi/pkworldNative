@@ -1,12 +1,12 @@
 const axios = require('axios');
-const apiToken = require('../../myConfig.js');
+require('dotenv').config();
 const {Event, User, Spot} = require('../../database/index.js');
 
 let getLatLng = (body, route, id) => {
   if (route === 'users') {
     const address = `${body.city}+${body.state}+${body.country}`;
     let options = {
-      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiToken}`,
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLEAPI}`,
     };
     return axios.get(options.url).then(function (response) {
       const query = {
@@ -47,7 +47,7 @@ let getLatLng = (body, route, id) => {
 
     const address = `${body.address}+${body.city}+${body.state}+${body.country}`;
     let options = {
-      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${apiToken}`,
+      url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLEAPI}`,
     };
 
     return axios.get(options.url).then(function (response) {

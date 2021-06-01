@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const multer = require('multer');
 const cors = require('cors');
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
@@ -13,6 +14,19 @@ const geoCode = require('./api/geoCode.js');
 const getLatLng = require('./api/getLatLng.js');
 
 const {Event, User, Spot} = require('../database/index.js');
+
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'client/dist/uploads/spots/')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+  // file.originalname
+})
+
+var upload = multer({ storage: storage })
 
 
 app.post('/spot', (req, res) => {
@@ -35,10 +49,11 @@ app.delete('/spots/:id', (req, res) => {
   Spot.remove({_id: req.params.id}).then(results => Spot.find().then(results => res.status(201).send(results)))
 })
 
-app.put('/spots/uploads/:id', (req, res) => {
+app.post('/spots/uploads/:id', upload.array('spots', 5), (req, res, next) => {
+
   const id = req.params.id;
-  const body = req.body.data
-  console.log(body)
+  const body = req.files
+  console.log(req, id)
 })
 
 app.post('/events', (req, res) => {

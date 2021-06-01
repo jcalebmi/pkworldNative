@@ -1,10 +1,10 @@
 const axios = require('axios');
-const apiToken = require('../../myConfig.js');
+require('dotenv').config();
 const {Event, User, Spot} = require('../../database/index.js');
 
 let geoCode = (body, id) => {
   let options = {
-    url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${body.lat},${body.lng}&key=${apiToken}`,
+    url: `https://maps.googleapis.com/maps/api/geocode/json?latlng=${body.lat},${body.lng}&key=${process.env.REACT_APP_GOOGLEAPI}`,
   };
 
   return axios.get(options.url).then(function (response) {

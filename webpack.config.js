@@ -2,6 +2,7 @@ const path = require('path');
 
 const SRC_DIR = path.join(__dirname, 'client', 'src');
 const OUT_DIR = path.join(__dirname, 'client', 'dist');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: path.join(SRC_DIR, 'app.jsx'),
@@ -41,4 +42,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  plugins: [
+    new Dotenv()
+  ]
 };
