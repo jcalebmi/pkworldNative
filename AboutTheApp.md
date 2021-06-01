@@ -32,7 +32,6 @@ To Do
 -Report
 
 *Users*
--phone numbers
 -Convert location inputs to drop down
 -Report
 
