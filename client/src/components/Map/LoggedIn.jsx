@@ -41,12 +41,12 @@ class LoggedIn extends React.Component {
         {this.props.selected.name && !this.state.showEdit
         ? <p
           onClick={() => this.props.changeFeed('content', this.props.selected._id)}
-          className="seeMore underline">Add Content?<span> | </span></p>
+          className="seeMore underline">Add Content?</p>
           : null}
         {this.auth.currentUser.email === this.props.selected.email && !this.state.showEdit
         ? <p
             className="seeMore underline"
-            onClick={this.showEdit}>Edit Spot?</p>
+            onClick={this.showEdit}><span> | </span>Edit Spot?</p>
         : null}
         {this.props.selected.name ? null :
         <AddSpot

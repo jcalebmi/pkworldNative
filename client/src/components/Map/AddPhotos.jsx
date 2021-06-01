@@ -14,25 +14,33 @@ class AddPhotos extends React.Component {
   }
 
   handlePhotos (e) {
-    e.preventDefault();
-    let fd = new FormData();
-    fd[e.target.files[0].name] = e.target.files[0]
-    let photoArr = this.state.photos;
-    photoArr.push(e.target.files);
-    this.setState({
-      photos: fd
-    })
+    const imgCont = document.getElementById('thumbnail');
+    const img = document.createElement('img');
+    for (let i = 0; i < e.target.files.length; i += 1) {
+      img.src = URL.createObjectURL(e.target.files[i]);
+      img.className = 'thumbnail';
+      imgCont.appendChild(img);
+        this.setState({
+          photos: this.state.photos.concat(e.target.files[i])
+        })
+    }
   }
 
   handleSubmit (e) {
     e.preventDefault()
-    uploadFiles(this.state.photos, this.props.spotId)
+    let data = new FormData();
+    this.state.photos.forEach((photo, index) => {
+      data[index] = photo;
+    });
+    uploadFiles(data, this.props.spotId).then(res => console.log(res))
   }
 
   render () {
     return (
       <div>
         <input
+          multiple
+          accept="image/*"
           style={{display: 'none'}}
           type="file"
           onChange={this.handlePhotos}
@@ -41,6 +49,9 @@ class AddPhotos extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <input type="submit"/>
           </form>
+          <div id="thumbnail" className="thumbnail">
+
+          </div>
       </div>
     )
   }
