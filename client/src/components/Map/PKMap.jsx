@@ -61,6 +61,7 @@ const PKMap = (props) => {
   }
 
   const onMapClick = useCallback((e) => {
+    e['passive'] === true;
     setTemp({
       lat: e.latLng.lat(),
       lng: e.latLng.lng()
