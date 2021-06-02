@@ -8,7 +8,7 @@ The events page will list upcoming events in order of which events are closest t
 
 Parkour athletes name spots by landmark and give directions by landmark. In a sport that relies on travelling to foreign locations, searching for "Mini Spot", three blocks towards the river from "Blue Rails" can cause you to waste a lot of training time walking in circles.
 
-With this app, a local athlete can mark "Mini Spot" on the map, so that you dont have to decipher amiguous directions. Just type the name and search the marker.
+With this app, a local athlete can mark "Mini Spot" on the map, so that you dont have to decipher ambiguous directions. Just type the name and search the marker.
 
 Just type and click. Its simple.
 
