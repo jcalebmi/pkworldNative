@@ -4,7 +4,9 @@ const {Event, User, Spot} = require('../../database/index.js');
 
 let getLatLng = (body, route, id) => {
   if (route === 'users') {
-    const address = `${body.city}+${body.state}+${body.country}`;
+    const city = body.city || body.country;
+    const state = body.state || body.country;
+    const address = `${city}+${state}+${body.country}`;
     let options = {
       url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLEAPI}`,
     };
@@ -44,8 +46,9 @@ let getLatLng = (body, route, id) => {
       console.log('ERROR: Axios Get Failed');
     });
   } else if (route === 'events') {
-
-    const address = `${body.address}+${body.city}+${body.state}+${body.country}`;
+    const city = body.city || body.country;
+    const state = body.state || body.country;
+    const address = `${body.address}+${city}+${state}+${body.country}`;
     let options = {
       url: `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GOOGLEAPI}`,
     };

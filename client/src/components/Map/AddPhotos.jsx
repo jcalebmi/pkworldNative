@@ -51,7 +51,6 @@ class AddPhotos extends React.Component {
             <input type="submit"/>
           </form>
           <div id="thumbnail" className="thumbnail">
-
           </div>
       </div>
     )

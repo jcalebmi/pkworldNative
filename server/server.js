@@ -16,7 +16,7 @@ const geoCode = require('./api/geoCode.js');
 const getLatLng = require('./api/getLatLng.js');
 const spotPhotos = require('./helpers/spotPhotos.js');
 
-const {Event, User, Spot} = require('../database/index.js');
+const {Event, User, Spot, Location} = require('../database/index.js');
 
 const { CLOUD_NAME, CLOUD_API, CLOUD_SECRET, CLOUDINARY_URL} = require('../cloudinaryConfig.js');
 cloudinary.config({
@@ -123,6 +123,29 @@ app.delete(`/users/:id`, (req, res) => {
 app.get('/userInfo', (req, res) => {
   User.find({email: req.query.email}).then(results => res.status(200).send(results));
 })
+
+// app.get('/locations/countries', (req, res) => {
+//   Location.find().then(data => {
+//     let countries = data.map(country => country.country);
+//     let once = [...new Set(countries)]
+//     let results = Array.prototype.slice.call(once);
+//     res.status(200).send(results);
+//   });
+// })
+
+// app.get('/locations/states/:country', (req, res) => {
+//   Location.find({'country': req.params.country}).then(data => {
+//     let states = [...new Set(data.map(country => country.subcountry))];
+//     res.status(200).send(states);
+//   })
+// })
+
+// app.get('/locations/cities/:state', (req, res) => {
+//   Location.find({'subcountry': req.params.state}).then(data => {
+//     let cities = [...new Set(data.map(state => state.name))];
+//     res.status(200).send(cities);
+//   })
+// })
 
 const port = 3005;
 app.listen(port, () => {

@@ -9,6 +9,7 @@ import Users from './components/Users/Users.jsx';
 import Events from './components/Events/Events.jsx';
 import SignIn from './components/Auth/SignIn.jsx';
 import Content from './components/Map/Content.jsx';
+import getLocations from './components/helpers/getLocations.js';
 
 
 class App extends React.Component {
@@ -20,7 +21,7 @@ class App extends React.Component {
       location: {
         lat: 28.5383,
         lng: -81.3792
-      },
+      }
     }
     this.changeFeed = this.changeFeed.bind(this);
   }

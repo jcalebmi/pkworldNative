@@ -27,7 +27,7 @@ class Events extends React.Component {
       searching: false,
       searchTerm: '',
       edit: false,
-      event: {}
+      event: {},
     }
     this.loader = React.createRef(null);
     this.updateEvents = this.updateEvents.bind(this);
@@ -43,7 +43,6 @@ class Events extends React.Component {
   componentDidMount () {
     this.requestEvents();
   }
-
   requestEvents () {
     getEvents().then(data => {
       const sort = findEvents('', data, this.props.location, this.state.sortBy);

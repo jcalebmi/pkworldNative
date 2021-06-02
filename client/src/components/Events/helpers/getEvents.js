@@ -2,9 +2,7 @@ const axios = require('axios');
 
 const getEvents = function () {
   return axios.get('/events')
-    .then((res) => {
-      return res.data;
-    })
+    .then((res) => res.data)
     .catch((err) => {
       console.log('ERROR: ', err);
     });

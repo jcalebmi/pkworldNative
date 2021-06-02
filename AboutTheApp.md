@@ -23,7 +23,7 @@ To Do
 *Map*
 -Fix click issue
 *Spots*
--video & pic upload
+-video upload
 -Modal for viewing pic and video
 -Report for bad spots
 -Report for innapropriate content
@@ -32,7 +32,6 @@ To Do
 -Report
 
 *Users*
--Convert location inputs to drop down
 -Report
 
 *Profile*

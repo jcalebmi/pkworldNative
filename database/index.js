@@ -67,4 +67,13 @@ let spotSchema = mongoose.Schema({
 
 let Spot = mongoose.model('Spot', spotSchema);
 
-module.exports = { db, Event, User, Spot};
+let locationSchema = mongoose.Schema({
+  name: String,
+  country: String,
+  subcountry: String,
+  geonameid: Number
+})
+
+let Location = mongoose.model('Location', locationSchema);
+
+module.exports = { db, Event, User, Spot, Location};

@@ -31,12 +31,13 @@ class Event extends React.Component {
               <div className="contentContainer">
                 <div className="contents">
                   <p>
-                    Date: {moment(this.props.event.date[0]).format("MMM Do YY")}-{moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
+                    Date: {moment(this.props.event.date[0]).format("MMM Do YY")} - {moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
                     Description: {this.props.event.description}<br/>
                     Website: {this.props.event.website}<br/>
                     Address: {this.props.event.address}<br/>
                     City: {this.props.event.city}<br/>
                     State: {this.props.event.state}<br/>
+                    Country: {this.props.event.country}<br/>
                     Is this a jam?: {this.props.event.jam ? 'Yes' : 'No'}<br/>
                     Is this at a gym: {this.props.event.gym ? 'Yes' : 'No'}
                   </p>

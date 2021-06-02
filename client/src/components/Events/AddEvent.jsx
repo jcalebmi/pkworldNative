@@ -3,6 +3,7 @@ import firebase from 'firebase';
 import 'firebase/auth';
 import 'firebase/app';
 import Calendar from 'react-calendar';
+import getLocations from '../helpers/getLocations.js';
 
 class AddEvent extends React.Component {
   constructor(props) {
@@ -19,11 +20,15 @@ class AddEvent extends React.Component {
       country: '',
       gym: null,
       jam: null,
-      date: [new Date(), new Date()]
+      date: [new Date(), new Date()],
+      countryList: this.props.countryList,
+      stateList: [],
+      cityList: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onCalendarChange = this.onCalendarChange.bind(this);
+    this.handleLocation = this.handleLocation.bind(this);
   }
 
   handleChange(e) {
@@ -42,6 +47,22 @@ class AddEvent extends React.Component {
     const data = this.state;
     this.props.submitInfo(data);
     this.props.closeModal();
+  }
+
+  handleLocation(e) {
+    if (e.target.name === 'country') {
+      getLocations('states', e.target.value).then(results => this.setState({
+      stateList: results
+      }))
+    }
+    if (e.target.name === 'state') {
+      getLocations('cities', e.target.value).then(results => this.setState({
+        cityList: results
+        }))
+    }
+    this.setState({
+      [e.target.name]: e.target.value
+    })
   }
 
   render () {
@@ -86,33 +107,55 @@ class AddEvent extends React.Component {
               onChange={this.handleChange}
               required/>
             </label>
-            <label htmlFor="city">
-            <input
-              type="text"
-              placeholder="City"
-              value={this.state.city}
+            {/* <label htmlFor="city">
+            <select
               name="city"
-              onChange={this.handleChange}
-              required/>
+              value={this.state.city} onChange={this.handleLocation}>
+                {this.state.cityList.map((city, index) => <option key={index} value={city}>{city}</option>)}
+            </select>
+            </label> */}
+            <label htmlFor="city">
+                <input
+                  type="text"
+                  placeholder="City"
+                  value={this.state.city}
+                  name="city"
+                  onChange={this.handleChange}
+                  required/>
             </label>
-            <label htmlFor="state">
-            <input
-              type="text"
-              placeholder="State"
-              value={this.state.state}
+            {/* <label htmlFor="state">
+            <select
               name="state"
-              onChange={this.handleChange}
-              required/>
-            </label>
-            <label htmlFor="country">
-            <input
-              type="text"
-              placeholder="Country"
-              value={this.state.country}
+              value={this.state.state} onChange={this.handleLocation}>
+                {this.state.stateList.map((state, index) => <option key={index} value={state}>{state || 'State'}</option>)}
+            </select>
+            </label> */}
+            <label htmlFor="state">
+                <input
+                  type="text"
+                  placeholder="State"
+                  value={this.state.state}
+                  name="state"
+                  onChange={this.handleChange}
+                  required/>
+                </label>
+            {/* <label htmlFor="country">
+            <select
+              required
               name="country"
-              onChange={this.handleChange}
-              required/>
-            </label>
+              value={this.state.country} onChange={this.handleLocation}>
+                {this.state.countryList.map((country, index) => <option key={index} value={country}>{country}</option>)}
+            </select>
+            </label> */}
+            <label htmlFor="country">
+                <input
+                  type="text"
+                  placeholder="Country"
+                  value={this.state.country}
+                  name="country"
+                  onChange={this.handleChange}
+                  required/>
+                </label>
             <h3>At A Gym?</h3>
             <div className="label">
               <label
