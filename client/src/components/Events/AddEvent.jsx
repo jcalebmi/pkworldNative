@@ -203,13 +203,15 @@ class AddEvent extends React.Component {
               </label>
             </div>
             <br/>
-            <Calendar
-              className="react-calendar"
-              tileClassName="react-calendar__tile"
-              onChange={this.onCalendarChange}
-              value={this.state.date}
-              selectRange={true}
-              />
+            <div className="calendar">
+              <Calendar
+                className="react-calendar"
+                tileClassName="react-calendar__tile"
+                onChange={this.onCalendarChange}
+                value={this.state.date}
+                selectRange={true}
+                />
+            </div>
             <br/>
             <input type='submit'></input>
           </form><br/>

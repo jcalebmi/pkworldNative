@@ -39,9 +39,6 @@ To Do
 -Delete & Put request
 -Profile Pic
 
-*Mongo*
--Index
-
 *Server*
 -Possibly add Redis
 
@@ -49,5 +46,10 @@ To Do
 -Deploy
 -SSL certificate
 -Domain Name
+
+*Most Important*
+-Style
+-Put and Delete on Profile
+-Image carousel
 
 *README*

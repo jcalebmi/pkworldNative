@@ -359,6 +359,11 @@ li
   border: solid black;
   overflow-y: scroll;
 }
+#addevent
+.calendar {
+  text-align: center;
+  margin: 0 auto;
+}
 #addEvent
 input {
   margin: 0 auto;
@@ -570,6 +575,7 @@ img.google {
   max-width: 100%;
   background: white;
   color: black;
+  margin: 0 auto;
   border: 1px solid black;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.125em;
