@@ -8,7 +8,7 @@ import Navigation from './components/Navigation.jsx';
 import Users from './components/Users/Users.jsx';
 import Events from './components/Events/Events.jsx';
 import SignIn from './components/Auth/SignIn.jsx';
-import AddPhotos from './components/Map/AddPhotos.jsx';
+import Content from './components/Map/Content.jsx';
 
 
 class App extends React.Component {
@@ -16,7 +16,7 @@ class App extends React.Component {
     super (props);
     this.state = {
       feed: 'Map',
-      spotId: null,
+      spot: null,
       location: {
         lat: 28.5383,
         lng: -81.3792
@@ -25,10 +25,10 @@ class App extends React.Component {
     this.changeFeed = this.changeFeed.bind(this);
   }
 
-  changeFeed (feed, id) {
+  changeFeed (feed, spot) {
     this.setState({
       feed: feed,
-      spotId: id
+      spot: spot
     })
   }
 
@@ -69,7 +69,7 @@ class App extends React.Component {
                 />
               :null }
           {this.state.feed === 'content'
-            ? <AddPhotos spotId={this.state.spotId}/>
+            ? <Content spot={this.state.spot}/>
             :null}
         </div>
       </div>

@@ -60,7 +60,7 @@ let spotSchema = mongoose.Schema({
   lat: Number,
   lng: Number,
   photos: [String],
-  videos: [String],
+  videos: [{name: String, url: String}],
   gym: Boolean,
   reported: Number
 });

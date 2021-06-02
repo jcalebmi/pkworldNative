@@ -1,14 +1,9 @@
 import React from 'react';
-import uploadFiles from './helpers/uploadFiles.js';
-import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
+import uploadPhotos from './helpers/uploadPhotos.js';
 
 class AddPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      photos: [],
-      videos: [],
-    }
     this.data = new FormData()
     this.handlePhotos = this.handlePhotos.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,7 +23,11 @@ class AddPhotos extends React.Component {
 
   handleSubmit (e) {
     e.preventDefault()
-    uploadFiles(this.data, this.props.spotId).then(res => console.log(res))
+    uploadPhotos(this.data, this.props.spotId).then(res => this.props.updatePhotos(res))
+    const parent = document.getElementById('thumbnail');
+    while(parent.firstChild) {
+      parent.firstChild.remove();
+    }
   }
 
   render () {

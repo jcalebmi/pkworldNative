@@ -1,6 +1,5 @@
 const axios = require('axios');
 
-
 const getMarkers = function () {
   return axios.get(`/spots`)
     .then((res) => {
@@ -11,7 +10,5 @@ const getMarkers = function () {
       console.log('ERROR: ', err);
     });
 };
-
-
 
 export default getMarkers;

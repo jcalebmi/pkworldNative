@@ -25,7 +25,7 @@ cloudinary.config({
   api_secret: CLOUD_SECRET,
 })
 
-const storage = new CloudinaryStorage({
+const spotPhotoStorage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
     folder: 'spots'
@@ -38,7 +38,7 @@ const storage = new CloudinaryStorage({
      { format: 'jpg' }
   ]
 });
-const parser = multer({ storage: storage });
+const spotPhotoParser = multer({ storage: spotPhotoStorage });
 
 // var storage = multer.diskStorage({
 //   destination: function (req, file, cb) {
@@ -75,7 +75,7 @@ app.delete('/spots/:id', (req, res) => {
   Spot.remove({_id: req.params.id}).then(results => Spot.find().then(results => res.status(201).send(results)))
 })
 
-app.post('/spots/uploads/:id', parser.array('spotPhotos'), (req, res) => {
+app.post('/spots/uploads/:id', spotPhotoParser.array('spotPhotos'), (req, res) => {
 
   const id = req.params.id;
   const body = req.files

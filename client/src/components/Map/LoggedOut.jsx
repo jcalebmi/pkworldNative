@@ -15,7 +15,7 @@ class LoggedOut extends React.Component {
         <p className='bold underline'>{this.props.selected.address}</p>
         <p>{this.props.selected.description}</p>
         <p
-          onClick={() => this.props.changeFeed('content', this.props.selected._id)}
+          onClick={() => this.props.changeFeed('content', this.props.selected)}
           className="seeMore underline">Show Content?</p>
       </div>
     )

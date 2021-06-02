@@ -57,7 +57,6 @@ class EditSpot extends React.Component {
   }
 
   render () {
-    console.log(this.props.selected)
     return (
       this.state.delete === 'edit'
         ?<form
