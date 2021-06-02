@@ -63,7 +63,7 @@ let getLatLng = (body, route, id) => {
         country: body.country,
         jam: body.jam,
         gym: body.gym,
-        photos: null,
+        photos: [],
         lat: response.data.results[0].geometry.location.lat,
         lng: response.data.results[0].geometry.location.lng
       }

@@ -1,10 +1,12 @@
 import React from 'react';
 import uploadFiles from './helpers/uploadFiles.js';
+import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
 
 class AddPhotos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      photos: [],
       videos: [],
     }
     this.data = new FormData()
@@ -20,18 +22,12 @@ class AddPhotos extends React.Component {
       img.src = URL.createObjectURL(e.target.files[i]);
       img.className = 'thumbnail';
       imgCont.appendChild(img);
-      this.data.append('spots', e.target.files[i])
+      this.data.append('spotPhotos', e.target.files[i])
     }
   }
 
   handleSubmit (e) {
     e.preventDefault()
-    // let data = new FormData();
-    // this.state.photos.forEach((photo, index) => {
-    //   data.append('spots', photo);
-    //   // data[index] = photo;
-    // });
-    console.log(this.data);
     uploadFiles(this.data, this.props.spotId).then(res => console.log(res))
   }
 
@@ -47,7 +43,7 @@ class AddPhotos extends React.Component {
               accept="image/*"
               style={{display: 'none'}}
               type="file"
-              name="spots"
+              name="spotPhotos"
               onChange={this.handlePhotos}
               ref={fileInput => this.fileInput = fileInput}/>
               <button

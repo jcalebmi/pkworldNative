@@ -4,6 +4,8 @@ const path = require('path');
 const app = express();
 const multer = require('multer');
 const cors = require('cors');
+const cloudinary = require('cloudinary').v2;
+const {CloudinaryStorage} = require('multer-storage-cloudinary');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -12,21 +14,45 @@ app.use(express.static(path.join(__dirname, '/../', 'client', 'dist')));
 
 const geoCode = require('./api/geoCode.js');
 const getLatLng = require('./api/getLatLng.js');
+const spotPhotos = require('./helpers/spotPhotos.js');
 
 const {Event, User, Spot} = require('../database/index.js');
 
-var storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'client/dist/uploads/spots/')
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + uniqueSuffix)
-  }
-  // file.originalname
+const { CLOUD_NAME, CLOUD_API, CLOUD_SECRET, CLOUDINARY_URL} = require('../cloudinaryConfig.js');
+cloudinary.config({
+  cloud_name: CLOUD_NAME,
+  api_key: CLOUD_API,
+  api_secret: CLOUD_SECRET,
 })
 
-var upload = multer({ storage: storage })
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'spots'
+  },
+  allowedFormats: ["jpg", "png"],
+  transformation: [
+     { if: "w_gt_1900", width: 1900, crop: "scale" },
+     { if: "h_gt_1900", height: 1900, crop: "scale" },
+     { quality: "auto" },
+     { format: 'jpg' }
+  ]
+});
+const parser = multer({ storage: storage });
+
+// var storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, 'client/dist/uploads/spots/')
+//   },
+//   filename: function (req, file, cb) {
+//     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+//     cb(null, file.fieldname + '-' + uniqueSuffix)
+//   }
+//   // file.originalname
+// })
+
+// var upload = multer({ storage: storage })
+// upload.array('spots', 5)
 
 
 app.post('/spot', (req, res) => {
@@ -49,11 +75,13 @@ app.delete('/spots/:id', (req, res) => {
   Spot.remove({_id: req.params.id}).then(results => Spot.find().then(results => res.status(201).send(results)))
 })
 
-app.post('/spots/uploads/:id', upload.array('spots', 5), (req, res, next) => {
+app.post('/spots/uploads/:id', parser.array('spotPhotos'), (req, res) => {
 
   const id = req.params.id;
   const body = req.files
-  console.log(req, id)
+  const UUIDS = req.files;
+  console.log(UUIDS)
+  spotPhotos(UUIDS, id).then(Spot.find({'_id': id}).then(results => res.status(201).send(results)))
 })
 
 app.post('/events', (req, res) => {

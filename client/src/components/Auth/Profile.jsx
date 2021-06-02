@@ -40,7 +40,6 @@ class Profile extends React.Component {
         </div>
         <div>
           <img src={this.auth.currentUser.photoURL} />
-          <img src='../../../dist/uploads/spots/spots-48922701_10155754638811951_671420555072634880_n.jpg'/>
         </div>
       </div>
     )
