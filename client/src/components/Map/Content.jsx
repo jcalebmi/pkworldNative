@@ -33,10 +33,10 @@ class Content extends React.Component {
         <div id="content">
           <Carousel
             photos={this.state.photos}/>
-        </div>
-        <div className="videos">
-          <h2>Videos</h2>
+          <div className="videos">
+            <h2>Videos</h2>
           </div>
+        </div>
       </div>
     )
   }

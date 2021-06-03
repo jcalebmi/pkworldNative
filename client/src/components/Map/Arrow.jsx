@@ -1,4 +1,5 @@
 import React from 'react';
+import arrow from './assets/Daco_5924118.png';
 
 class Arrow extends React.Component {
   constructor(props) {
@@ -10,8 +11,7 @@ class Arrow extends React.Component {
       <div
         className={`arrow ${this.props.direction}`}
         onClick={this.props.arrowClick}>
-          hello
-          {this.props.glyph}
+          <img src={arrow}/>
       </div>
     )
   }

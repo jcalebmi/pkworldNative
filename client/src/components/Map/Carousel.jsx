@@ -30,21 +30,21 @@ class Carousel extends React.Component {
       <div className="photos">
         <h2>Photos</h2>
         <div className="photoSlide">
-        {this.state.index > 0
+        {/* {this.state.index > 0
         ? <Arrow
           direction="left"
           arrowClick={this.previous}
-          glyph="&#9964;" />
-        : null}
-          <div>
-            <img
-              src={this.props.photos[this.state.index]}/>
-          </div>
+          />
+        : null} */}
+
+        <img
+           src={this.props.photos[this.state.index]}/>
+
           {this.state.index < this.props.photos.length - 1
         ? <Arrow
           direction="right"
           arrowClick={this.next}
-          glyph="&#9954;"/>
+          />
         : null}
         </div>
       </div>
