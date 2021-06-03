@@ -15,7 +15,7 @@ class AddVideos extends React.Component {
   handleChange (e, index) {
     const {name, value} = e.target;
     const videos = this.state.videos;
-    videos[index][name] = value;
+    videos[index][name] = value.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/');
     this.setState({
       videos: videos
     })
@@ -30,11 +30,14 @@ class AddVideos extends React.Component {
   handleSubmit (e) {
     e.preventDefault()
     uploadVideos(this.state.videos, this.props.spotId).then(res => this.props.updateVideos(res))
+    this.setState({
+      videos: [{video: ""}]
+    })
   }
 
   render () {
     return (
-      <div>
+      <div className="submitVideos">
           <form
             onSubmit={this.handleSubmit}>
             {this.state.videos.map((video, index)=>
@@ -42,7 +45,8 @@ class AddVideos extends React.Component {
               <input
               type="url"
               name="video"
-              placeholder="Add Video URL"
+              placeholder="Add Full Youtube URL"
+              value={this.state.videos[index].video}
               onChange={(e) => this.handleChange(e, index)}></input>
             </div>
             )}

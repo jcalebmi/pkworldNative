@@ -483,6 +483,10 @@ span{
   text-align: center;
 }
 #addUser
+input.radio {
+  display: inline;
+}
+#addUser
 .formContainer {
   width: 60%;
   height: 60%;
@@ -733,6 +737,10 @@ h2 {
   overflow: scroll;
   padding: 0;
   margin: 0 auto;
+  border-top: solid #EEFBFB;
+}
+#content
+.submitVideos {
   border-top: solid #EEFBFB;
 }
 #content

@@ -23,6 +23,7 @@ let getLatLng = (body, route, id) => {
         state: body.state,
         country: body.country,
         pic: body.pic,
+        host: body.host,
         lat: response.data.results[0].geometry.location.lat,
         lng: response.data.results[0].geometry.location.lng
       }

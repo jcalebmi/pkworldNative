@@ -84,7 +84,7 @@ app.post('/spots/uploads/:id', spotPhotoParser.array('spotPhotos'), (req, res) =
 app.post('/spots/videoUploads/:id', (req, res) => {
   const id = req.params.id;
   const body = req.body
-  const videos = req.body.map(video => video.video);
+  const videos = req.body.map(video => video.video.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')).filter(video => video.includes('youtube.com/embed/'));
   Spot.findByIdAndUpdate({'_id': id}, {$push: {videos: [...videos]}}).then(results => Spot.find({'_id': id}).then(results => res.status(200).send(results)));
 })
 

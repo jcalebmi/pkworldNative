@@ -22,11 +22,10 @@ class AddSpot extends React.Component {
   onChange (e) {
     this.setState({
       [e.target.name]: e.target.value
-    },console.log(this.state.gym))
+    })
   }
   onSubmit (e) {
     e.preventDefault();
-    console.log(this.state.gym)
     const spot = {
         name: this.state.name,
         email: this.state.email,

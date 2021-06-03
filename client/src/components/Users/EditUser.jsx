@@ -18,6 +18,7 @@ class EditUser extends React.Component {
       state: this.props.user.state,
       country: this.props.user.country,
       pic: this.props.user.pic,
+      host: false,
       delete: 'edit'
     }
     this.handleChange = this.handleChange.bind(this);
@@ -134,7 +135,28 @@ class EditUser extends React.Component {
               onChange={this.handleChange}
               required/>
             </label>
-            <br></br>
+            <br/>
+            <h3>Host Athletes?</h3>
+            <label
+                className="radio"
+                htmlFor="host"> Yes:
+                <input
+                  className="radio"
+                  type="radio"
+                  name="host"
+                  value='true'
+                  onChange={this.handleChange}></input>
+              </label>
+            <label
+                className="radio"
+                htmlFor="host"> No:
+                <input
+                  className="radio"
+                  type="radio"
+                  name="host"
+                  value='false'
+                  onChange={this.handleChange}></input>
+              </label>
             <input type='submit'></input>
           </form>
           : <form onSubmit={this.handleSubmit}>

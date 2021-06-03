@@ -44,6 +44,7 @@ let userSchema = mongoose.Schema({
   city: String,
   state: String,
   country: String,
+  host: Boolean,
   pic: String,
   lat: Number,
   lng: Number,

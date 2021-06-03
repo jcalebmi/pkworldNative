@@ -20,7 +20,8 @@ class AddUser extends React.Component {
       city: '',
       state: '',
       country: '',
-      pic: this.auth.currentUser.photoURL
+      pic: this.auth.currentUser.photoURL,
+      host: false,
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -117,7 +118,28 @@ class AddUser extends React.Component {
               onChange={this.handleChange}
               required/>
             </label>
-            <br></br>
+            <br/>
+            <h3>Host Athletes?</h3>
+            <label
+                className="radio"
+                htmlFor="host"> Yes:
+                <input
+                  className="radio"
+                  type="radio"
+                  name="host"
+                  value='true'
+                  onChange={this.handleChange}></input>
+              </label>
+            <label
+                className="radio"
+                htmlFor="host"> No:
+                <input
+                  className="radio"
+                  type="radio"
+                  name="host"
+                  value='false'
+                  onChange={this.handleChange}></input>
+              </label>
             <input type='submit'></input>
           </form><br/>
           <div

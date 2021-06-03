@@ -14,7 +14,7 @@ class Content extends React.Component {
     this.auth = firebase.auth();
     this.state = {
       photos: this.props.spot.photos,
-      videos: this.props.spot.videos
+      videos: this.props.spot.videos.map(video => video)
     }
     this.updatePhotos = this.updatePhotos.bind(this);
     this.updateVideos = this.updateVideos.bind(this);
@@ -47,8 +47,6 @@ class Content extends React.Component {
               <img src={photo} />
             </div>)}
           </Carousel>
-          {/* <Carousel
-            photos={this.state.photos}/> */}
         {this.auth.currentUser
         ? <AddVideos
             updateVideos={this.updateVideos}
@@ -59,9 +57,7 @@ class Content extends React.Component {
             <Carousel showThumbs={false}>
               {this.state.videos.map((video, index) =>
               <div key={index}>
-                <video controls>
-                  <source src={video} type="video/mp4"/>
-                </video>
+                <iframe width="560" height="315" src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>)}
             </Carousel>
           </div>

@@ -8,6 +8,8 @@ import {
   faTwitter,
   faInstagram
 } from "@fortawesome/free-brands-svg-icons";
+import no from './assets/Boton-mal.svg';
+import yes from './assets/dwcheckyes.svg';
 
 class User extends React.Component {
   constructor(props) {
@@ -30,7 +32,10 @@ class User extends React.Component {
                   <span>State: {this.props.user.state}</span><br></br>
                   <span>Country: {this.props.user.country}</span><br/>
                   <span>Email: {this.props.user.email}</span><br></br>
-                  <span>Phone: {this.props.user.phone}</span>
+                  <span>Phone: {this.props.user.phone}</span><br/>
+                  <span>Hosts Athletes: <br/>{this.props.user.host
+                    ? <img src={yes} style={{width: '5vw', height:'auto'}}/>
+                    : <img src={no} style={{width: '5vw', height:'auto'}}/>}</span>
                 </div>
               </div>
             </div>

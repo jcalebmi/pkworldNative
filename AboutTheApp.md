@@ -23,8 +23,7 @@ To Do
 *Map*
 -Fix click issue
 *Spots*
--video upload
--Modal for viewing pic and video
+-carousel for spot marker
 -Report for bad spots
 -Report for innapropriate content
 
@@ -32,6 +31,7 @@ To Do
 -Report
 
 *Users*
+-Circle image
 -Report
 
 *Profile*
