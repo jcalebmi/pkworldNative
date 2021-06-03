@@ -76,12 +76,16 @@ app.delete('/spots/:id', (req, res) => {
 })
 
 app.post('/spots/uploads/:id', spotPhotoParser.array('spotPhotos'), (req, res) => {
-
   const id = req.params.id;
   const body = req.files
   const UUIDS = req.files;
-  console.log(UUIDS)
   spotPhotos(UUIDS, id).then(Spot.find({'_id': id}).then(results => res.status(201).send(results)))
+})
+app.post('/spots/videoUploads/:id', (req, res) => {
+  const id = req.params.id;
+  const body = req.body
+  const videos = req.body.map(video => video.video);
+  Spot.findByIdAndUpdate({'_id': id}, {$push: {videos: [...videos]}}).then(results => Spot.find({'_id': id}).then(results => res.status(200).send(results)));
 })
 
 app.post('/events', (req, res) => {

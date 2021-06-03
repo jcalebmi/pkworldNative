@@ -1,7 +1,10 @@
 import React from 'react';
 import AddPhotos from './AddPhotos.jsx';
+import AddVideos from './AddVideos.jsx';
 import {Image, Video, Transformation, CloudinaryContext} from 'cloudinary-react';
-import Carousel from './Carousel.jsx';
+// import Carousel from './Carousel.jsx';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import firebase from 'firebase';
 import 'firebase/auth';
 
@@ -14,12 +17,18 @@ class Content extends React.Component {
       videos: this.props.spot.videos
     }
     this.updatePhotos = this.updatePhotos.bind(this);
+    this.updateVideos = this.updateVideos.bind(this);
   }
 
   updatePhotos (data) {
     this.setState({
       photos: data.photos
-    }, console.log(this.state.photos))
+    })
+  }
+  updateVideos (data) {
+    this.setState({
+      videos: data
+    })
   }
 
   render () {
@@ -31,10 +40,28 @@ class Content extends React.Component {
             spotId={this.props.spot._id}/>
         : null}
         <div id="content">
-          <Carousel
-            photos={this.state.photos}/>
+          <h2>Photos</h2>
+          <Carousel>
+            {this.state.photos.map((photo, index) =>
+            <div key={index}>
+              <img src={photo} />
+            </div>)}
+          </Carousel>
+          {/* <Carousel
+            photos={this.state.photos}/> */}
+        {this.auth.currentUser
+        ? <AddVideos
+            updateVideos={this.updateVideos}
+            spotId={this.props.spot._id}/>
+          : null}
           <div className="videos">
             <h2>Videos</h2>
+            <Carousel showThumbs={false}>
+              {this.state.videos.map((video, index) =>
+              <div key={index}>
+                <embed type="video" src={video}/>
+              </div>)}
+            </Carousel>
           </div>
         </div>
       </div>

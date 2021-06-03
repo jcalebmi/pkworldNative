@@ -39,7 +39,7 @@ class AddPhotos extends React.Component {
             encType="multipart/form-data">
             <input
               multiple
-              accept="image/*"
+              accept="image/png, image/gif, image/jpeg"
               style={{display: 'none'}}
               type="file"
               name="spotPhotos"

@@ -709,11 +709,13 @@ img.google {
   width:100%;
   height: fit-content;
   background-color: #007CC7;
-  border: solid red;
+  border-top: solid #EEFBFB;
   margin: 0;
 }
 #content
 h2 {
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 #content
@@ -731,7 +733,7 @@ h2 {
   overflow: scroll;
   padding: 0;
   margin: 0 auto;
-  border: solid orange
+  border-top: solid #EEFBFB;
 }
 #content
 .photos
@@ -755,45 +757,11 @@ img {
   margin: 0 auto;
   padding: 0;
 }
-#content
-.arrow.left{
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  top: 50vh;
-  right: 10vw;
-}
-#content
-.arrow.left
-img{
-  height: 40vh;
-  width: 6vw;
-  margin: 0;
-  padding:0;
-  transform: scaleX(-1);
-}
-
-#content
-.arrow.right{
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  left: 10vw;
-}
-
-#content
-.arrow.right
-img{
-  height: 40vh;
-  width: 6vw;
-  margin: 0;
-  padding:0;
-}
 
 #content
 .videos {
-  padding-top: 5vh;
+  margin: 0;
+  padding: 0;
 }
 #thumbnail
 img.thumbnail {
