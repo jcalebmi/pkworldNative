@@ -59,7 +59,9 @@ class Content extends React.Component {
             <Carousel showThumbs={false}>
               {this.state.videos.map((video, index) =>
               <div key={index}>
-                <embed type="video" src={video}/>
+                <video controls>
+                  <source src={video} type="video/mp4"/>
+                </video>
               </div>)}
             </Carousel>
           </div>

@@ -30,7 +30,7 @@ const spotPhotoStorage = new CloudinaryStorage({
   params: {
     folder: 'spots'
   },
-  allowedFormats: ["jpg", "png"],
+  allowedFormats: ["jpg", "png", "jpeg", "gif"],
   transformation: [
      { if: "w_gt_1900", width: 1900, crop: "scale" },
      { if: "h_gt_1900", height: 1900, crop: "scale" },
