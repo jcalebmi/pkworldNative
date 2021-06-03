@@ -14,7 +14,7 @@ class Content extends React.Component {
     this.auth = firebase.auth();
     this.state = {
       photos: this.props.spot.photos,
-      videos: this.props.spot.videos.map(video => video)
+      videos: this.props.spot.videos
     }
     this.updatePhotos = this.updatePhotos.bind(this);
     this.updateVideos = this.updateVideos.bind(this);

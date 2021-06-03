@@ -33,8 +33,6 @@ class AddSpot extends React.Component {
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
         gym: this.state.gym,
-        videos: this.state.video,
-        photos: this.state.photos
       }
 
     createSpot(spot).then(data => this.props.setMarkers(data));

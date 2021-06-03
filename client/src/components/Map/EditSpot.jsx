@@ -13,7 +13,6 @@ class EditSpot extends React.Component {
       phone: this.props.selected.phone,
       email: this.auth.currentUser.email,
       description: this.props.selected.description,
-      video: this.props.selected.video,
       gym: this.props.selected.gym,
       delete: 'edit'
     }
@@ -26,10 +25,11 @@ class EditSpot extends React.Component {
   onChange (e) {
     this.setState({
       [e.target.name]: e.target.value
-    }, console.log(this.state.gym))
+    })
   }
   onSubmit (e) {
     e.preventDefault();
+    console.log(this.props)
     const spot = {
         name: this.state.name,
         email: this.state.email,
@@ -37,7 +37,6 @@ class EditSpot extends React.Component {
         lat: this.props.coordinates.lat,
         lng: this.props.coordinates.lng,
         gym: this.state.gym,
-        videos: this.state.video
       }
 
     editSpot(this.props.selected._id, spot, this.state.delete).then(data => this.props.setMarkers(data));
@@ -110,7 +109,12 @@ class EditSpot extends React.Component {
       :<form
           id="deleteSpot"
           onSubmit={this.onSubmit}>
-        <h2>Delete This Spot?</h2>
+        <h2 className="seeMore"><span
+              onClick={this.edit}
+              >Edit</span> |
+              <span
+              onClick={this.delete}> Delete</span></h2>
+        <h3>Delete This Spot?</h3>
         <input
           type="submit"
           value="Delete"></input>

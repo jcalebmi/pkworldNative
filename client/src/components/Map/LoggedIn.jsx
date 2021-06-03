@@ -3,6 +3,8 @@ import AddSpot from './AddSpot.jsx';
 import EditSpot from './EditSpot.jsx';
 import firebase from 'firebase';
 import 'firebase/auth';
+import { Carousel } from 'react-responsive-carousel';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 class LoggedIn extends React.Component {
   constructor(props) {
@@ -28,6 +30,16 @@ class LoggedIn extends React.Component {
             <h2 className="submitSpot">{this.props.selected.name || 'Submit Spot?'}</h2>
             <p className='bold underline'>{this.props.selected.address}</p>
             <p>{this.props.selected.description}</p>
+              {this.props.selected.photos
+                ? <div id="markerContent">
+                  <Carousel showThumbs={false}>
+                    {this.props.selected.photos.map((photo, index) =>
+                    <div key={index}>
+                      <img src={photo} />
+                    </div>)}
+                  </Carousel>
+                </div>
+                : null }
           </div>
           : <EditSpot
               setMarkers={this.props.setMarkers}
