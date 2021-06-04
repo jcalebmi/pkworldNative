@@ -22,7 +22,9 @@ Now mark all your favorite training locations for a world of easy to find spots.
 To Do
 *Map*
 -Fix click issue
+
 *Spots*
+-Delete request for spots photos
 -Report for bad spots
 -Report for innapropriate content
 

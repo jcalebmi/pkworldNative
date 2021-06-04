@@ -4,7 +4,6 @@ import 'firebase/auth';
 import SearchLocations from './SearchLocations.jsx';
 import SearchSpots from './SearchSpots.jsx';
 
-
 class MapInfo extends React.Component {
   constructor(props) {
     super(props);
