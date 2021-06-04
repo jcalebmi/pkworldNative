@@ -37,7 +37,9 @@ class AddVideos extends React.Component {
 
   render () {
     return (
-      <div className="submitVideos">
+      <div
+        className="submitVideos"
+        style={{textAlign:'right'}}>
           <form
             onSubmit={this.handleSubmit}>
             {this.state.videos.map((video, index)=>

@@ -73,6 +73,11 @@ class App extends React.Component {
             ? <Content spot={this.state.spot}/>
             :null}
         </div>
+        <footer>
+          <a
+          style={{color: 'white'}}
+          href="mailto:calebiuliano@gmail.com">Developed by Caleb Iuliano</a>
+        </footer>
       </div>
     )
   }

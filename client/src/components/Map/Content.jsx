@@ -41,6 +41,9 @@ class Content extends React.Component {
         : null}
         <div id="content">
           <h2>Photos</h2>
+          {!this.state.photos.length
+            ? <p style={{textAlign: 'center'}}>No Photos Yet</p>
+            : null}
           <Carousel>
             {this.state.photos.map((photo, index) =>
             <div key={index}>
@@ -54,6 +57,9 @@ class Content extends React.Component {
           : null}
           <div className="videos">
             <h2>Videos</h2>
+            {!this.state.videos.length
+            ? <p style={{textAlign: 'center'}}>No Videos Yet</p>
+            : null}
             <Carousel>
               {this.state.videos.map((video, index) =>
               <div key={index}>

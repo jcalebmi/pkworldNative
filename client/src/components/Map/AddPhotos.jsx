@@ -32,7 +32,7 @@ class AddPhotos extends React.Component {
 
   render () {
     return (
-      <div>
+      <div style={{textAlign:'right'}}>
           <form
             method="post"
             onSubmit={this.handleSubmit}

@@ -31,7 +31,7 @@ const findEvents = (value, events, location, sortBy) => {
       return event;
     })
   }
-  console.log(sortBy)
+
   if (sortBy === 'nearest') {
     filter.sort((a, b) => {
       const distanceA = Math.sqrt(((a.lat - location.lat) ** 2) + ((a.lng - location.lng) ** 2) );

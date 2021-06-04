@@ -12,16 +12,10 @@ class UserInfo extends React.Component {
     return (
       <div className="info">
         <p>
-          Search for other athletes or add your info to the user list.
-          </p>
-          <div>
-            {this.auth.currentUser
-              ? null
-              : <span
-                  className="seeMore signIn"
-                  onClick={() => {this.props.changeFeed('Profile')}}>Sign in to join list.
-                </span>}
-          </div>
+          Use the search bar to find athletes by name or location and find their contact info.
+          If you have allowed location services, the list will be sorted with athletes closed to you at the top.
+          You can add yourself to the list if you would like other athletes to be able to find you.
+        </p>
       </div>
     )
   }

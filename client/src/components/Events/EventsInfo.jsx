@@ -11,7 +11,7 @@ class EventsInfo extends React.Component {
     return (
       <div className="info">
         <p>
-          Sort events by nearest to you or by date, search for events in the search bar, or add events to the eventList.
+          Sort events by nearest to you or by date, search for events in the search bar, or add events to the eventList. If you have location services blocked the nearest option will be sorted based on a default location rather than your own.
           </p>
       </div>
     )

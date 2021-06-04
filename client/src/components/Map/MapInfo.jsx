@@ -14,7 +14,9 @@ class MapInfo extends React.Component {
     return (
       <div className="info">
         <p>
-          Search for places to train by address or by spot name. If you know the name of a spot you can search by name and see if it has been added to the map.
+          If you want to search a location or address, you can search locations to find any address in the world, and add a spot to the map.
+
+          If you want to search for a spot by name, you can search spots and see if someone has added the spot to the map yet.
           <br />
         </p>
         <div>
