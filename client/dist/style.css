@@ -527,7 +527,7 @@ input {
 #auth
 div.userInfoContainer {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 33% 33% 33%;
   text-align: center;
   margin: 0 auto;
   padding: 0;
@@ -537,13 +537,48 @@ div.userInfo {
   width: 100%;
   padding: 0;
   margin: 0;
+}
+#auth
+div.contentContainer {
+  width: 100%;
+  padding: 0;
+  padding-left: 10%;
+  padding-top: 5vh;
+  margin: 0;
+  text-align: center;
+}
+#auth
+.contents {
+  width: 100%;
+  padding: 0;
+  margin: 0;
   text-align: left;
+}
+#auth
+.userInfo
+.profilePic {
+  text-align: center;
 }
 #auth
 div.profilePic {
   width: 100%;
   padding: 0 1vw;
-  text-align: right;
+  text-align: center;
+}
+#auth
+img.profilePic {
+  width: 40%;
+}
+#auth
+.userInfo {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+#auth
+.userInfo
+h3.underline {
+  color: #203647;
+  display: inline;
 }
 #auth
 div.userInfo
