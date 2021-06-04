@@ -26,9 +26,12 @@ class LoggedOut extends React.Component {
             </Carousel>
           </div>
         : null}
+        {this.props.selected.name ?
         <p
           onClick={() => this.props.changeFeed('content', this.props.selected)}
-          className="seeMore underline">Show Content?</p>
+          className="seeMore underline">
+          Show Content?
+        </p> : null}
       </div>
     )
   }
