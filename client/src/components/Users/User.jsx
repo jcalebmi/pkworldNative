@@ -40,18 +40,18 @@ class User extends React.Component {
               </div>
             </div>
             <div className="socialMedia">
-              <a href={this.props.user.youtube}
+              <a href={this.props.user.youtube || null}
                 className="youtube social">
                 <FontAwesomeIcon icon={faYoutube} size="1x" />
               </a>
-              <a href={this.props.user.facebook}
+              <a href={this.props.user.facebook || null}
                 className="facebook social">
                 <FontAwesomeIcon icon={faFacebook} size="1x" />
               </a>
-              <a href={this.props.user.twitter} className="twitter social">
+              <a href={this.props.user.twitter || null} className="twitter social">
                 <FontAwesomeIcon icon={faTwitter} size="1x" />
               </a>
-              <a href={this.props.user.instagram}
+              <a href={this.props.user.instagram || null}
                 className="instagram social">
                 <FontAwesomeIcon icon={faInstagram} size="1x" />
               </a><br/>

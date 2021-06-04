@@ -158,7 +158,8 @@ input {
 
 button.location {
   color: black;
-  background-color: transparent;
+  background-color: whitesmoke;
+  opacity: .7;
   size: 10vw;
   position: absolute;
   z-index: 1;
@@ -529,31 +530,33 @@ div.userInfoContainer {
   grid-template-columns: 50% 50%;
   text-align: center;
   margin: 0 auto;
+  padding: 0;
 }
 #auth
 div.userInfo {
   width: 100%;
-  padding: 0 1vw;
+  padding: 0;
+  margin: 0;
   text-align: left;
 }
 #auth
 div.profilePic {
   width: 100%;
   padding: 0 1vw;
-  text-align: left;
+  text-align: right;
 }
 #auth
 div.userInfo
 p {
-
   text-align: left;
   margin: 0 auto;
+  padding: 0;
 }
 #auth
 div.userInfo
 h3 {
   color: #12232E;
-  margin-bottom: 1%;
+  margin-bottom: 0;
 }
 #auth
 .signInButton {

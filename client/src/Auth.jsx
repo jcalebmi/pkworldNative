@@ -20,8 +20,6 @@ const Auth = () => {
   const [user] = useAuthState(auth);
   const [err, setErr] = useState(null);
 
-  console.log('ERR',err)
-
   return (
     <FirebaseAuthProvider {...config} firebase={firebase}>
       <div id='auth'>
@@ -37,7 +35,7 @@ const Auth = () => {
             >
               <img className="google" src={google} />
             </button><br/>
-            <button
+            {/* <button
             onClick={() => {
               const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
               firebase.auth().signInWithPopup(facebookAuthProvider)
@@ -53,7 +51,7 @@ const Auth = () => {
               }}
             >
               Sign in with Facebook
-            </button>
+            </button> */}
             {err !== null
             ? <div style={{color:'red', backgroundColor: 'black'}}>
                 <p>{err.err}</p>

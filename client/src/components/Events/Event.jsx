@@ -33,7 +33,7 @@ class Event extends React.Component {
                   <p>
                     Date: {moment(this.props.event.date[0]).format("MMM Do YY")} - {moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
                     Description: {this.props.event.description}<br/>
-                    Website: {this.props.event.website}<br/>
+                    Website: {this.props.event.website? <a href={this.props.event.website}>Go To Site</a> : null}<br/>
                     Address: {this.props.event.address}<br/>
                     City: {this.props.event.city}<br/>
                     State: {this.props.event.state}<br/>
@@ -62,7 +62,7 @@ class Event extends React.Component {
                   <p>
                   Date: {moment(this.props.event.date[0]).format("MMM Do YY")} - {moment(this.props.event.date[1]).format("MMM Do YY")}<br/>
                   Description: {this.props.event.description}<br/>
-                  Website: {this.props.event.website}<br/>
+                  Website: {this.props.event.website? <a href={this.props.event.website}>Go To Site</a> : null} <br/>
                   </p>
                 </div>
                 <br/>

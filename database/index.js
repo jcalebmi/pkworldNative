@@ -15,6 +15,7 @@ mongoose.Promise = global.Promise;
 let eventSchema = mongoose.Schema({
   name: String,
   email: String,
+  username: String,
   date: {type: [Date], required: true},
   description: String,
   website: String,
@@ -35,12 +36,15 @@ let Event = mongoose.model('Event', eventSchema);
 
 let userSchema = mongoose.Schema({
   displayName: String,
+  firstName: String,
+  lastName: String,
   facebook: String,
   instagram: String,
   youtube: String,
   twitter: String,
   phone: Number,
   email: {type: String, unique: true},
+  userName: {type: String, unique: true},
   city: String,
   state: String,
   country: String,
@@ -55,6 +59,7 @@ let User = mongoose.model('User', userSchema);
 
 let spotSchema = mongoose.Schema({
   name: String,
+  userName: String,
   email: String,
   description: String,
   address: String,

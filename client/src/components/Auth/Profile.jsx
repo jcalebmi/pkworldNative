@@ -37,7 +37,7 @@ class Profile extends React.Component {
                 <h3 className="bold underline">City:</h3> {this.state.user.city}<br/>
                 <h3 className="bold underline">State:</h3> {this.state.user.state}<br/>
                 <h3 className="bold underline">Country:</h3> {this.state.user.country}<br/>
-                <h3>Hosts Athletes:</h3><br/>
+                <h3 className="bold underline">Hosts Athletes:</h3><br/>
                 {this.state.user.host
                   ? <img src={yes} style={{width: '5vw', height:'auto'}}/>
                   : <img src={no} style={{width: '5vw', height:'auto'}}/>}

@@ -8,9 +8,9 @@ let geoCode = (body, id) => {
   };
 
   return axios.get(options.url).then(function (response) {
-    console.log(body)
     const data = {
       name: body.name,
+      userName: body.userName,
       email: body.email,
       description: body.description,
       address: response.data.results[0].formatted_address,
