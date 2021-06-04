@@ -45,7 +45,7 @@ class Profile extends React.Component {
               : null}
         </div>
         <div className="profilePic">
-          <img src={this.auth.currentUser.photoURL} />
+          <img className="profilePic" src={this.auth.currentUser.photoURL} />
         </div>
       </div>
     )

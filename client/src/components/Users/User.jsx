@@ -24,7 +24,7 @@ class User extends React.Component {
             <div className="userInfo">
               <div>
                 <h3>{this.props.user.displayName}</h3>
-                <img src={this.props.user.pic}></img>
+                <img className="profilePic" src={this.props.user.pic}></img>
               </div>
               <div className="contentContainer">
                 <div className="contents">

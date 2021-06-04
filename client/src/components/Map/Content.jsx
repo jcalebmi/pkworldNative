@@ -54,7 +54,7 @@ class Content extends React.Component {
           : null}
           <div className="videos">
             <h2>Videos</h2>
-            <Carousel showThumbs={false}>
+            <Carousel>
               {this.state.videos.map((video, index) =>
               <div key={index}>
                 <iframe width="560" height="315" src={video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>

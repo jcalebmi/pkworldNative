@@ -413,6 +413,10 @@ li
   display: grid;
   grid-template-columns: 50% 50%;
 }
+
+img.profilePic {
+  border-radius: 50%;
+}
 #users
 li
 .contents {

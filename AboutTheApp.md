@@ -23,7 +23,6 @@ To Do
 *Map*
 -Fix click issue
 *Spots*
--carousel for spot marker
 -Report for bad spots
 -Report for innapropriate content
 
@@ -31,13 +30,11 @@ To Do
 -Report
 
 *Users*
--Circle image
 -Report
 
 *Profile*
 -style
 -Delete & Put request
--Profile Pic
 
 *Server*
 -Possibly add Redis
@@ -50,6 +47,5 @@ To Do
 *Most Important*
 -Style
 -Put and Delete on Profile
--Image carousel
 
 *README*
