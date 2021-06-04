@@ -11,7 +11,7 @@ import EventsInfo from './EventsInfo.jsx';
 import findEvents from './helpers/findEvents.js';
 import getEvents from './helpers/getEvents.js';
 import submitEvent from './helpers/submitEvent.js';
-import editEvent from './helpers/EditEvent.js';
+import editEvent from './helpers/editEvent.js';
 
 class Events extends React.Component {
   constructor(props) {
