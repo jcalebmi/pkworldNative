@@ -52,6 +52,7 @@ let userSchema = mongoose.Schema({
   pic: String,
   lat: Number,
   lng: Number,
+  shareEmail: Boolean,
   reported: Number
 });
 

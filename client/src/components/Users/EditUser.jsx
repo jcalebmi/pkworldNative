@@ -136,7 +136,7 @@ class EditUser extends React.Component {
               required/>
             </label>
             <br/>
-            <h3>Host Athletes?</h3>
+            <h3 className="host">Host Athletes?</h3>
             <label
                 className="radio"
                 htmlFor="host"> Yes:
