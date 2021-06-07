@@ -29,7 +29,6 @@ class EditSpot extends React.Component {
   }
   onSubmit (e) {
     e.preventDefault();
-    console.log(this.props)
     const spot = {
         name: this.state.name,
         email: this.state.email,

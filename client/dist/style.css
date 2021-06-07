@@ -414,6 +414,10 @@ li
   display: grid;
   grid-template-columns: 50% 50%;
 }
+.profilePic
+h3 {
+  color: #EEFBFB !important;
+}
 
 img.profilePic {
   border-radius: 50%;

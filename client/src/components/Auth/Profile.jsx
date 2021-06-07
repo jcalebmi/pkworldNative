@@ -34,7 +34,7 @@ class Profile extends React.Component {
   }
 
   getUser () {
-    getUserInfo(this.props.user.email)
+    getUserInfo(this.props.user.providerData[0].email)
     .then(data => this.setState({
       user: data
     }))
