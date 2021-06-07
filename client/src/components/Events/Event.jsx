@@ -44,7 +44,7 @@ class Event extends React.Component {
                 </div>
                 <br/>
                 <span className="bold seeMore" onClick={this.showMore}>Close</span><br/>
-                {this.auth.currentUser && this.props.event.email === this.auth.currentUser.email
+                {this.auth.currentUser && this.props.event.email === this.auth.providerData[0].email
               ? <div id="deleteLi">
                   <div></div>
                   <span
@@ -69,7 +69,7 @@ class Event extends React.Component {
                 <span
                   className="bold seeMore"
                   onClick={this.showMore}>More</span><br/>
-                {this.auth.currentUser && this.props.event.email === this.auth.currentUser.email
+                {this.auth.currentUser && this.props.event.email === this.auth.providerData[0].email
               ? <div id="deleteLi">
                   <div></div>
                   <span

@@ -79,8 +79,8 @@ class Profile extends React.Component {
       <div>
         <div className="userInfo">
           <div className="profilePic">
-            <h3>{this.auth.currentUser.displayName}</h3>
-            <img className="profilePic" src={this.auth.currentUser.photoURL}></img>
+            <h3>{this.auth.currentUser.providerData[0].displayName}</h3>
+            <img className="profilePic" src={this.auth.currentUser.providerData[0].photoURL}></img>
           </div>
           {this.state.edit
             ? <EditUser
@@ -125,7 +125,7 @@ class Profile extends React.Component {
               <FontAwesomeIcon icon={faInstagram} size="1x" />
             </a><br/>
           </div> : null}
-        {this.auth.currentUser && this.state.user && this.state.user.email === this.auth.currentUser.email
+        {this.auth.currentUser && this.state.user && this.state.user.email === this.auth.currentUser.providerData[0].email
           ? <div id="deleteLi">
               <div></div>
               <span

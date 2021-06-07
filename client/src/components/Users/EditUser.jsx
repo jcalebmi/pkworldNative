@@ -7,13 +7,13 @@ class EditUser extends React.Component {
     super(props);
     this.auth = firebase.auth();
     this.state = {
-      displayName: this.auth.currentUser.displayName,
+      displayName: this.auth.currentUser.providerData[0].displayName,
       facebook: this.props.user.facebook,
       instagram: this.props.user.instagram,
       youtube: this.props.user.youtube,
       twitter: this.props.user.twitter,
       phone: this.props.user.phone,
-      email: this.auth.currentUser.email,
+      email: this.auth.currentUser.providerData[0].email,
       city: this.props.user.city,
       state: this.props.user.state,
       country: this.props.user.country,

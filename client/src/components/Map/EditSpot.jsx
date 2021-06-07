@@ -11,7 +11,7 @@ class EditSpot extends React.Component {
     this.state = {
       name: this.props.selected.name,
       phone: this.props.selected.phone,
-      email: this.auth.currentUser.email,
+      email: this.auth.currentUser.providerData[0].email,
       description: this.props.selected.description,
       gym: this.props.selected.gym,
       delete: 'edit'

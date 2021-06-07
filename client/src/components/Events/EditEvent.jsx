@@ -9,7 +9,7 @@ class EditEvent extends React.Component {
     this.auth = firebase.auth();
     this.state = {
       name: this.props.event.name,
-      email: this.auth.currentUser.email,
+      email: this.auth.currentUser.providerData[0].email,
       description: this.props.event.description,
       website: this.props.event.website,
       address: this.props.event.address,

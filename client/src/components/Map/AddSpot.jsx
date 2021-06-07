@@ -9,7 +9,7 @@ class AddSpot extends React.Component {
     this.auth = firebase.auth();
     this.state = {
       name: '',
-      email: this.auth.currentUser.email,
+      email: this.auth.currentUser.providerData[0].email,
       description: '',
       video: [],
       photos: [],

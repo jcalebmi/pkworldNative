@@ -10,13 +10,13 @@ class AddUser extends React.Component {
     super(props);
     this.auth = firebase.auth();
     this.state = {
-      displayName: this.auth.currentUser.displayName,
+      displayName: this.auth.currentUser.providerData[0].displayName,
       facebook: '',
       instagram: '',
       youtube: '',
       twitter: '',
       phone: '',
-      email: this.auth.currentUser.email,
+      email: this.auth.currentUser.providerData[0].email,
       city: '',
       state: '',
       country: '',

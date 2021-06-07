@@ -30,6 +30,7 @@ const Auth = () => {
               className="signInButton"
               onClick={() => {
               const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+              googleAuthProvider.addScope("email");
               firebase.auth().signInWithPopup(googleAuthProvider);
               }}
             >

@@ -56,7 +56,7 @@ class User extends React.Component {
                 <FontAwesomeIcon icon={faInstagram} size="1x" />
               </a><br/>
             </div>
-            {this.auth.currentUser && this.props.user.email === this.auth.currentUser.email
+            {this.auth.currentUser && this.props.user.email === this.auth.currentUser.providerData[0].email
               ? <div id="deleteLi">
                   <div></div>
                   <span
