@@ -46,9 +46,7 @@ class Users extends React.Component {
   }
 
   submitInfo (data) {
-    console.log('DATA',data);
     submitUser(data).then(res => {
-      console.log('RES', res);
       const sort = findUsers('', res, this.props.location);
       this.setState({
         users: res,
