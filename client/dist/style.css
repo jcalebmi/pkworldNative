@@ -176,7 +176,7 @@ img {
 }
 .popOver {
   color:black;
-  z-index:4;
+  z-index:99;
   background-color: white;
   border: solid black;
 }
