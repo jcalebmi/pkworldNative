@@ -185,7 +185,7 @@ img {
   border: none;
   border-bottom: solid black;
   list-style: none;
-  overflow: scroll;
+  overflow-x: hidden;
 }
 .popOver ul {
   width: 100%;
@@ -347,8 +347,9 @@ li
 /* Add Events */
 #addEvent {
   width: 93%;
-  height: 100%;
-  position: absolute;
+  height: 93%;
+  z-index: 1;
+  position: fixed;
   background-color: none;
   margin: 0 auto;
   padding: 0 auto;
