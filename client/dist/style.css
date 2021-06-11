@@ -12,6 +12,7 @@ html, body {
   align-items: center;
   width: 100%;
   height: fit-content;
+  margin-top: 15%;
 }
 
 .bold {
@@ -81,10 +82,14 @@ ul.dataLists{
 
 /* Nav */
 #navigation {
+  position: fixed;
+  background-color: #007CC7;;
+  top: 1px;
   width: 95vw;
   text-align: center;
   border: solid #EEFBFB;
   margin: auto;
+  z-index: 5;
 }
 
 #navigation

@@ -76,7 +76,7 @@ class Profile extends React.Component {
 
   render () {
     return (
-      <div>
+      <div id="profile">
         <div className="userInfo">
           <div className="profilePic">
             <h3>{this.auth.currentUser.providerData[0].displayName}</h3>
