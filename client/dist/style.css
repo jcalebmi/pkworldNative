@@ -12,7 +12,7 @@ html, body {
   align-items: center;
   width: 100%;
   height: fit-content;
-  margin-top: 15%;
+  margin-top: 12vh;
 }
 
 .bold {
@@ -176,7 +176,7 @@ img {
 }
 .popOver {
   color:black;
-  z-index:2;
+  z-index:4;
   background-color: white;
   border: solid black;
 }
