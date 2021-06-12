@@ -1,11 +1,17 @@
+:root {
+  --primary-color: #007CC7;
+  --secondary-color: #4DA8DA;
+  --tertiary-color: #EEFBFB;
+  --form-bg: #203647;
+}
 html, body {
-  color: #EEFBFB;
+  color: var(--tertiary-color);
   background-image: linear-gradient(45deg, #12232E 0%, #090979 45%, #007CC7 55%);
   background-repeat: no-repeat;
   height: 200vh;
 }
 #pkworld {
-  color: #EEFBFB;
+  color: var(--tertiary-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +28,7 @@ html, body {
   text-decoration: underline;
 }
 .highlight {
-  background-color: #203647;
+  background-color: var(--form-bg);
 }
 #deleteLi {
   display: grid;
@@ -48,8 +54,8 @@ span:hover{
 .info{
   border-radius: 5%;
   text-align: center;
-  border: solid #EEFBFB;
-  background-color: #007CC7;
+  border: solid var(--tertiary-color);
+  background-color: var(--primary-color);
   width: 90%;
   margin: 0 auto;
 }
@@ -63,8 +69,8 @@ div {
   text-align: center;
 }
 li.dataLists{
-  border: solid #EEFBFB;
-  background-color: #4DA8DA;
+  border: solid var(--tertiary-color);
+  background-color: var(--secondary-color);
   list-style: none;
   padding: 0;
   border-width: .1em 0;
@@ -75,7 +81,7 @@ ul.dataLists{
   margin: 0 auto;
   margin-top: 1em;
   border-radius: 5%;
-  border: solid #EEFBFB;
+  border: solid var(--tertiary-color);
   max-height: fit-content;
   overflow-y: hidden;
 }
@@ -83,18 +89,18 @@ ul.dataLists{
 /* Nav */
 #navigation {
   position: fixed;
-  background-color: #007CC7;;
+  background-color: var(--primary-color);
   top: 0px;
   width: 100vw;
   text-align: center;
-  border: solid #EEFBFB;
+  border: solid var(--tertiary-color);
   margin: auto;
   z-index: 5;
 }
 
 #navigation
 button {
-  color: #EEFBFB;
+  color: var(--tertiary-color);
   border: none;
   background-color: transparent;
   outline: none;
@@ -115,9 +121,9 @@ button {
   margin-bottom: 1em;
   border-radius: 5%;
   text-align: center;
-  color: #EEFBFB;
-  background-color: #007CC7;
-  border: solid #EEFBFB;
+  color: var(--tertiary-color);
+  background-color: var(--primary-color);
+  border: solid var(--tertiary-color);
 }
 #map
 div.info {
@@ -282,7 +288,7 @@ p.seeMore {
 }
 #events
 div.forms {
-  background-color: #007CC7;
+  background-color: var(--primary-color);
   text-align: center;
   display: flex;
   align-content: space-between;
@@ -293,7 +299,7 @@ div.forms {
 div.add
 button {
   background: transparent;
-  color: #EEFBFB;
+  color: var(--tertiary-color);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -363,7 +369,7 @@ li
   opacity: .95;
   margin: 0 auto;
   text-align: center;
-  background-color: #203647;
+  background-color: var(--form-bg);
   border: solid black;
   overflow-y: scroll;
 }
@@ -422,7 +428,7 @@ li
 }
 .profilePic
 h3 {
-  color: #EEFBFB !important;
+  color: var(--tertiary-color) !important;
 }
 
 img.profilePic {
@@ -447,7 +453,7 @@ button {
 }
 #users
 div.forms {
-  background-color: #007CC7;
+  background-color: var(--primary-color);
   text-align: center;
   display: flex;
   align-content:stretch;
@@ -458,7 +464,7 @@ div.forms {
 div.add
 button {
   background: transparent;
-  color: #EEFBFB;
+  color: var(--tertiary-color);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -510,7 +516,7 @@ input.radio {
   margin: 0 auto;
   position: relative;
   text-align: center;
-  background-color: #203647;
+  background-color: var(--form-bg);
   border: solid black;
   overflow-y: scroll;
 }
@@ -521,7 +527,7 @@ input {
 }
 h3.host
 {
-  color:#EEFBFB !important;
+  color:var(--tertiary-color) !important;
 }
 #addUser
 .closeModal {
@@ -591,7 +597,7 @@ img.profilePic {
 #auth
 .userInfo
 h3.underline {
-  color: #203647;
+  color: var(--form-bg);
   display: inline;
 }
 #auth
@@ -624,9 +630,9 @@ img.google {
   margin: 0 auto;
   margin-top: 1em;
   border-radius: 5%;
-  border: solid #EEFBFB;
-  background-color: #4DA8DA;
-  color: #EEFBFB;
+  border: solid var(--tertiary-color);
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
 }
 
 /* Calendar */
@@ -753,8 +759,8 @@ img.google {
 
 /* Content */
 #contentContainer {
-  border: solid #EEFBFB;
-  background-color: #007CC7;
+  border: solid var(--tertiary-color);
+  background-color: var(--primary-color);
   max-width: 90vw;
   padding: 0;
   margin: 0 auto;
@@ -769,8 +775,8 @@ img.google {
   flex-direction: column;
   width:100%;
   height: fit-content;
-  background-color: #007CC7;
-  border-top: solid #EEFBFB;
+  background-color: var(--primary-color);
+  border-top: solid var(--tertiary-color);
   margin: 0;
 }
 #content
@@ -794,7 +800,7 @@ h2 {
   overflow: scroll;
   padding: 0;
   margin: 0 auto;
-  border-top: solid #EEFBFB;
+  border-top: solid var(--tertiary-color);
 }
 #content
 .iframe {
@@ -803,7 +809,7 @@ h2 {
 }
 #content
 .submitVideos {
-  border-top: solid #EEFBFB;
+  border-top: solid var(--tertiary-color);
 }
 #content
 .photos
@@ -851,3 +857,9 @@ img {
   width: 35vw;
 }
 
+/* rellax */
+.rellax {
+  margin-top: 100px;
+  z-index: 99;
+  background-color: red;
+}
