@@ -174,8 +174,7 @@ img {
   width: 5vw;
 }
 .popOver {
-  position: fixed;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   color:black;
   z-index:4;
   background-color: white;
@@ -183,6 +182,7 @@ img {
 }
 
 .popOver li {
+  margin: 0 auto;
   border: none;
   border-bottom: solid black;
   list-style: none;
@@ -191,7 +191,7 @@ img {
 .popOver ul {
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
 }
 h2.submitSpot {
   text-align: center;
