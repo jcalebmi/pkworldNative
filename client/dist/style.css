@@ -84,8 +84,8 @@ ul.dataLists{
 #navigation {
   position: fixed;
   background-color: #007CC7;;
-  top: 1px;
-  width: 95vw;
+  top: 0px;
+  width: 100vw;
   text-align: center;
   border: solid #EEFBFB;
   margin: auto;
@@ -128,8 +128,8 @@ div.info {
 #map
 .info
 .search {
-  display: grid;
-  grid-template-columns: 75% 25%;
+  /* display: grid;
+  grid-template-columns: 75% 25%; */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -148,16 +148,15 @@ div {
 select {
   margin: 0 1vw;
   padding: 0 1vw;
-  width: 20vw
+  width: 30vw;
 }
 #map
 .info
 .search
 input {
   margin: 0;
-  margin-left: 1vw;
   padding: 0;
-  width: 19.5vw;
+  width: 30vw;
 }
 
 button.location {

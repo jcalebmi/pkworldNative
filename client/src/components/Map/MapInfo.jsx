@@ -28,7 +28,6 @@ class MapInfo extends React.Component {
              </span>}
         </div>
         <div className="search">
-          <div></div>
           <div>
             <select value={this.props.searching} onChange={this.props.onChange}>
               <option value='Locations'>Locations</option>
