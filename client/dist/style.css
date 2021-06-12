@@ -797,6 +797,11 @@ h2 {
   border-top: solid #EEFBFB;
 }
 #content
+.iframe {
+  margin: 0 auto;
+  width: 80vw;
+}
+#content
 .submitVideos {
   border-top: solid #EEFBFB;
 }
