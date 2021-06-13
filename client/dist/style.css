@@ -6,12 +6,12 @@
 }
 html, body {
   height: 200vh;
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   padding: 0 auto;
   background-image: url('cracked-concrete-4.jpg');
   background-repeat: no-repeat;
-  overflow-x: hidden;
+  overflow-x:hidden;
 }
 #pkworld {
   color: var(--tertiary-color);
@@ -91,6 +91,12 @@ ul.dataLists{
   overflow-y: hidden;
 }
 
+#home {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 /* Nav */
 #navigation {
   position: fixed;
@@ -113,7 +119,7 @@ button {
 }
 
 #home {
-  width: 100vw;
+  width: 50vw;
   overflow-x: hidden;
 }
 
@@ -874,7 +880,9 @@ img.rellax.stride {
   padding: 0;
   top: 80vh;
   left: 30vw;
+  right: 0;
   width: 100%;
+  overflow: hidden;
   z-index: 1;
 }
 img.rellax.trio {
@@ -898,7 +906,7 @@ img.rellax.imax {
   padding: 0;
   position: absolute;
   top: 0vh;
-  width: 120%;
+  width: 100%;
   z-index: 1;
 }
 img.rellax.gareth {
@@ -916,7 +924,8 @@ img.rellax.garethLay {
   position: absolute;
   top: 180vh;
   left: 10vw;
-  width: 120%;
+  right: 0;
+  width: 100%;
   z-index: 1;
 }
 h1.spots {
@@ -925,7 +934,7 @@ h1.spots {
   position: absolute;
   top: 30vh;
   left: 5vw;
-  width: 120%;
+  right: 0;
   z-index: 2;
 }
 h1.athletes {
@@ -934,7 +943,7 @@ h1.athletes {
   position: absolute;
   top: 50vh;
   left: 35vw;
-  width: 120%;
+  right: 0;
   z-index: 2;
 }
 h1.events {
@@ -943,6 +952,6 @@ h1.events {
   position: absolute;
   top: 80vh;
   left: 12vw;
-  width: 120%;
+  right: 0;
   z-index: 2;
 }

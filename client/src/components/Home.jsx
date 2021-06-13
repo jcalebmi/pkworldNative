@@ -15,7 +15,7 @@ class Home extends React.Component {
   componentDidMount () {
     new Rellax('.stride', {
       speed: 10,
-      center: false,
+      center: true,
       wrapper: null,
       round: false,
       vertical: true,
