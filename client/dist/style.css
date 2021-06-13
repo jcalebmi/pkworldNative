@@ -6,7 +6,7 @@
 }
 html, body {
   height: 200vh;
-  width: 100vw;
+  width: 100%;
   margin: 0 auto;
   padding: 0 auto;
   background-image: url('cracked-concrete-4.jpg');
@@ -22,6 +22,7 @@ html, body {
   width: 100%;
   height: fit-content;
   margin-top: 105px;
+  overflow-x: hidden;
 }
 
 .bold {
