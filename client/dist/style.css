@@ -95,7 +95,7 @@ ul.dataLists{
   position: fixed;
   background-color: var(--primary-color);
   top: 0px;
-  width: 100%;
+  width: 100vw;
   text-align: center;
   border: solid var(--tertiary-color);
   margin: auto;
@@ -109,6 +109,11 @@ button {
   background-color: transparent;
   outline: none;
   cursor: pointer;
+}
+
+#home {
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Map */
