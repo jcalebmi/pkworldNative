@@ -16,7 +16,7 @@ class Home extends React.Component {
     new Rellax('.stride', {
       speed: 10,
       center: true,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -24,7 +24,7 @@ class Home extends React.Component {
     new Rellax('.trio', {
       speed: 2,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -33,7 +33,7 @@ class Home extends React.Component {
       speed: -3,
       zindex: 5,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -41,7 +41,7 @@ class Home extends React.Component {
     new Rellax('.imax', {
       speed: -10,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -49,7 +49,7 @@ class Home extends React.Component {
     new Rellax('.gareth', {
       speed: 5,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: true
@@ -57,7 +57,7 @@ class Home extends React.Component {
     new Rellax('.garethLay', {
       speed: 9,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -65,7 +65,7 @@ class Home extends React.Component {
     new Rellax('.spots', {
       speed: -4,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -73,7 +73,7 @@ class Home extends React.Component {
     new Rellax('.athletes', {
       speed: -5,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -81,7 +81,7 @@ class Home extends React.Component {
     new Rellax('.events', {
       speed: -8,
       center: false,
-      wrapper: null,
+      wrapper: '.body',
       round: false,
       vertical: true,
       horizontal: false
@@ -90,7 +90,7 @@ class Home extends React.Component {
 
   render () {
     return (
-      <div id="home">
+      <div id="home" className="home">
         <h1 className="spots seeMore" onClick={() => this.props.changeFeed('Map')}>Find and Share Spots</h1>
         <h1 className="athletes seeMore" onClick={() => this.props.changeFeed('Users')}>Find Other Athletes</h1>
         <h1 className="events seeMore" onClick={() => this.props.changeFeed('Events')}>Find and Share Events</h1>

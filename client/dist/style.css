@@ -5,7 +5,8 @@
   --form-bg: #203647;
 }
 html, body {
-  height: 200vh;
+  position: relative;
+  height: 100vh;
   width: 100vw;
   margin: 0 auto;
   padding: 0 auto;
@@ -94,7 +95,6 @@ ul.dataLists{
 #home {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
 /* Nav */
@@ -116,11 +116,6 @@ button {
   background-color: transparent;
   outline: none;
   cursor: pointer;
-}
-
-#home {
-  width: 50vw;
-  overflow-x: hidden;
 }
 
 /* Map */
@@ -882,7 +877,6 @@ img.rellax.stride {
   left: 30vw;
   right: 0;
   width: 100%;
-  overflow: hidden;
   z-index: 1;
 }
 img.rellax.trio {
@@ -923,8 +917,7 @@ img.rellax.garethLay {
   padding: 0;
   position: absolute;
   top: 180vh;
-  left: 10vw;
-  right: 0;
+  right: 25vw;
   width: 100%;
   z-index: 1;
 }

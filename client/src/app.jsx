@@ -22,7 +22,7 @@ class App extends React.Component {
   constructor(props) {
     super (props);
     this.state = {
-      feed: 'Map',
+      feed: 'Home',
       spot: null,
       location: {
         lat: 28.5383,
@@ -102,16 +102,11 @@ class App extends React.Component {
   render () {
     return (
       <div id='pkworld'>
-        {/* <img className="rellax stride" src={stride} />
-        <img className="rellax trio" src={trio} />
-        <img className="rellax air" src={air} />
-        <img className="rellax imax" src={imax} />
-        <img className="rellax garethLay" src={garethLay} /> */}
         <Navigation changeFeed={this.changeFeed}/>
         <div id="feed">
           {this.state.feed === 'Home'
-            ? <Home changeFeed={this.changeFeed}/>
-            : null}
+              ? <Home changeFeed={this.changeFeed}/>
+              : null}
           {this.state.feed === 'Map'
             ? <PKMap
                 location={this.state.location}
