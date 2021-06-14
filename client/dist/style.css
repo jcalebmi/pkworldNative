@@ -930,7 +930,7 @@ h1.spots {
   right: 0;
   z-index: 2;
 }
-@media screen and (max-width:540px) {
+/* @media screen and (max-width:540px) { */
   h1.athletes {
     margin: 0;
     padding: 0;
@@ -940,9 +940,9 @@ h1.spots {
     right: 0;
     z-index: 2;
   }
-}
+/* } */
 
-@media screen and (min-width: 540px) {
+/* @media screen and (min-width: 540px) {
   h1.athletes {
     margin: 0;
     padding: 0;
@@ -952,9 +952,9 @@ h1.spots {
     right: 0;
     z-index: 2;
   }
-}
+} */
 
-@media screen and (max-width:540px) {
+/* @media screen and (max-width:540px) { */
   h1.events {
     margin: 0;
     padding: 0;
@@ -964,9 +964,9 @@ h1.spots {
     right: 0;
     z-index: 2;
   }
-}
+/* } */
 
-@media screen and (min-width: 540px) {
+/* @media screen and (min-width: 540px) {
   h1.events {
     margin: 0;
     padding: 0;
@@ -976,4 +976,4 @@ h1.spots {
     right: 0;
     z-index: 2;
   }
-}
+} */
