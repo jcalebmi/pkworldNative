@@ -14,7 +14,7 @@ class Home extends React.Component {
 
   componentDidMount () {
     new Rellax('.stride', {
-      breakpoints: [480, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: 10,
       center: true,
       wrapper: '.body',
@@ -23,7 +23,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.trio', {
-      breakpoints: [480, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: 3,
       center: false,
       wrapper: '.body',
@@ -32,7 +32,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.air', {
-      breakpoints: [480, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: -3,
       zindex: 5,
       center: false,
@@ -42,7 +42,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.imax', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: -10,
       center: false,
       wrapper: '.body',
@@ -51,7 +51,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.gareth', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: 5,
       center: false,
       wrapper: '.body',
@@ -60,7 +60,7 @@ class Home extends React.Component {
       horizontal: true
     })
     new Rellax('.garethLay', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: 9,
       center: false,
       wrapper: '.body',
@@ -69,7 +69,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.spots', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: -4,
       center: false,
       wrapper: '.body',
@@ -78,7 +78,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.athletes', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: -5,
       center: false,
       wrapper: '.body',
@@ -87,7 +87,7 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.events', {
-      breakpoints: [576, 768, 1201],
+      breakpoints: [200, 480, 576, 768, 1201],
       speed: -8,
       center: false,
       wrapper: '.body',
