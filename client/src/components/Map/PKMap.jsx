@@ -152,15 +152,6 @@ const PKMap = (props) => {
         )}
         {temp ? <Marker
             position={{lat: temp.lat, lng: temp.lng}}
-            // icon={{
-            //   url: './sneakers-sneaker-svgrepo-com.svg',
-            //   //fix size of icon
-            //   scaledSize: new window.google.maps.Size(20, 20),
-            //   //Keep icon in middle of click
-            //   origin: new window.google.maps.Point(0,0),
-            //   //Set to half of size
-            //   anchor: new window.google.maps.Point(10,10)
-            // }}
             onClick={() => {
               setSelected(temp)
             }}/> : null}

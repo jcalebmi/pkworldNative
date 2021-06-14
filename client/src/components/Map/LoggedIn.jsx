@@ -14,6 +14,7 @@ class LoggedIn extends React.Component {
       showEdit: false
     }
     this.showEdit = this.showEdit.bind(this);
+    this.addressClick = this.addressClick.bind(this);
   }
 
   showEdit () {
@@ -22,13 +23,19 @@ class LoggedIn extends React.Component {
     })
   }
 
+  addressClick () {
+
+  }
+
   render () {
     return (
       <div id="spotMarker">
         {!this.state.showEdit
         ? <div>
             <h2 className="submitSpot">{this.props.selected.name || 'Submit Spot?'}</h2>
-            <p className='bold underline'>{this.props.selected.address}</p>
+            <p
+              className='bold underline'
+              onClick={this.addressClick}>{this.props.selected.address}</p>
             <p>{this.props.selected.description}</p>
               {this.props.selected.photos
                 ? <div id="markerContent">
