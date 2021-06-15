@@ -12,8 +12,8 @@ class AddPhotos extends React.Component {
   handlePhotos (e) {
     e.preventDefault();
     const imgCont = document.getElementById('thumbnail');
-    const img = document.createElement('img');
     for (let i = 0; i < e.target.files.length; i += 1) {
+      const img = document.createElement('img');
       img.src = URL.createObjectURL(e.target.files[i]);
       img.className = 'thumbnail';
       imgCont.appendChild(img);
