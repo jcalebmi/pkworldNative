@@ -13,9 +13,18 @@ class AddPhotos extends React.Component {
     e.preventDefault();
     const imgCont = document.getElementById('thumbnail');
     for (let i = 0; i < e.target.files.length; i += 1) {
-      const img = document.createElement('img');
-      img.src = URL.createObjectURL(e.target.files[i]);
+      const img = document.createElement('div');
+      img.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[i])})`;
       img.className = 'thumbnail';
+
+      const x = document.createElement('button');
+      x.className = 'x';
+      x.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.target.parentNode.remove();
+      })
+      img.appendChild(x);
+
       imgCont.appendChild(img);
       this.data.append('spotPhotos', e.target.files[i])
     }

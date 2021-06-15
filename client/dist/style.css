@@ -849,10 +849,35 @@ img {
   margin: 0;
   padding: 0;
 }
+#thumbnail {
+  display: flex;
+  justify-content: flex-end;
+}
 #thumbnail
-img.thumbnail {
-  width: 10%;
-  height: auto;
+div.thumbnail {
+  position: relative;
+  display: inline;
+  width: 5em;
+  height: 5em;
+  margin: .2em;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#thumbnail
+.x
+{
+  background-image: url(./close.png);
+  background-position: center;
+  background-size: contain;
+  border: none;
+  background-color: white;
+  position: absolute;
+  right: 1%;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
 }
 
 #markerContent
