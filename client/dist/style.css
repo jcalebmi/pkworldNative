@@ -3,6 +3,8 @@
   --secondary-color: #4DA8DA;
   --tertiary-color: #EEFBFB;
   --form-bg: #203647;
+  --font-main: #EEFBFB;
+  --border-color: #EEFBFB;
 }
 html, body {
   position: relative;
@@ -15,7 +17,7 @@ html, body {
   overflow-x:hidden;
 }
 #pkworld {
-  color: var(--tertiary-color);
+  color: var(--font-main);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +62,7 @@ span:hover{
 .info{
   border-radius: 5%;
   text-align: center;
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   background-color: var(--primary-color);
   width: 90%;
   margin: 0 auto;
@@ -75,7 +77,7 @@ div {
   text-align: center;
 }
 li.dataLists{
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   background-color: var(--secondary-color);
   list-style: none;
   padding: 0;
@@ -87,7 +89,7 @@ ul.dataLists{
   margin: 0 auto;
   margin-top: 1em;
   border-radius: 5%;
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   max-height: fit-content;
   overflow-y: hidden;
 }
@@ -98,20 +100,40 @@ ul.dataLists{
 }
 
 /* Nav */
+#navigation
+button {
+  text-shadow: 0 0 10px black
+}
 #navigation {
   position: fixed;
-  background-color: var(--primary-color);
+  background-image: url("space-624054_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  animation: animate 120s linear infinite;
   top: 0px;
   width: 100vw;
   text-align: center;
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   margin: auto;
   z-index: 5;
+  text-shadow: 0 0 10px black
+}
+@keyframes animate {
+  0%
+  {
+    background-position-y: 720px;
+    background-position-x: 0px;
+  }
+  100%
+  {
+    background-position-y: 0px;
+    background-position-x: 1280px;
+  }
 }
 
 #navigation
 button {
-  color: var(--tertiary-color);
+  color: var(--font-main);
   border: none;
   background-color: transparent;
   outline: none;
@@ -132,9 +154,9 @@ button {
   margin-bottom: 1em;
   border-radius: 5%;
   text-align: center;
-  color: var(--tertiary-color);
+  color: var(--font-main);
   background-color: var(--primary-color);
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
 }
 #map
 div.info {
@@ -310,7 +332,7 @@ div.forms {
 div.add
 button {
   background: transparent;
-  color: var(--tertiary-color);
+  color: var(--font-main);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -439,7 +461,7 @@ li
 }
 .profilePic
 h3 {
-  color: var(--tertiary-color) !important;
+  color: var(--font-main) !important;
 }
 
 img.profilePic {
@@ -475,7 +497,7 @@ div.forms {
 div.add
 button {
   background: transparent;
-  color: var(--tertiary-color);
+  color: var(--font-main);
   margin: 0;
   padding: 0;
   width: 100%;
@@ -538,7 +560,7 @@ input {
 }
 h3.host
 {
-  color:var(--tertiary-color) !important;
+  color:var(--font-main) !important;
 }
 #addUser
 .closeModal {
@@ -641,9 +663,9 @@ img.google {
   margin: 0 auto;
   margin-top: 1em;
   border-radius: 5%;
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   background-color: var(--secondary-color);
-  color: var(--tertiary-color);
+  color: var(--font-main);
 }
 
 /* Calendar */
@@ -770,7 +792,7 @@ img.google {
 
 /* Content */
 #contentContainer {
-  border: solid var(--tertiary-color);
+  border: solid var(--border-color);
   background-color: var(--primary-color);
   max-width: 90vw;
   padding: 0;
@@ -787,7 +809,7 @@ img.google {
   width:100%;
   height: fit-content;
   background-color: var(--primary-color);
-  border-top: solid var(--tertiary-color);
+  border-top: solid var(--border-color);
   margin: 0;
 }
 #content
@@ -811,7 +833,7 @@ h2 {
   overflow: scroll;
   padding: 0;
   margin: 0 auto;
-  border-top: solid var(--tertiary-color);
+  border-top: solid var(--border-color);
 }
 #content
 .iframe {
@@ -820,7 +842,7 @@ h2 {
 }
 #content
 .submitVideos {
-  border-top: solid var(--tertiary-color);
+  border-top: solid var(--border-color);
 }
 #content
 .photos
