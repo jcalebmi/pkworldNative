@@ -47,7 +47,6 @@ class AddPhotos extends React.Component {
         photos: photoContainer,
         count: this.state.count += 1
       })
-      console.log(img);
     }
   }
 
