@@ -22,9 +22,13 @@ class AddVideos extends React.Component {
   }
 
   handleClick () {
-    this.setState({
-      videos: [...this.state.videos, {video: ""}]
-    })
+    const keys = Object.keys(this.state.videos);
+    const lastKey = keys[keys.length-1];
+    if (this.state.videos[lastKey].video !== '') {
+      this.setState({
+        videos: [...this.state.videos, {video: ""}]
+      })
+    }
   }
 
   handleSubmit (e) {
