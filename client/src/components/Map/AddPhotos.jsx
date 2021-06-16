@@ -26,6 +26,7 @@ class AddPhotos extends React.Component {
       x.className = 'x';
       x.addEventListener("click", (e) => {
         e.preventDefault();
+
         const nodeKey = e.target.parentNode.attributes.key.value
         let currentPhotos = this.state.photos;
         delete currentPhotos[nodeKey];
@@ -33,6 +34,7 @@ class AddPhotos extends React.Component {
         this.setState({
           photos: currentPhotos
         })
+
         e.target.parentNode.remove();
       })
       img.appendChild(x);
@@ -45,6 +47,7 @@ class AddPhotos extends React.Component {
         photos: photoContainer,
         count: this.state.count += 1
       })
+      console.log(img);
     }
   }
 
@@ -53,7 +56,7 @@ class AddPhotos extends React.Component {
     const keys = Object.keys(this.state.photos);
     keys.forEach(key => this.state.data.append('spotPhotos', this.state.photos[key]))
 
-    uploadPhotos(this.data, this.props.spotId).then(res => this.props.updatePhotos(res))
+    uploadPhotos(this.state.data, this.props.spotId).then(res => this.props.updatePhotos(res))
     this.setState({
       photos: {},
       data: new FormData()
