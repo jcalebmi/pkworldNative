@@ -4,7 +4,11 @@ import uploadPhotos from './helpers/uploadPhotos.js';
 class AddPhotos extends React.Component {
   constructor(props) {
     super(props);
-    this.data = new FormData()
+    this.state = {
+      photos: {},
+      count: 0,
+      data: new FormData()
+    }
     this.handlePhotos = this.handlePhotos.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,23 +20,44 @@ class AddPhotos extends React.Component {
       const img = document.createElement('div');
       img.style.backgroundImage = `url(${URL.createObjectURL(e.target.files[i])})`;
       img.className = 'thumbnail';
+      img.setAttribute("key", this.state.count)
 
       const x = document.createElement('button');
       x.className = 'x';
       x.addEventListener("click", (e) => {
         e.preventDefault();
+        const nodeKey = e.target.parentNode.attributes.key.value
+        let currentPhotos = this.state.photos;
+        delete currentPhotos[nodeKey];
+
+        this.setState({
+          photos: currentPhotos
+        })
         e.target.parentNode.remove();
       })
       img.appendChild(x);
 
       imgCont.appendChild(img);
-      this.data.append('spotPhotos', e.target.files[i])
+
+      let photoContainer = this.state.photos;
+      photoContainer[this.state.count] = e.target.files[i];
+      this.setState({
+        photos: photoContainer,
+        count: this.state.count += 1
+      })
     }
   }
 
   handleSubmit (e) {
     e.preventDefault()
+    const keys = Object.keys(this.state.photos);
+    keys.forEach(key => this.state.data.append('spotPhotos', this.state.photos[key]))
+
     uploadPhotos(this.data, this.props.spotId).then(res => this.props.updatePhotos(res))
+    this.setState({
+      photos: {},
+      data: new FormData()
+    })
     const parent = document.getElementById('thumbnail');
     while(parent.firstChild) {
       parent.firstChild.remove();
