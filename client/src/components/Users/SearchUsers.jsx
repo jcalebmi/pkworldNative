@@ -39,7 +39,7 @@ class SearchUsers extends React.Component {
             className="search"
             type="text"
             value={this.state.search}
-            placeholder="Search Events"
+            placeholder="Search Athletes"
             onChange={this.handleChange} />
         </form>
       </div>
