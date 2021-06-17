@@ -1,10 +1,10 @@
 :root {
-  --primary-color: #007CC7;
-  --secondary-color: #4DA8DA;
-  --tertiary-color: #EEFBFB;
+  --primary-color: #ebebebca;
+  --secondary-color: #EBEBEB;
   --form-bg: #203647;
-  --font-main: #EEFBFB;
-  --border-color: #EEFBFB;
+  --font-main: #050505;
+  --border-color: #6F4A8E;
+  --font-nav: #EEFBFB;
 }
 html, body {
   position: relative;
@@ -38,7 +38,7 @@ html, body {
   text-decoration: underline;
 }
 .highlight {
-  background-color: var(--form-bg);
+  background-color: yellow;
 }
 #deleteLi {
   display: grid;
@@ -52,7 +52,7 @@ span:hover{
   background-color: #007CC7
 }
 .signIn:hover {
-  background-color: #12232E;
+  background-color: #007CC7;
 }
 .deleteLi {
   margin-bottom: 0;
@@ -98,16 +98,14 @@ ul.dataLists{
 }
 
 #home {
+  color: var(--font-nav);
   margin: 0;
   padding: 0;
 }
 
 /* Nav */
-#navigation
-button {
-  text-shadow: 0 0 10px black
-}
 #navigation {
+  color: var(--font-nav);
   position: fixed;
   background-image: url("space-624054_1280.jpg");
   background-size: cover;
@@ -136,7 +134,8 @@ button {
 
 #navigation
 button {
-  color: var(--font-main);
+  color: var(--font-nav);
+  text-shadow: 0 0 10px black;
   border: none;
   background-color: transparent;
   outline: none;
@@ -462,10 +461,6 @@ li
   display: grid;
   grid-template-columns: 50% 50%;
 }
-.profilePic
-h3 {
-  color: var(--font-main) !important;
-}
 
 img.profilePic {
   border-radius: 50%;
@@ -561,10 +556,7 @@ input {
   margin: 0 auto;
   display: block;
 }
-h3.host
-{
-  color:var(--font-main) !important;
-}
+
 #addUser
 .closeModal {
   font-size: 2em;
@@ -646,7 +638,6 @@ p {
 #auth
 div.userInfo
 h3 {
-  color: #12232E;
   margin-bottom: 0;
 }
 #auth
@@ -669,6 +660,10 @@ img.google {
   border: solid var(--border-color);
   background-color: var(--secondary-color);
   color: var(--font-main);
+}
+
+div.popup {
+  color: var(--font-nav);
 }
 
 /* Calendar */

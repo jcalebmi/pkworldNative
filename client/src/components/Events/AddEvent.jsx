@@ -68,7 +68,7 @@ class AddEvent extends React.Component {
   render () {
     return (
       <div id="addEvent">
-        <div className="formContainer">
+        <div className="formContainer popup">
           <h2>Add Event</h2>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="name">

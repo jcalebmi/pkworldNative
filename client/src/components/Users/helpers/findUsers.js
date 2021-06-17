@@ -17,7 +17,7 @@ const findUsers = (value, users, location) => {
       return doesMatch;
     }).map((user, index) => {
       keys.forEach((key, index) => {
-        if (typeof user[key] !== 'string') {
+        if (typeof user[key] !== 'string' || key === 'pic') {
           return;
         } else {
           const i = user[key].toLowerCase().indexOf(value.toLowerCase());

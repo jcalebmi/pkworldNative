@@ -43,7 +43,7 @@ class AddUser extends React.Component {
   render () {
     return (
       <div id="addUser">
-        <div className="formContainer">
+        <div className="formContainer popup">
           <h2>Join</h2>
           <form onSubmit={this.handleSubmit}>
             <label htmlFor="phone">

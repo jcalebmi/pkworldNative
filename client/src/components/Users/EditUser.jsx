@@ -54,7 +54,7 @@ class EditUser extends React.Component {
   render () {
     return (
       <div id="addUser">
-        <div className="formContainer">
+        <div className="formContainer popup">
         <h2 className="seeMore"><span
             onClick={this.edit}
             >Edit</span> |

@@ -61,7 +61,7 @@ class EditEvent extends React.Component {
   render () {
     return (
       <div id="addEvent">
-        <div className="formContainer">
+        <div className="formContainer popup">
           <h2 className="seeMore"><span
             onClick={this.edit}
             >Edit</span> |
