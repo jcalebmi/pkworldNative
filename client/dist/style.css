@@ -13,7 +13,10 @@ html, body {
   margin: 0 auto;
   padding: 0 auto;
   background-image: url('cracked-concrete-4.jpg');
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
+  resize: both;
+  background-position: center;
+  background-size: cover;
   overflow-x:hidden;
 }
 #pkworld {

@@ -48,55 +48,6 @@ class App extends React.Component {
         }
       })
     }, () => null);
-    // new Rellax('.stride', {
-    //   speed: 10,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: false
-    // })
-    // new Rellax('.trio', {
-    //   speed: 2,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: false
-    // })
-    // new Rellax('.air', {
-    //   speed: -3,
-    //   zindex: 5,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: false
-    // })
-    // new Rellax('.imax', {
-    //   speed: -10,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: false
-    // })
-    // new Rellax('.gareth', {
-    //   speed: 5,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: true
-    // })
-    // new Rellax('.garethLay', {
-    //   speed: 9,
-    //   center: false,
-    //   wrapper: null,
-    //   round: false,
-    //   vertical: true,
-    //   horizontal: false
-    // })
   }
 
   render () {
