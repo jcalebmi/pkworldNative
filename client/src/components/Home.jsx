@@ -44,8 +44,8 @@ class Home extends React.Component {
       horizontal: false
     })
     new Rellax('.imax', {
-      breakpoints: [576, 768, 1201],
-      speed: -15,
+      breakpoints: [414, 768, 1201],
+      speed: -2,
       center: false,
       wrapper: '.body',
       round: false,
