@@ -13,7 +13,7 @@ class UserInfo extends React.Component {
       <div className="info">
         <p>
           Use the search bar to find athletes by name or location and find their contact info.
-          If you have allowed location services, the list will be sorted with athletes closed to you at the top.
+          If you have allowed location services, the list will be sorted with athletes closest to you at the top.
           You can add yourself to the list if you would like other athletes to be able to find you.
         </p>
       </div>
