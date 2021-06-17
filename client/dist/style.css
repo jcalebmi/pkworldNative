@@ -131,15 +131,27 @@ ul.dataLists{
     background-position-x: 1280px;
   }
 }
-
+#navigation
+.buttons {
+  display: flex;
+  align-content: flex-end;
+  justify-content: space-around;
+}
 #navigation
 button {
   color: var(--font-nav);
+  font-size: 1em;
   text-shadow: 0 0 10px black;
   border: none;
   background-color: transparent;
   outline: none;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+#navigation
+button:hover {
+  text-shadow: 0 0 100px #6F4A8E;
 }
 
 /* Map */
