@@ -17,6 +17,7 @@ import imax from './assets/imax.png';
 import gareth from './assets/gareth.png';
 import garethLay from './assets/garethlay.png';
 import Rellax from 'rellax';
+import $ from 'jquery';
 
 class App extends React.Component {
   constructor(props) {

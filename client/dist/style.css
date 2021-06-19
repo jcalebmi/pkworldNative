@@ -11,7 +11,6 @@ html, body {
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
-  padding: 0 auto;
   background-image: url('cracked-concrete-4.jpg');
   background-repeat:no-repeat;
   resize: both;
@@ -85,6 +84,7 @@ li.dataLists{
   list-style: none;
   padding: 0;
   border-width: .1em 0;
+  box-shadow: 1px 1px 25px 3px grey;
 }
 ul.dataLists{
   width: 90%;
@@ -476,6 +476,7 @@ li
 
 img.profilePic {
   border-radius: 50%;
+  box-shadow: 0 0 10px 3px grey;
 }
 #users
 li
@@ -984,7 +985,7 @@ img.rellax.eric {
   margin: 0;
   padding: 0;
   position: absolute;
-  top: 95vh;
+  top: 98vh;
   right: 25vw;
   width: 50%;
   z-index: 1;
@@ -1053,5 +1054,24 @@ h1.athletes {
     left: 12vw;
     right: 0;
     z-index: 2;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #pkworld {
+    position: static;
+    width: 100vw;
+  }
+  #feed {
+    position: static;
+    width: 100vw;
+  }
+  .info {
+    position: static;
+    width: 100vw;
+  }
+  .dataLists {
+    position: static;
+    width: 100vw;
   }
 }
