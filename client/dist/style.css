@@ -1001,6 +1001,7 @@ img.rellax.half {
 }
 
 h1.athletes {
+  font-size: 4.5vw;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -1011,6 +1012,7 @@ h1.athletes {
 }
 @media screen and (max-width:540px) {
   h1.spots {
+    font-size: 4.5vw;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -1023,6 +1025,7 @@ h1.athletes {
 
 @media screen and (min-width: 540px) {
   h1.spots {
+    font-size: 4.5vw;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -1035,6 +1038,7 @@ h1.athletes {
 
 @media screen and (max-width:540px) {
   h1.events {
+    font-size: 4.5vw;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -1047,6 +1051,7 @@ h1.athletes {
 
 @media screen and (min-width: 540px) {
   h1.events {
+    font-size: 4.5vw;
     margin: 0;
     padding: 0;
     position: absolute;
