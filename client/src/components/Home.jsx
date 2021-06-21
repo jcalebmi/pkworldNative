@@ -123,13 +123,13 @@ class Home extends React.Component {
         <h1 className="spots seeMore" onClick={() => this.props.changeFeed('Map')}>Find and Share Spots</h1>
         <h1 className="athletes seeMore" onClick={() => this.props.changeFeed('Users')}>Find Other Athletes</h1>
         <h1 className="events seeMore" onClick={() => this.props.changeFeed('Events')}>Find and Share Events</h1>
-        <img className="rellax stride" src={stride} />
-        <img className="rellax trio" src={trio} />
-        <img className="rellax air" src={air} />
-        <img className="rellax imax" src={imax} />
-        <img className="rellax garethLay" src={garethLay} />
-        <img className="rellax eric" src={eric} />
-        <img className="rellax half" src={tampaHalf} />
+        <img className="rellax stride" alt="stride" src={stride} />
+        <img className="rellax trio" alt="trio kong" src={trio} />
+        <img className="rellax air" alt="air time" src={air} />
+        <img className="rellax imax" alt="imax" src={imax} />
+        <img className="rellax garethLay" alt="layout" src={garethLay} />
+        <img className="rellax eric" alt="stride" src={eric} />
+        <img className="rellax half" alt="gap flip" src={tampaHalf} />
       </div>
     )
   }

@@ -10,12 +10,6 @@ import Events from './components/Events/Events.jsx';
 import SignIn from './components/Auth/SignIn.jsx';
 import Content from './components/Map/Content.jsx';
 import getLocations from './components/helpers/getLocations.js';
-import stride from './assets/stride.png';
-import trio from './assets/trio.png';
-import air from './assets/Air.png';
-import imax from './assets/imax.png';
-import gareth from './assets/gareth.png';
-import garethLay from './assets/garethlay.png';
 import Rellax from 'rellax';
 import $ from 'jquery';
 
