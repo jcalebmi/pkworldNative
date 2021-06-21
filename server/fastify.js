@@ -4,7 +4,7 @@ const express = require('express');
 const path = require('path');
 const multer = require('fastify-multer');
 
-const cors = require('cors');
+const cors = require('fastify-cors');
 const cloudinary = require('cloudinary').v2;
 const {CloudinaryStorage} = require('multer-storage-cloudinary');
 const fastifyStatic = require('fastify-static')
@@ -13,6 +13,7 @@ fastify.register(fastifyStatic, {
   root: path.join(__dirname, '/../', 'client', 'dist'),
   // prefix: '/dist/', // optional: default '/'
 })
+fastify.register(cors, {origin: true})
 fastify.register(multer.contentParser);
 
 const geoCode = require('./api/geoCode.js');
