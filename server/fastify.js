@@ -125,7 +125,7 @@ fastify.get('/userInfo/', (req, res) => {
 })
 
 const port = 3005;
-fastify.listen(port, (err) => {
+fastify.listen(port, '0.0.0.0', (err) => {
   if (err) {
     fastify.log.error(err)
     process.exit(1)
