@@ -1,9 +1,9 @@
 {
   "name": "pkworld",
-  "main": "server/server.js",
+  "main": "server/fastify.js",
   "scripts": {
     "build": "webpack --mode development --watch",
-    "start": "npx nodemon dotenv/config server/server.js"
+    "start": "npx nodemon dotenv/config server/fastify.js"
   },
   "dependencies": {
     "@babel/preset-env": "^7.13.15",
@@ -24,6 +24,10 @@
     "csv-parser": "^3.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "fastify": "^3.18.0",
+    "fastify-express": "^0.3.2",
+    "fastify-multer": "^2.0.2",
+    "fastify-static": "^4.2.2",
     "file-loader": "^6.2.0",
     "firebase": "^8.6.2",
     "fs.promises": "^0.1.2",
