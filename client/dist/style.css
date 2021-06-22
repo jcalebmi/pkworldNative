@@ -358,7 +358,7 @@ button {
 .forms
 div.add {
   text-align: center;
-  width: 25vw;
+  width: 33vw;
   margin: 0 .2vw;
   padding: 0;
 }
@@ -520,7 +520,7 @@ button {
 .forms
 div.add {
   text-align: center;
-  width: 45vw;
+  width: 50vw;
   margin: 0 .2vw;
   padding: 0;
 }
@@ -535,7 +535,7 @@ span{
 #users
 .forms
 .search {
-  width: 45vw;
+  width: 50vw;
   margin: 0;
 }
 
