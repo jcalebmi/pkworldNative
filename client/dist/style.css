@@ -163,6 +163,12 @@ button:hover {
   margin: 0 auto;
   margin-top: 1em;
 }
+#map
+.mapContainer {
+  width: 75vw;
+  margin: 0 auto;
+  overflow: hidden;
+}
 
 #map
 .info{
@@ -1088,5 +1094,13 @@ h1.athletes {
   #users
   div.forms {
     width: 100%;
+  }
+  #map
+  .mapContainer {
+    position: static;
+    width: 100vw;
+  }
+  button.location {
+    margin-left: 90vw;
   }
 }

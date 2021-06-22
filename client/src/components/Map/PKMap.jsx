@@ -22,8 +22,8 @@ const auth = firebase.auth();
 const libraries = ["places", "geometry"];
 //Height and width necessary for map to work
 const mapContainerStyle = {
-  width: "75vw",
-  height: "75vh",
+  width: '100vw',
+  height: '100vh',
   margin: '0 auto',
 }
 //map starting point
@@ -78,7 +78,7 @@ const PKMap = (props) => {
   //pans to location
   const panTo = useCallback(({lat, lng}) => {
     mapRef.current.panTo({lat, lng});
-    mapRef.current.setZoom(16);
+    mapRef.current.setZoom(18);
   }, [])
 
   const handleSearching = (e) => {
@@ -108,74 +108,76 @@ const PKMap = (props) => {
       <Locate
         panTo={panTo}
         location={props.location}/>
-      <GoogleMap
-        mapContainerStyle={mapContainerStyle}
-        zoom={8}
-        center={props.location || center}
-        options={options}
-        onClick={onMapClick}
-        onLoad={onMapLoad}>
-        {markers.map((marker, index) =>
-        marker.gym
-        ? <Marker
-            key={index}
-            position={{lat: marker.lat, lng: marker.lng}}
-            icon={{
-              url: gym,
-              //fix size of icon
-              scaledSize: new window.google.maps.Size(80, 80),
-              //Keep icon in middle of click
-              origin: new window.google.maps.Point(0,0),
-              //Set to half of size
-              anchor: new window.google.maps.Point(40,40)
-            }}
-            onClick={() => {
-              setSelected(marker)
-            }}
-            />
-            : <Marker
-            key={index}
-            position={{lat: marker.lat, lng: marker.lng}}
-            // icon={{
-            //   url: gym,
-            //   //fix size of icon
-            //   scaledSize: new window.google.maps.Size(20, 20),
-            //   //Keep icon in middle of click
-            //   origin: new window.google.maps.Point(0,0),
-            //   //Set to half of size
-            //   anchor: new window.google.maps.Point(10,10)
-            // }}
-            onClick={() => {
-              setSelected(marker)
-            }}
-            />
-        )}
-        {temp ? <Marker
-            position={{lat: temp.lat, lng: temp.lng}}
-            onClick={() => {
-              setSelected(temp)
-            }}/> : null}
-        {selected ? (
-        <InfoWindow
-          position={{
-            lat: selected.lat,
-            lng: selected.lng}}
-          onCloseClick={() => {
-            setSelected(null);
-          }}>
-          {user
-            ? <LoggedIn
-                changeFeed={props.changeFeed}
-                setMarkers={setMarkers}
-                setTemp={setTemp}
-                setSelected={setSelected}
-                selected={selected}/>
-            : <LoggedOut
-                changeFeed={props.changeFeed}
-                selected={selected}/>}
+      <div className="mapContainer">
+        <GoogleMap
+          mapContainerStyle={mapContainerStyle}
+          zoom={8}
+          center={props.location || center}
+          options={options}
+          onClick={onMapClick}
+          onLoad={onMapLoad}>
+          {markers.map((marker, index) =>
+          marker.gym
+          ? <Marker
+              key={index}
+              position={{lat: marker.lat, lng: marker.lng}}
+              icon={{
+                url: gym,
+                //fix size of icon
+                scaledSize: new window.google.maps.Size(80, 80),
+                //Keep icon in middle of click
+                origin: new window.google.maps.Point(0,0),
+                //Set to half of size
+                anchor: new window.google.maps.Point(40,40)
+              }}
+              onClick={() => {
+                setSelected(marker)
+              }}
+              />
+              : <Marker
+              key={index}
+              position={{lat: marker.lat, lng: marker.lng}}
+              // icon={{
+              //   url: gym,
+              //   //fix size of icon
+              //   scaledSize: new window.google.maps.Size(20, 20),
+              //   //Keep icon in middle of click
+              //   origin: new window.google.maps.Point(0,0),
+              //   //Set to half of size
+              //   anchor: new window.google.maps.Point(10,10)
+              // }}
+              onClick={() => {
+                setSelected(marker)
+              }}
+              />
+          )}
+          {temp ? <Marker
+              position={{lat: temp.lat, lng: temp.lng}}
+              onClick={() => {
+                setSelected(temp)
+              }}/> : null}
+          {selected ? (
+          <InfoWindow
+            position={{
+              lat: selected.lat,
+              lng: selected.lng}}
+            onCloseClick={() => {
+              setSelected(null);
+            }}>
+            {user
+              ? <LoggedIn
+                  changeFeed={props.changeFeed}
+                  setMarkers={setMarkers}
+                  setTemp={setTemp}
+                  setSelected={setSelected}
+                  selected={selected}/>
+              : <LoggedOut
+                  changeFeed={props.changeFeed}
+                  selected={selected}/>}
 
-        </InfoWindow>) : null}
-      </GoogleMap>
+          </InfoWindow>) : null}
+        </GoogleMap>
+        </div>
     </div>
   )
 }
