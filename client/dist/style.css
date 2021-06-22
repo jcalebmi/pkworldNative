@@ -79,6 +79,7 @@ div {
   text-align: center;
 }
 li.dataLists{
+  width: 100%;
   border: solid var(--border-color);
   background-color: var(--secondary-color);
   list-style: none;
@@ -94,7 +95,7 @@ ul.dataLists{
   border-radius: 5%;
   border: solid var(--border-color);
   max-height: fit-content;
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 #home {
@@ -335,6 +336,7 @@ p.seeMore {
 }
 #events
 div.forms {
+  width: 100%;
   background-color: var(--primary-color);
   text-align: center;
   display: flex;
@@ -371,14 +373,14 @@ span{
 #events
 .forms
 .search {
-  width: 30vw;
+  width: 33vw;
   margin: 0;
 }
 
 #events
 .forms
 select {
-  width: 30vw;
+  width: 33vw;
 }
 
 #events
@@ -1075,8 +1077,16 @@ h1.athletes {
     position: static;
     width: 100vw;
   }
-  .dataLists {
+  ul.dataLists {
     position: static;
     width: 100vw;
+  }
+  #events
+  div.forms {
+    width: 100%;
+  }
+  #users
+  div.forms {
+    width: 100%;
   }
 }

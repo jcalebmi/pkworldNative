@@ -53,7 +53,7 @@ class AddPhotos extends React.Component {
   handleSubmit (e) {
     e.preventDefault()
     const keys = Object.keys(this.state.photos);
-    keys.forEach(key => this.state.data.append('spotPhotos', this.state.photos[key]))
+    keys.forEach(key => this.state.data.append('spotPhotos', this.state.photos[key]));
 
     uploadPhotos(this.state.data, this.props.spotId).then(res => this.props.updatePhotos(res))
     this.setState({
