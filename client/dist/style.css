@@ -587,6 +587,7 @@ input {
 }
 
 #auth {
+  width: 100%;
   min-height:fit-content;
   max-height: max-content;
   text-align: center;
@@ -683,6 +684,13 @@ img.google {
   color: var(--font-main);
 }
 
+#profile {
+  width: 100%;
+}
+#profile
+.userInfo {
+  width: 100%;
+}
 div.popup {
   color: var(--font-nav);
 }
@@ -1103,4 +1111,9 @@ h1.athletes {
   button.location {
     margin-left: 90vw;
   }
+  #signIn {
+    position: static;
+    width: 100vw;
+  }
+
 }
