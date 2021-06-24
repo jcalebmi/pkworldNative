@@ -11,7 +11,6 @@ import SignIn from './components/Auth/SignIn.jsx';
 import Content from './components/Map/Content.jsx';
 import getLocations from './components/helpers/getLocations.js';
 import Rellax from 'rellax';
-import $ from 'jquery';
 
 class App extends React.Component {
   constructor(props) {

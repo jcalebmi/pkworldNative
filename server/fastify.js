@@ -71,6 +71,7 @@ fastify.delete('/spots/:id', (req, res) => {
 })
 
 fastify.post('/spots/uploads/:id', {preHandler: spotPhotoParser.array('spotPhotos')}, (req, res) => {
+  console.log(req.files)
   const id = req.params.id;
   const body = req.files
   const UUIDS = req.files;
