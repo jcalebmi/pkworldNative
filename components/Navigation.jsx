@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   header: {
     textAlign: 'center',
     color: 'white',
-    fontSize: 2
+    fontSize: 20
   },
   buttons: {
     display: 'flex',
