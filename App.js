@@ -1,16 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import Navigation from './components/Navigation.jsx';
+import background from './cracked-concrete-4.jpg';
 
 class App extends React.Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
+    this.state = {
+      feed: 'Home',
+      spot: null,
+      location: {
+        lat: 28.5383,
+        lng: -81.3792
+      }
+    }
+    this.changeFeed = this.changeFeed.bind(this);
   }
 
+  changeFeed (feed, spot) {
+    this.setState({
+      feed: feed,
+      spot: spot
+    })
+  }
   render () {
     return (
       <View style={styles.container}>
-        <Text>hello squig!</Text>
+        <Navigation changeFeed={this.changeFeed}/>
+        <ImageBackground source={background} style={styles.background}>
+            <Text>Hello</Text>
+        </ImageBackground>
         <StatusBar style="auto" />
       </View>
     );
@@ -24,6 +44,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  background: {
+    width: '100%',
+    height: '100%',
+    resizeMode: "cover",
+    justifyContent: "center"
+  }
 });
 
 export default App;
