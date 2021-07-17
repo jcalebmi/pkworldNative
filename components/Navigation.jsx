@@ -6,11 +6,6 @@ class Navigation extends React.Component {
   constructor(props) {
     super(props);
     this.feeds = ['Home', 'Map', 'Events', 'Users', 'Profile']
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e) {
-    this.props.changeFeed(e.target.value)
   }
 
   render () {
@@ -19,7 +14,7 @@ class Navigation extends React.Component {
         <ImageBackground source={background} style={styles.image}>
           <Text style={styles.header} onClick={() => {this.props.changeFeed('Home')}}>PK World</Text>
           <View style={styles.buttons}>
-            {this.feeds.map((feed, index) => <Button style={styles.button} key={feed} onPress={this.handleClick} value={feed} title={feed}>{feed}</Button>)}
+            {this.feeds.map((feed, index) => <Button style={styles.button} key={feed} onPress={() => this.props.changeFeed(feed)} value={feed} title={feed}>{feed}</Button>)}
           </View>
         </ImageBackground>
       </View>

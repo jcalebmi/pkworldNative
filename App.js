@@ -3,6 +3,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import Navigation from './components/Navigation.jsx';
 import background from './cracked-concrete-4.jpg';
+import PKMap from './components/Map/PKMap.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +30,9 @@ class App extends React.Component {
       <View style={styles.container}>
         <Navigation changeFeed={this.changeFeed}/>
         <ImageBackground source={background} style={styles.background}>
-            <Text>Hello</Text>
+          {this.state.feed === 'Map'
+            ? <PKMap/>
+            : null}
         </ImageBackground>
         <StatusBar style="auto" />
       </View>
