@@ -5,7 +5,7 @@ import background from '../space-624054_1280.jpg'
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
-    this.feeds = ['Home', 'Map', 'Events', 'Users', 'Profile']
+    this.feeds = ['Map']
   }
 
   render () {

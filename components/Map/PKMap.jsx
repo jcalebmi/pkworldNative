@@ -7,9 +7,11 @@ class PKMap extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      markers: []
+      markers: [],
+      current: null
     }
     this.loadMarkers = this.loadMarkers.bind(this);
+    this.handlePress = this.handlePress.bind(this);
   }
   loadMarkers() {
     getMarkers().then(data => {
@@ -23,16 +25,30 @@ class PKMap extends React.Component {
     this.loadMarkers();
   }
 
+  handlePress (e) {
+    this.setState({
+      current: {
+        lat: e.latitude,
+        long: e.longitude
+      }
+    })
+  }
+
   render() {
     return (
     <MapView
       style={{flex: 1}}
       // region={{latitude: 42.882004, longitude: 74.582748, latitudeDelta: 0.0922, longitudeDelta: 0.0421}}
+      onPress={(e)=> {this.handlePress(e.nativeEvent.coordinate)}}
+      showsCompass={true}
       showsUserLocation={true}
       followUserLocation={true}>
         {this.state.markers.map((spot, index) => <Marker
             key={index}
             coordinate={{latitude: spot.lat, longitude: spot.lng}}
+            title={spot.name}
+            description={spot.desc}
+            tracksViewChanges={false}
             >
               <Callout style={styles.callout}>
                 <View style={styles.container}>
@@ -42,6 +58,12 @@ class PKMap extends React.Component {
                 </View>
               </Callout>
             </Marker>)}
+        {this.state.current ?
+          <Marker
+            coordinate={{latitude:this.state.current.lat, longitude: this.state.current.long}}>
+
+          </Marker>
+          :null}
     </MapView>
     )
   }
