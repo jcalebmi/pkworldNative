@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TextInput} from 'react-native';
 import MapView, {Marker, Callout} from 'react-native-maps';
+import AddSpot from './AddSpot.jsx';
 import getMarkers from './helpers/getMarkers.js';
 
 class PKMap extends React.Component {
@@ -39,7 +40,7 @@ class PKMap extends React.Component {
     <MapView
       style={{flex: 1}}
       // region={{latitude: 42.882004, longitude: 74.582748, latitudeDelta: 0.0922, longitudeDelta: 0.0421}}
-      onPress={(e)=> {this.handlePress(e.nativeEvent.coordinate)}}
+      onLongPress={(e)=> {this.handlePress(e.nativeEvent.coordinate)}}
       showsCompass={true}
       showsUserLocation={true}
       followUserLocation={true}>
@@ -61,7 +62,9 @@ class PKMap extends React.Component {
         {this.state.current ?
           <Marker
             coordinate={{latitude:this.state.current.lat, longitude: this.state.current.long}}>
-
+              <Callout>
+                <AddSpot></AddSpot>
+              </Callout>
           </Marker>
           :null}
     </MapView>
