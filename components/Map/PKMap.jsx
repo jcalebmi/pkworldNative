@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
   address: {
     fontSize: 10,
     textAlign: 'center',
-    width: '50%',
+    width: '25%',
     fontWeight: 'bold',
     fontStyle: 'italic'
   },
